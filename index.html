@@ -19,12 +19,12 @@
 
     <header id="header">
         <div id="banner">
-            <h1><a href="#">Morse Translator</a></h1>
+            <h1><a href="#">WifiSlax OS</a></h1>
         </div>
 
         <nav id="menu">
             <ul>
-                <li><a href="#" accesskey="1">Inicio</a></li>
+                <li class="active"><a href="#" accesskey="1">Inicio</a></li>
                 <li><a href="#" accesskey="2">Historia</a></li>
                 <li><a href="#" accesskey="3">Configuracion</a></li>
                 <li><a href="#" accesskey="3">Acerca de</a></li>
@@ -37,8 +37,19 @@
     </section>
 
     <footer id="comments-pane">
-        <h3>Comments Pane</h3>
+        <h3>Comentarios</h3>
+        <h3>Escribe tu Comentario</h3>
+        <div>
+            <input id="name-input" placeholder="Name" type="text">
+            <input id="email-input" placeholder="E-mail" type="text">
+        </div>
+        <textarea id="comment-area" rows="10" placeholder="Enter your Comment..."></textarea>
+        <div><button>Send Comment</button></div>
     </footer>
+
+    <script>
+        $("#content").load("start.html")
+    </script>
 </body>
 
 </html>
