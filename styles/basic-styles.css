@@ -2,34 +2,18 @@ body {
     height: 100%;
     margin: 0px;
     padding: 0px;
-    background: #2056ac;
+    background: #34495e;
     font-family: 'Questrial', sans-serif;
     font-size: 12pt;
-    color: rgba(0, 0, 0, .6);
 }
 
 h1, h2, h3 {
-    display: block;
-    margin-bottom: 0.20em;
     color: #ffffff;
 }
 
 #header {
-    overflow: hidden;
-    background: #2056ac;
+    background: #34495e;
     text-align: center;
-}
-
-#banner a {
-    text-decoration: none;
-    color: #FFF;
-}
-
-#banner h1 {
-    display: block;
-    margin-bottom: 0.20em;
-    padding: 0.20em 0.9em;
-    font-size: 3.5em;
 }
 
 #menu {
@@ -57,7 +41,7 @@ h1, h2, h3 {
 #menu li:hover a, #menu li.active a {
     background: #ffffff;
     border-radius: 10px 10px 0px 0px;
-    color: #2056ac;
+    color: #34495e;
 }
 
 #content {
