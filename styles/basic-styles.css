@@ -44,12 +44,27 @@ h1, h2, h3 {
     color: #34495e;
 }
 
-#content {
+#section {
     overflow: hidden;
     padding: 1em 1em 1em 1em;
-    background: #ffffff;
 
     border-width: 20px;
+    width: 900px;
+}
+
+#content {
+    background: #ffffff;
+    width: 1200px;
+    display: flex;
+}
+
+#article {
+    vertical-align: middle;
+    width: 250px;
+    padding: 1em 1em 1em 1em;
+    border-width: 20px;
+
+    margin: auto; 
 }
 
 #comments-pane {
