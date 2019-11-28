@@ -44,19 +44,23 @@
 		</article>
 	</div>
 
-	<footer id="comments-pane">
+	<form id="comments-pane">
 		<h3>Comentarios</h3>
-		<h3>Escribe tu Comentario</h3>
+		<div class="comments"></div>
 
+		<h3>Escribe tu Comentario</h3>
 		<div>
-			<input id="name-input" placeholder="Nombre" type="text">
-			<input id="email-input" placeholder="Correo Electronico" type="text">
+			<input id="name-input" placeholder="Nombre" type="text" name='name'>
+			<input id="email-input" placeholder="Correo Electronico" type="email" name='email'>
 		</div>
 
 		<textarea id="comment-area" rows="10"
-			placeholder="Ingrese su Comentario"></textarea>
-		<div><button>Enviar</button></div>
-	</footer>
+			placeholder="Ingrese su Comentario" name='comment'></textarea>
+
+		<div><button type="submit">Enviar</button></div>
+	</form>
+
+	<script src="scripts/google-sheet.js"></script>
 </body>
 
 </html>
