@@ -54,14 +54,18 @@ h1, h2, h3 {
 	border-left: 20px solid #34495e;
 	border-radius: 20px 20px 0px 0px;
 	float: right;
-	padding: 3em 1em 1em 1em;
+	padding: 25px 25px 25px 25px;
 }
 
 .article {
-	padding: 1em 0em 1em 0em;
+	padding-top: 20px;
 }
 
-#comments-pane {
-	border-right: 600px solid #34495e;
-	display: grid;
+#comments-pane textarea{
+	margin-top: 5px;
+	width: 60.7%;
+}
+
+#comments-pane input{
+	width: 30%;
 }
