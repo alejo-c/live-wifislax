@@ -1,2 +1,2 @@
-# wifi-slax-os
-Source of a web page for Wifi Slax Operative System
+# live-wifislax
+Web page source for Live WifiSlax Operative System with database in a Google spreadsheet
