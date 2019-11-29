@@ -15,7 +15,7 @@ h1, h2, h3 {
 }
 
 #menu {
-	border-right: 275px solid #34495e;
+	border-right: 300px solid #34495e;
 	height: 60px;
 }
 
@@ -44,7 +44,7 @@ h1, h2, h3 {
 
 #content {
 	background: #ffffff;
-	border-radius: 20px 20px 0px 0px;
+	border-radius: 25px 0px 0px 25px;
 	float: left;
 	padding: 1em 1em 1em 1em;
 }
@@ -52,7 +52,7 @@ h1, h2, h3 {
 #links {
 	background: #ffffff;
 	border-left: 20px solid #34495e;
-	border-radius: 20px 20px 0px 0px;
+	border-radius: 0px 25px 25px 0px;
 	float: right;
 	padding: 25px 25px 25px 25px;
 }
