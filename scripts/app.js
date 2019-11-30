@@ -10,6 +10,10 @@ $('#forum-button').click(function () {
 	window.open("https://foro.seguridadwireless.net/live-wifislax/")
 })
 
+$('#page-button').click(function () {
+	window.open("https://www.wifislax.com/") 
+})
+
 $('#menu li').click(function () {
 	$('.active').removeClass('active')
 	$(this).addClass('active')
