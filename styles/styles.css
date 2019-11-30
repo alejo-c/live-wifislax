@@ -9,6 +9,10 @@ h1, h2, h3 {
 	color: #ffffff;
 }
 
+a {
+	color: blue;
+}
+
 #header {
 	background: #34495e;
 	text-align: center;
@@ -47,6 +51,7 @@ h1, h2, h3 {
 	border-radius: 25px 0px 0px 25px;
 	float: left;
 	padding: 1em 1em 1em 1em;
+	width: 200%;
 }
 
 #links {
@@ -68,4 +73,8 @@ h1, h2, h3 {
 
 #comments-pane input{
 	width: 30%;
+}
+
+.image {
+	text-align: center;
 }
