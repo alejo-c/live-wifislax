@@ -66,12 +66,13 @@ a {
 	padding-top: 20px;
 }
 
-#comments-pane textarea{
+#comments-form textarea{
 	margin-top: 5px;
-	width: 60.7%;
+	resize: none;
+	width: 30%;
 }
 
-#comments-pane input{
+#comments-form input{
 	width: 30%;
 }
 
