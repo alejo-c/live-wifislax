@@ -48,8 +48,6 @@
 	</div>
 
 	<h3>Comentarios</h3>
-	<div class="comments"></div>
-
 	<h3>Escribe tu Comentario</h3>
 	<form id="comments-form" autocomplete="off">
 		<input id="name-input" placeholder="Nombre" type="text" name='name'>
@@ -58,11 +56,13 @@
 
 		<div><button type="submit">Enviar</button></div>
 	</form>
+
+	<div class="comments"><ul id="comments-list"></ul></div>
+
 	<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-analytics.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-database.js"></script>
 	<script>
-		// Your web app's Firebase configuration
 		var firebaseConfig = {
 			apiKey: "AIzaSyCYKXX1ZBsSuqQJgzHmUqpD8pcshGNNqTg",
 			authDomain: "live-wifislax.firebaseapp.com",
@@ -73,7 +73,7 @@
 			appId: "1:713870640964:web:7230448fac46812a79f911",
 			measurementId: "G-C79LBMY0KT"
 		};
-		// Initialize Firebase
+		
 		firebase.initializeApp(firebaseConfig);
 		firebase.analytics();
 	</script>
