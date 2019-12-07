@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "569b1b0be13dbb7a8d5943dffef77bec",
+    "revision": "3b4e6f03620a0bddcedb226306883325",
     "url": "/live-wifislax/index.html"
   },
   {
-    "revision": "65069d2784b0192f756a",
-    "url": "/live-wifislax/static/css/main.4f275c36.chunk.css"
+    "revision": "b3629211306d75e66194",
+    "url": "/live-wifislax/static/css/main.e6d3f904.chunk.css"
   },
   {
-    "revision": "a118f8c33985d9b3e392",
-    "url": "/live-wifislax/static/js/2.69b7fcff.chunk.js"
+    "revision": "90f8779d3d3fa3d76760",
+    "url": "/live-wifislax/static/js/2.86f4dea2.chunk.js"
   },
   {
     "revision": "d705cb622423d72c5defbf368ca70dcc",
-    "url": "/live-wifislax/static/js/2.69b7fcff.chunk.js.LICENSE"
+    "url": "/live-wifislax/static/js/2.86f4dea2.chunk.js.LICENSE"
   },
   {
-    "revision": "65069d2784b0192f756a",
-    "url": "/live-wifislax/static/js/main.d4995027.chunk.js"
+    "revision": "b3629211306d75e66194",
+    "url": "/live-wifislax/static/js/main.7ebf0bc7.chunk.js"
   },
   {
     "revision": "60e1b8bd17f2624abbe6",
