@@ -4,10 +4,9 @@
 	"private": true,
 	"homepage": "https://alejo-castrillon.github.io/live-wifislax",
 	"dependencies": {
-		"@testing-library/jest-dom": "^4.2.4",
-		"@testing-library/react": "^9.3.2",
-		"@testing-library/user-event": "^7.1.2",
+		"core-js": "^3.4.7",
 		"gh-pages": "^2.1.1",
+		"mdbreact": "^4.23.0",
 		"react": "^16.12.0",
 		"react-dom": "^16.12.0",
 		"react-scripts": "3.3.0"

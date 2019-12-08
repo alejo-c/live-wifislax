@@ -28,7 +28,7 @@ export default class CommentForm extends Component {
 					className="form-control"
 					name='username'
 					value={this.state.username}
-					placeholder="Tu nombre"
+					placeholder="Nombre"
 					onChange={this.handleChange}
 				/>
 			</div>
@@ -38,7 +38,7 @@ export default class CommentForm extends Component {
 					style={{ resize: 'none' }}
 					name='text'
 					value={this.state.text}
-					placeholder='Agrega un comentario'
+					placeholder='Agrega un comentario público'
 					onChange={this.handleChange}
 				/>
 			</div>

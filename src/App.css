@@ -12,24 +12,6 @@
 	font-size: calc(10px + 2vmin);
 }
 
-.App-link {
-	color: #61dafb;
-}
-
-.Middle-section {
-	background-color: #282c34;
-	color: white;
-}
-
-.Content-Pane {
-	background-color: white;
-	color: black;
-}
-
-.Footer {
-	background-color: #282c34;
-}
-
 @keyframes logo-spin {
 	from {
 		transform: rotate(0deg);

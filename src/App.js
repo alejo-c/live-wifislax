@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 
 import banner from './images/banner.png'
-import reactLogo from './images/react.png'
-import bootstrapLogo from './images/bootstrap.png'
-import githubPagesLogo from './images/gh-pages-dk.png'
-import firebaseGif from './images/firebase.png'
+
+import reactjs from './images/reactjs.png'
+import mdbreact from './images/bootstrap.png'
+import ghpages from './images/github-lg.png'
+import firebase from './images/firebase.png'
 
 import './App.css'
 
@@ -12,10 +13,11 @@ import StartContent from './components/content/Start'
 import HistoryContent from './components/content/History'
 import InstalationContent from './components/content/Instalation'
 
-import NavBar from './components/NavBar'
-import CommentForm from './components/CommentForm'
-import Article from './components/Article'
-import Comment from './components/Comment'
+import NavbarPage from './components/navbar-page'
+import Article from './components/article'
+import CommentForm from './components/comment-form'
+import Comment from './components/comment'
+import FooterPage from './components/footer-page'
 
 export default class App extends Component {
 	constructor() {
@@ -57,8 +59,8 @@ export default class App extends Component {
 
 		return <div className="App">
 			<header className="App-header">
-				<img src={banner} className='App-banner' alt='banner' />
-				<NavBar tabsContent={
+				<img src={banner} className='App-banner' alt='banner' />¿
+				<NavbarPage tabsContent={
 					[
 						{ title: 'Inicio', content: StartContent },
 						{ title: 'Historia', content: HistoryContent },
@@ -85,41 +87,31 @@ export default class App extends Component {
 				<ul>{comments}</ul>
 			</footer>
 			<hr />
-			<footer className='Footer clearfix p-5'>
-				<a className='float-left' href='https://github.com/alejo-castrillon/live-wifislax'>
-					Ver repositorio en GitHub
-				</a>
-				<div className='float-right'>
-					<a href='https://es.reactjs.org/'>
-						<img
-							src={reactLogo}
-							className='Spinning-logo Logo'
-							alt="react"
-						/>
-					</a>
-					<a href='https://getbootstrap.com/'>
-						<img
-							src={bootstrapLogo}
-							className='Logo'
-							alt="bootstrap"
-						/>
-					</a>
-					<a href='https://pages.github.com/'>
-						<img
-							src={githubPagesLogo}
-							className='Logo'
-							alt="github-p"
-						/>
-					</a>
-					<a href='https://firebase.google.com/'>
-						<img
-							src={firebaseGif}
-							className='Logo'
-							alt="firebase"
-						/>
-					</a>
-				</div>
-			</footer>
+			<FooterPage imageLinks={
+				[
+					{
+						src: 'https://github.com/alejo-castrillon/live-wifislax/blob/react-structure/src/images/react.png?raw=true',
+						alt: 'reactjs-logo',
+						href: 'https://es.reactjs.org/',
+						text: 'React.js'
+					}, {
+						src: 'https://github.com/alejo-castrillon/live-wifislax/blob/react-structure/src/images/mdbreact.png?raw=true',
+						alt: 'mdbreact-logo',
+						href: 'https://mdbootstrap.com/docs/react/',
+						text: 'Material Design Bootstrap React'
+					}, {
+						src: 'https://github.com/alejo-castrillon/live-wifislax/blob/react-structure/src/images/github-lg.png?raw=true',
+						alt: 'github-logo',
+						href: 'https://pages.github.com/',
+						text: 'Github Pages'
+					}, {
+						src: 'https://github.com/alejo-castrillon/live-wifislax/blob/react-structure/src/images/firebase.png?raw=true',
+						alt: 'firebase-logo',
+						href: 'https://firebase.google.com/products/realtime-database/',
+						text: 'Firebase Realtime Database'
+					},
+				]
+			} />
 		</div>
 	}
 }

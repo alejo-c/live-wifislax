@@ -4,7 +4,7 @@ import like from '../images/like.png'
 import reply from '../images/reply.png'
 import report from '../images/report.png'
 
-import Avatar from './Avatar'
+import Avatar from './avatar'
 
 export default class Comment extends Component {
 	constructor() {
