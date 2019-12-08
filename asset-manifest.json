@@ -1,24 +1,25 @@
 {
   "files": {
-    "main.css": "/live-wifislax/static/css/main.e6d3f904.chunk.css",
-    "main.js": "/live-wifislax/static/js/main.7ebf0bc7.chunk.js",
-    "main.js.map": "/live-wifislax/static/js/main.7ebf0bc7.chunk.js.map",
+    "main.css": "/live-wifislax/static/css/main.5ef6f3ee.chunk.css",
+    "main.js": "/live-wifislax/static/js/main.6dbd6fb1.chunk.js",
+    "main.js.map": "/live-wifislax/static/js/main.6dbd6fb1.chunk.js.map",
     "runtime-main.js": "/live-wifislax/static/js/runtime-main.0fd0338b.js",
     "runtime-main.js.map": "/live-wifislax/static/js/runtime-main.0fd0338b.js.map",
-    "static/js/2.86f4dea2.chunk.js": "/live-wifislax/static/js/2.86f4dea2.chunk.js",
-    "static/js/2.86f4dea2.chunk.js.map": "/live-wifislax/static/js/2.86f4dea2.chunk.js.map",
+    "static/js/2.4d857018.chunk.js": "/live-wifislax/static/js/2.4d857018.chunk.js",
+    "static/js/2.4d857018.chunk.js.map": "/live-wifislax/static/js/2.4d857018.chunk.js.map",
     "index.html": "/live-wifislax/index.html",
-    "precache-manifest.b22e709f9d67533e9ede93348d8842a0.js": "/live-wifislax/precache-manifest.b22e709f9d67533e9ede93348d8842a0.js",
+    "precache-manifest.0f890668f9aa41fb6018a7e38b888a15.js": "/live-wifislax/precache-manifest.0f890668f9aa41fb6018a7e38b888a15.js",
     "service-worker.js": "/live-wifislax/service-worker.js",
-    "static/css/main.e6d3f904.chunk.css.map": "/live-wifislax/static/css/main.e6d3f904.chunk.css.map",
-    "static/js/2.86f4dea2.chunk.js.LICENSE": "/live-wifislax/static/js/2.86f4dea2.chunk.js.LICENSE",
+    "static/css/main.5ef6f3ee.chunk.css.map": "/live-wifislax/static/css/main.5ef6f3ee.chunk.css.map",
+    "static/js/2.4d857018.chunk.js.LICENSE": "/live-wifislax/static/js/2.4d857018.chunk.js.LICENSE",
     "static/media/banner.png": "/live-wifislax/static/media/banner.7de7847e.png",
-    "static/media/bootstrap-logo.png": "/live-wifislax/static/media/bootstrap-logo.73844123.png"
+    "static/media/bootstrap.png": "/live-wifislax/static/media/bootstrap.73844123.png",
+    "static/media/like.png": "/live-wifislax/static/media/like.9937444a.png"
   },
   "entrypoints": [
     "static/js/runtime-main.0fd0338b.js",
-    "static/js/2.86f4dea2.chunk.js",
-    "static/css/main.e6d3f904.chunk.css",
-    "static/js/main.7ebf0bc7.chunk.js"
+    "static/js/2.4d857018.chunk.js",
+    "static/css/main.5ef6f3ee.chunk.css",
+    "static/js/main.6dbd6fb1.chunk.js"
   ]
 }
