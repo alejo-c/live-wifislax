@@ -1,0 +1,52 @@
+@media (prefers-reduced-motion: no-preference) {
+	.Spinning-logo {
+		animation: logo-spin infinite 20s linear;
+	}
+}
+
+.App-header {
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+	font-size: calc(10px + 2vmin);
+}
+
+.App-link {
+	color: #61dafb;
+}
+
+.Middle-section {
+	background-color: #282c34;
+	color: white;
+}
+
+.Content-Pane {
+	background-color: white;
+	color: black;
+}
+
+.Footer {
+	background-color: #282c34;
+}
+
+@keyframes logo-spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.Logo {
+	height: 7vmin;
+	transition: filter .3s ease-in-out;
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+}
+
+.Logo:hover {
+	-webkit-filter: grayscale(0%);
+	filter: grayscale(0%);
+}
