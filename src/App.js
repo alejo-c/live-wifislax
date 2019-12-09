@@ -60,7 +60,7 @@ export default class App extends Component {
 
 		return <div className="App">
 			<header className="text-center">
-                <img src={banner} className='w-60' alt='banner' />
+				<img src={banner} className='w-60' alt='banner' />
 				<NavbarPage contentTabs={
 					[
 						{ title: 'Inicio', content: StartContent },
@@ -71,12 +71,12 @@ export default class App extends Component {
 				} linkTab={{ title: 'Foro', href: 'https://foro.seguridadwireless.net/' }} />
 			</header>
 
-			<section className='Middle-section'>
+			<section className='Middle-section row'>
 				<div className='Content-pane col-10'>
-					<StartContent/>
+					<StartContent />
 				</div>
 				<div className='bg-dark text-white col-2'>
-			        <CollapsePage/>
+					<CollapsePage />
 				</div>
 			</section>
 

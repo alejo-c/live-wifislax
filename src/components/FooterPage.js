@@ -17,7 +17,7 @@ export default class FooterPage extends Component {
             			</p>
 					</MDBCol>
 					<MDBCol md="6">
-						<h5 className="title"><strong>Herramientas usadas</strong></h5>
+						<h5 className="title"><strong>Herramientas utilizadas</strong></h5>
 						<ul>
 							{
 								this.props.iconsLinks.map((iconLink, i) => {
