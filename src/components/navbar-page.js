@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {
-	MDBNavbar, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse
+	MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse
 } from "mdbreact";
 import { BrowserRouter as Router } from 'react-router-dom';
 
@@ -10,6 +10,13 @@ class NavbarPage extends Component {
 	constructor() {
 		super()
 		this.state = { isOpen: false }
+	}
+
+	handleClick = (e) => {
+		const { value, name } = e.target
+		this.setState({
+			[name]: value
+		})
 	}
 
 	toggleCollapse = () => {
@@ -26,11 +33,15 @@ class NavbarPage extends Component {
 						</MDBNavItem>
 					</MDBNavbarNav>
 
+					<MDBNavbarBrand>
+						<strong className="white-text">Live WifiSlax</strong>
+					</MDBNavbarBrand>
+
 					<MDBNavbarToggler onClick={this.toggleCollapse} />
-					<MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
+					<MDBCollapse id="navbarCollaps3" isOpen={this.state.isOpen} navbar>
 						<MDBNavbarNav left>
 							{
-								this.props.tabsContent.map((tab, i) => {
+								this.props.contentTabs.map((tab, i) => {
 									if (i === 0) {
 										return <MDBNavItem key={i} active>
 											<MDBNavLink to="#!">{tab.title}</MDBNavLink>
@@ -41,6 +52,9 @@ class NavbarPage extends Component {
 									</MDBNavItem>
 								})
 							}
+							<MDBNavItem>
+								<a className='nav-link' href={this.props.linkTab.href}>{this.props.linkTab.title}</a>
+							</MDBNavItem>
 						</MDBNavbarNav>
 					</MDBCollapse>
 				</MDBNavbar>
