@@ -10,13 +10,26 @@ export default class FooterPage extends Component {
 		return <MDBFooter color="elegant-color" className="font-small pt-4 mt-4">
 			<MDBContainer fluid className="text-center text-md-left">
 				<MDBRow className='text-left'>
-					<MDBCol md="6">
+					<MDBCol md="4">
 						<h5 className="title"><strong>Live WifiSlax</strong></h5>
 						<p>
 							Description
             			</p>
 					</MDBCol>
-					<MDBCol md="6">
+					<MDBCol md="4">
+						<h5 className="title"><strong>Enlaces</strong></h5>
+						<ul>
+							<li style={{listStyleType:'none'}}>
+								<i className="fa fa-angle-right mr-1"/>
+								<a href='#!'>Pagina Principal de Live WifiSlax</a>
+							</li>
+							<li style={{listStyleType:'none'}}>
+								<i className="fa fa-angle-right mr-1"/>
+								<a href='#!'>Foro Principal del Sistema Operativo</a>
+							</li>
+						</ul>
+					</MDBCol>
+					<MDBCol md="4">
 						<h5 className="title"><strong>Herramientas utilizadas</strong></h5>
 						<ul>
 							{
@@ -24,7 +37,7 @@ export default class FooterPage extends Component {
 									if (iconLink.spinning === true) {
 										return <li className='Icon list-unstyled' key={i}>
 											<img
-												className={` Spinning-icon py-1 mr-${iconLink.mr}`}
+												className={`Spinning-icon py-1 mr-${iconLink.mr}`}
 												src={iconLink.src}
 												width={iconLink.size}
 												alt={iconLink.alt}
