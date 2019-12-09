@@ -13,8 +13,6 @@ import CommentForm from './components/CommentForm'
 import CommentList from './components/CommentList'
 import FooterPage from './components/FooterPage'
 
-import SideNav from './components/SideNav'
-
 import icons from './data/logos.json'
 
 export default class App extends Component {
@@ -59,7 +57,6 @@ export default class App extends Component {
 		});
 
 		return <div className="App">
-			<SideNav />
 			<header className="text-center">
 				<img src={banner} className='w-100' alt='banner' />
 				<NavbarPage contentTabs={
