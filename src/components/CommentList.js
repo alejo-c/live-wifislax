@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Comment from "./comment";
+import Comment from "./Comment";
 
 export default class CommentList extends Component {
 	render() {
@@ -12,7 +12,7 @@ export default class CommentList extends Component {
 				<span className="badge badge-info">
 					{count}
 				</span>
-				{" Comment"}{count === 1 ? "" : "s"}
+				{" Comentario"}{count === 1 ? "" : "s"}
 			</h5>
 
 			{
@@ -20,7 +20,7 @@ export default class CommentList extends Component {
 					<div className="alert text-center alert-info">
 						Be the first to comment
 		  			</div>
-				) : <div></div>
+				) : null
 			}
 			{
 				Object.keys(this.props.comments).map((key, index) => {

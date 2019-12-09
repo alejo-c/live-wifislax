@@ -2,20 +2,20 @@ import React, { Component } from 'react'
 
 import banner from './images/banner.png'
 
-import StartContent from './components/content/start'
-import HistoryContent from './components/content/history'
-// import versions from './components/content/Versions'
-import InstalationContent from './components/content/instalation'
+import StartContent from './components/content/Start'
+import HistoryContent from './components/content/History'
+import VertionsContent from './components/content/Versions'
+import InstalationContent from './components/content/Instalation'
 
-import './App.css'
+import NavbarPage from './components/NavbarPage'
 
-import NavbarPage from './components/navbar-page'
+import CommentForm from './components/CommentForm'
+import CommentList from './components/CommentList'
+import FooterPage from './components/FooterPage'
 
-import CommentForm from './components/comment-form'
-import CommentList from './components/comment-list'
-import FooterPage from './components/footer-page'
+import SideNav from './components/SideNav'
 
-import icons from './files/icons.json'
+import icons from './data/logos.json'
 
 export default class App extends Component {
 	constructor() {
@@ -59,14 +59,15 @@ export default class App extends Component {
 		});
 
 		return <div className="App">
-			<header className="App-header text-center">
-				<img src={banner} className='App-banner' alt='banner' />
+			<SideNav />
+			<header className="text-center">
+				<img src={banner} className='w-100' alt='banner' />
 				<NavbarPage contentTabs={
 					[
 						{ title: 'Inicio', content: StartContent },
 						{ title: 'Historia', content: HistoryContent },
-						// { 'Versiones': VertionsContent },
-						{ title: 'Guia Instalacion', content: InstalationContent },
+						{ title: 'Guia Instalación', content: InstalationContent },
+						{ title: 'Versiones', content: VertionsContent },
 					]
 				} linkTab={{ title: 'Foro', href: 'https://foro.seguridadwireless.net/' }} />
 			</header>

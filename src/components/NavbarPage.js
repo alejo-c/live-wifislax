@@ -4,6 +4,7 @@ import {
 } from "mdbreact";
 import { BrowserRouter as Router } from 'react-router-dom';
 
+import './icon.css'
 import logo from '../images/logo.png'
 
 class NavbarPage extends Component {
@@ -29,7 +30,7 @@ class NavbarPage extends Component {
 				<MDBNavbar color="elegant-color-dark" dark expand="md">
 					<MDBNavbarNav left>
 						<MDBNavItem>
-							<img src={logo} className='mr-4' width='40' alt='logo' />
+							<img className='Icon mr-4' src={logo} width='40' alt='logo' />
 						</MDBNavItem>
 					</MDBNavbarNav>
 

@@ -27,7 +27,6 @@ export default class FooterPage extends Component {
 												className={` Spinning-icon py-1 mr-${imageLink.mr}`}
 												src={imageLink.src}
 												width={imageLink.size}
-												// height={imageLink.size}
 												alt={imageLink.alt}
 											/>
 											<a href={imageLink.href}>{imageLink.text}</a>
@@ -38,7 +37,6 @@ export default class FooterPage extends Component {
 											className={`py-1 mr-${imageLink.mr}`}
 											src={imageLink.src}
 											width={imageLink.size}
-											// height={imageLink.size}
 											alt={imageLink.alt}
 										/>
 										<a href={imageLink.href}>{imageLink.text}</a>
