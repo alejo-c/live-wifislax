@@ -15,6 +15,8 @@ import FooterPage from './components/FooterPage'
 
 import icons from './data/logos.json'
 
+import CollapsePage from './components/CollapsePage'
+
 export default class App extends Component {
 	constructor() {
 		super()
@@ -57,6 +59,7 @@ export default class App extends Component {
 		});
 
 		return <div className="App">
+			<CollapsePage/>
 			<header className="text-center">
 				<img src={banner} className='w-100' alt='banner' />
 				<NavbarPage contentTabs={
