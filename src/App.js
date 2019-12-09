@@ -15,7 +15,7 @@ import FooterPage from './components/FooterPage'
 
 import icons from './data/logos.json'
 
-import CollapsePage from './components/CollapsePage'
+import SideLinksPage from './components/SideLinksPage'
 
 export default class App extends Component {
 	constructor() {
@@ -76,11 +76,18 @@ export default class App extends Component {
 					<StartContent />
 				</div>
 				<div className='bg-dark text-white col-2'>
-					<CollapsePage />
+					<SideLinksPage menus={
+						[
+							{title: 'Versiones', links: [
+								{text:'1.1', href:'https://google.com'}
+							]},
+							{title: 'Tutoriales', links: [
+								{text:'1.2', href:'https://google.com'}
+							]}
+						]	
+					}/>
 				</div>
 			</section>
-
-			<hr />
 
 			<div className="row">
 				<div className="col-4 pt-3 border-right">
