@@ -4,7 +4,7 @@ import { MDBContainer, MDBCollapse, MDBListGroup, MDBListGroupItem } from "mdbre
 export default class CollapsePage extends Component {
 	constructor() {
 		super()
-		this.state = {¿collapseID: ""}
+		this.state = {collapseID: ""}
 	}
 
 	toggleCollapse = collapseID => () => {
