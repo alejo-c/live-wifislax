@@ -54,14 +54,13 @@ export default class App extends Component {
 	}
 
 	render() {
-		const comments = Object.keys(this.state.comments).map((key, i) => {
+		const comments = Object.keys(this.state.comments).map(key => {
 			return this.state.comments[key]
 		});
 
 		return <div className="App">
-			<CollapsePage/>
 			<header className="text-center">
-				<img src={banner} className='w-100' alt='banner' />
+                <img src={banner} className='w-60' alt='banner' />
 				<NavbarPage contentTabs={
 					[
 						{ title: 'Inicio', content: StartContent },
@@ -72,11 +71,12 @@ export default class App extends Component {
 				} linkTab={{ title: 'Foro', href: 'https://foro.seguridadwireless.net/' }} />
 			</header>
 
-			<section className='Middle-sectino'>
-				<div className='Content-pane'>
-					<StartContent />
+			<section className='Middle-section'>
+				<div className='Content-pane col-10'>
+					<StartContent/>
 				</div>
-				<div className='bg-dark text-white'>
+				<div className='bg-dark text-white col-2'>
+			        <CollapsePage/>
 				</div>
 			</section>
 
@@ -86,7 +86,7 @@ export default class App extends Component {
 				<div className="col-4 pt-3 border-right">
 					<CommentForm onAddComment={this.handleAddComment} />
 				</div>
-				<div className="col-8 pt-3 bg-white">
+				<div className="col-8 pt-3">
 					<CommentList
 						loading={this.state.loading}
 						comments={comments}
@@ -95,7 +95,7 @@ export default class App extends Component {
 			</div>
 
 			<hr />
-			<FooterPage imageLinks={icons} />
+			<FooterPage iconsLinks={icons} />
 		</div>
 	}
 }

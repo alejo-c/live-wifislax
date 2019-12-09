@@ -3,8 +3,6 @@ import Comment from "./Comment";
 
 export default class CommentList extends Component {
 	render() {
-		console.log(this.props.comments);
-
 		const count = this.props.comments.length ? this.props.comments.length : 0
 
 		return <div className="commentList">

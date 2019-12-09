@@ -20,26 +20,26 @@ export default class FooterPage extends Component {
 						<h5 className="title"><strong>Herramientas usadas</strong></h5>
 						<ul>
 							{
-								this.props.imageLinks.map((imageLink, i) => {
-									if (imageLink.spinning === true) {
+								this.props.iconsLinks.map((iconLink, i) => {
+									if (iconLink.spinning === true) {
 										return <li className='Icon list-unstyled' key={i}>
 											<img
-												className={` Spinning-icon py-1 mr-${imageLink.mr}`}
-												src={imageLink.src}
-												width={imageLink.size}
-												alt={imageLink.alt}
+												className={` Spinning-icon py-1 mr-${iconLink.mr}`}
+												src={iconLink.src}
+												width={iconLink.size}
+												alt={iconLink.alt}
 											/>
-											<a href={imageLink.href}>{imageLink.text}</a>
+											<a href={iconLink.href}>{iconLink.text}</a>
 										</li>
 									}
 									return <li className='Icon list-unstyled' key={i}>
 										<img
-											className={`py-1 mr-${imageLink.mr}`}
-											src={imageLink.src}
-											width={imageLink.size}
-											alt={imageLink.alt}
+											className={`py-1 mr-${iconLink.mr}`}
+											src={iconLink.src}
+											width={iconLink.size}
+											alt={iconLink.alt}
 										/>
-										<a href={imageLink.href}>{imageLink.text}</a>
+										<a href={iconLink.href}>{iconLink.text}</a>
 									</li>
 								})
 							}
