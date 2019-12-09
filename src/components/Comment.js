@@ -5,8 +5,24 @@ import reply from '../images/reply.png'
 import report from '../images/report.png'
 
 export default class Comment extends Component {
+	constructor() {
+		super()
+		this.state = {likes: 0, replies:[]}
+	}
+
+	componentDidMount(){
+		this.setState({
+			likes: this.props.comment.likes,
+			replies: this.props.comment.replies
+		})
+	}
+
 	render() {
-		const { username, content } = this.props.comment;
+		var { username, content } = this.props.comment;
+		while(username.includes(' '.rep)) {
+			username.replace(' ', '')
+		}
+		username = username.toLowerCase()
 
 		const btnStyle = {
 			WebkitFiter: 'grayscale(100%)',
@@ -27,7 +43,6 @@ export default class Comment extends Component {
 						src={`https://api.adorable.io/avatars/48/${username}@adorable.io.png`}
 						alt={username}
 					/>
-
 					<div className="media-body p-2 shadow-sm rounded bg-light border">
 						{/* <small className="float-right text-muted">{date}</small> */}
 						<h6 className="mt-0 mb-1"><strong>{username}</strong></h6>
