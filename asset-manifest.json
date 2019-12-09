@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/live-wifislax/static/css/main.2a0313ad.chunk.css",
-    "main.js": "/live-wifislax/static/js/main.b40e2d4b.chunk.js",
-    "main.js.map": "/live-wifislax/static/js/main.b40e2d4b.chunk.js.map",
+    "main.js": "/live-wifislax/static/js/main.c2f8c4d2.chunk.js",
+    "main.js.map": "/live-wifislax/static/js/main.c2f8c4d2.chunk.js.map",
     "runtime-main.js": "/live-wifislax/static/js/runtime-main.0fd0338b.js",
     "runtime-main.js.map": "/live-wifislax/static/js/runtime-main.0fd0338b.js.map",
     "static/css/2.91baf2e1.chunk.css": "/live-wifislax/static/css/2.91baf2e1.chunk.css",
     "static/js/2.0e269e28.chunk.js": "/live-wifislax/static/js/2.0e269e28.chunk.js",
     "static/js/2.0e269e28.chunk.js.map": "/live-wifislax/static/js/2.0e269e28.chunk.js.map",
     "index.html": "/live-wifislax/index.html",
-    "precache-manifest.f4c320f5021ad3690f7df73c4b590701.js": "/live-wifislax/precache-manifest.f4c320f5021ad3690f7df73c4b590701.js",
+    "precache-manifest.c08501ad70f5b67fb6c05e7c8143054e.js": "/live-wifislax/precache-manifest.c08501ad70f5b67fb6c05e7c8143054e.js",
     "service-worker.js": "/live-wifislax/service-worker.js",
     "static/css/2.91baf2e1.chunk.css.map": "/live-wifislax/static/css/2.91baf2e1.chunk.css.map",
     "static/css/main.2a0313ad.chunk.css.map": "/live-wifislax/static/css/main.2a0313ad.chunk.css.map",
@@ -24,6 +24,6 @@
     "static/css/2.91baf2e1.chunk.css",
     "static/js/2.0e269e28.chunk.js",
     "static/css/main.2a0313ad.chunk.css",
-    "static/js/main.b40e2d4b.chunk.js"
+    "static/js/main.c2f8c4d2.chunk.js"
   ]
 }
