@@ -1,3 +1,14 @@
+.Icon {
+	transition: filter .3s ease-in-out;
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+}
+
+.Icon:hover {
+	-webkit-filter: grayscale(0%);
+	filter: grayscale(0%);
+}
+
 @media (prefers-reduced-motion: no-preference) {
 	.Spinning-icon {
 		animation: icon-spin infinite 20s linear;
@@ -13,13 +24,13 @@
 	}
 }
 
-.Icon {
+.Untoggled-icon {
 	transition: filter .3s ease-in-out;
 	-webkit-filter: grayscale(100%);
 	filter: grayscale(100%);
 }
 
-.Icon:hover {
+.Untoggled-icon:hover .Toggled-icon {
 	-webkit-filter: grayscale(0%);
 	filter: grayscale(0%);
 }

@@ -1,58 +1,51 @@
 import React, { Component } from "react";
 
-import like from '../images/like.png'
-import reply from '../images/reply.png'
-import report from '../images/report.png'
+// import './icon.css'
 
 export default class Comment extends Component {
 	constructor() {
 		super()
-		this.state = {likes: 0, replies:[]}
+		this.state = { likes: 0, replies: [] }
 	}
 
-	componentDidMount(){
+	componentDidMount = () => {
 		this.setState({
-			likes: this.props.comment.likes,
-			replies: this.props.comment.replies
+			replies: this.props.comment.replies ? this.props.comment.replies : []
 		})
 	}
 
-	render() {
-		var { username, content } = this.props.comment;
-		while(username.includes(' '.rep)) {
-			username.replace(' ', '')
+	clear = (string) => {
+		while (string.includes(' ')) {
+			string = string.replace(' ', '')
 		}
-		username = username.toLowerCase()
+		return string.toLowerCase()
+	}
 
-		const btnStyle = {
-			WebkitFiter: 'grayscale(100%)',
-			filter: 'grayscale(100%)',
-			hover: {
-				WebkitFiter: 'grayscale(0%)',
-				filter: 'grayscale(0%)',
-			}
-		}
+	render() {
+		var { username, content, date } = this.props.comment;
 
 		return (
 			<div className='mb-3'>
 				<div className="media mb-1">
 					<img
 						className="mr-2 bg-light rounded"
-						width="48"
-						height="48"
-						src={`https://api.adorable.io/avatars/48/${username}@adorable.io.png`}
+						src={`https://api.adorable.io/avatars/48/${this.clear(username)}@adorable.io.png`}
 						alt={username}
 					/>
 					<div className="media-body p-2 shadow-sm rounded bg-light border">
-						{/* <small className="float-right text-muted">{date}</small> */}
+						<small className="float-right text-muted">{date}</small>
 						<h6 className="mt-0 mb-1"><strong>{username}</strong></h6>
 						{content}
 					</div>
 				</div>
 				<div>
-					<span className='mx-5'><input style={btnStyle} type='image' src={like} width="20" alt='like' /></span>
-					<span className='mx-5'><input type='image' src={reply} width="20" alt='reply' /></span>
-					<span className='mx-5'><input type='image' src={report} width="20" alt='report' /></span>
+					<div className='text-warning d-inline-block ml-5' style={{ hover: 'cursor: pointer' }}>
+						{this.state.replies.length + ' '}
+						<i className="fa fa-comment-alt" />
+					</div>
+					<div className='text-danger d-inline-block ml-5' style={{ hover: 'cursor: pointer' }}>
+						<i className="fa fa-flag" />
+					</div>
 				</div>
 			</div>
 		)

@@ -33,7 +33,6 @@ export default class App extends Component {
 			username: comment.username,
 			content: comment.content,
 			replies: [],
-			valid: true
 		}
 		console.log(comment)
 		try {
@@ -78,19 +77,25 @@ export default class App extends Component {
 				<div className='bg-dark text-white col-2'>
 					<SideLinksPage menus={
 						[
-							{title: 'Versiones', links: [
-								{text:'1.1', href:'https://google.com'}
-							]},
-							{title: 'Tutoriales', links: [
-								{text:'1.2', href:'https://google.com'}
-							]}
-						]	
-					}/>
+							{
+								title: 'Versiones', links: [
+									{ text: '1.1', href: 'https://google.com' }
+								]
+							},
+							{
+								title: 'Tutoriales', links: [
+									{ text: '1.2', href: 'https://google.com' }
+								]
+							}
+						]
+					} />
 				</div>
 			</section>
 
+			<hr />
+
 			<div className="row">
-				<div className="col-4 pt-3 border-right">
+				<div className="col-3 pt-3 border-right">
 					<CommentForm onAddComment={this.handleAddComment} />
 				</div>
 				<div className="col-8 pt-3">
@@ -101,7 +106,6 @@ export default class App extends Component {
 				</div>
 			</div>
 
-			<hr />
 			<FooterPage iconsLinks={icons} />
 		</div>
 	}
