@@ -17,7 +17,7 @@ export default class Instalation extends Component {
 
 				<br /><br />
 
-				<div class="image">
+				<div className="image">
 					<img src="images/install1.jpg" width="500px" alt='image1' />
 				</div>
 
@@ -25,7 +25,7 @@ export default class Instalation extends Component {
 				<li>Luego elije el idioma de tu preferencia.</li>
 				<br />
 
-				<div class="image">
+				<div className="image">
 					<img src="images/install2.png" width="500px" alt='image2' />
 				</div>
 

@@ -8,6 +8,8 @@ import VertionsContent from './components/content/Versions'
 import InstalationContent from './components/content/Instalation'
 
 import NavbarPage from './components/NavbarPage'
+import TabsMaterial from './components/TabsMaterial'
+import ContentTabbedBar from './components/ContentTabbedBar'
 import SideLinksPage from './components/SideLinksPage'
 import CommentForm from './components/CommentForm'
 import CommentList from './components/CommentList'
@@ -28,6 +30,7 @@ export default class App extends Component {
 
 		object[key] = {
 			id: key,
+			date: new Date().toLocaleString(),
 			username: comment.username,
 			content: comment.content,
 			replies: [],
@@ -57,6 +60,24 @@ export default class App extends Component {
 		return <div className="App">
 			<header className="text-center">
 				<img src={banner} className='w-60' alt='banner' />
+				<ContentTabbedBar
+					image='https://raw.githubusercontent.com/alejo-castrillon/live-wifislax/react-structure/src/images/logo.png'
+					title='Live WifiSlax'
+					contentTabs={
+						[
+							// { title: 'Inicio', content: StartContent },
+							// { title: 'Historia', content: HistoryContent },
+							// { title: 'Guia Instalación', content: InstalationContent },
+							// { title: 'Versiones', content: VertionsContent },
+
+							{ title: 'Inicio', content: (<div>Start</div>) },
+							{ title: 'Historia', content: (<div>History</div>) },
+							{ title: 'Guia Instalación', content: (<div>Instalation</div>) },
+							{ title: 'Versiones', content: (<div>Versions</div>) },
+						]
+					}
+				/>
+				<TabsMaterial />
 				<NavbarPage contentTabs={
 					[
 						{ title: 'Inicio', content: StartContent },
