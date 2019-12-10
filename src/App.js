@@ -8,20 +8,18 @@ import VertionsContent from './components/content/Versions'
 import InstalationContent from './components/content/Instalation'
 
 import NavbarPage from './components/NavbarPage'
-
+import SideLinksPage from './components/SideLinksPage'
 import CommentForm from './components/CommentForm'
 import CommentList from './components/CommentList'
 import FooterPage from './components/FooterPage'
 
 import icons from './data/logos.json'
-
-import SideLinksPage from './components/SideLinksPage'
+import menuLinks from './data/menu-links.json'
 
 export default class App extends Component {
 	constructor() {
 		super()
 		this.state = { comments: [], loading: false }
-		this.handleAddComment = this.handleAddComment.bind(this)
 	}
 
 	handleAddComment = (comment) => {
@@ -34,7 +32,6 @@ export default class App extends Component {
 			content: comment.content,
 			replies: [],
 		}
-		console.log(comment)
 		try {
 			window.firebase.database().ref('comments/').update(object)
 		} catch (error) {
@@ -67,7 +64,7 @@ export default class App extends Component {
 						{ title: 'Guia Instalación', content: InstalationContent },
 						{ title: 'Versiones', content: VertionsContent },
 					]
-				} linkTab={{ title: 'Foro', href: 'https://foro.seguridadwireless.net/' }} />
+				} linkTab={{ title: 'Foro', href: 'https://foro.seguridadwireless.net' }} />
 			</header>
 
 			<section className='Middle-section row'>
@@ -75,20 +72,7 @@ export default class App extends Component {
 					<StartContent />
 				</div>
 				<div className='bg-dark text-white col-2'>
-					<SideLinksPage menus={
-						[
-							{
-								title: 'Versiones', links: [
-									{ text: '1.1', href: 'https://google.com' }
-								]
-							},
-							{
-								title: 'Tutoriales', links: [
-									{ text: '1.2', href: 'https://google.com' }
-								]
-							}
-						]
-					} />
+					<SideLinksPage menus={menuLinks} />
 				</div>
 			</section>
 
@@ -106,7 +90,12 @@ export default class App extends Component {
 				</div>
 			</div>
 
-			<FooterPage iconsLinks={icons} />
+			<FooterPage links={
+				[
+					{ text: 'Pagina Principal de Live WifiSlax', href: 'https://www.wifislax.com' },
+					{ text: 'Foro Principal del Sistema Operativo', href: 'https://foro.seguridadwireless.net' }
+				]
+			} iconsLinks={icons} />
 		</div>
 	}
 }

@@ -13,24 +13,27 @@ export default class FooterPage extends Component {
 					<MDBCol md="4">
 						<h5 className="title"><strong>Live WifiSlax</strong></h5>
 						<p>
-							Description
+							Pagina Web que muestra el contenido principal del
+							sistema operativo Live WifiSlax, historia, pasos de
+							instalacion, links de descarga para diferentes
+							versiones y tutoriales de instalacion y uso.
             			</p>
 					</MDBCol>
 					<MDBCol md="4">
 						<h5 className="title"><strong>Enlaces</strong></h5>
 						<ul>
-							<li style={{listStyleType:'none'}}>
-								<i className="fa fa-angle-right mr-1"/>
-								<a href='#!'>Pagina Principal de Live WifiSlax</a>
-							</li>
-							<li style={{listStyleType:'none'}}>
-								<i className="fa fa-angle-right mr-1"/>
-								<a href='#!'>Foro Principal del Sistema Operativo</a>
-							</li>
+							{
+								this.props.links.map((link, i) => {
+									return <li key={i} style={{ listStyleType: 'none' }}>
+										<i className="fa fa-angle-right mr-1" />
+										<a href={link.href}>{link.text}</a>
+									</li>
+								})
+							}
 						</ul>
 					</MDBCol>
 					<MDBCol md="4">
-						<h5 className="title"><strong>Herramientas utilizadas</strong></h5>
+						<h5 className="title"><strong>Herramientas Utilizadas</strong></h5>
 						<ul>
 							{
 								this.props.iconsLinks.map((iconLink, i) => {
