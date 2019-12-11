@@ -2,21 +2,12 @@ import React, { Component } from 'react'
 
 import banner from './images/banner.png'
 
-import StartContent from './components/content/Start'
-import HistoryContent from './components/content/History'
-import VertionsContent from './components/content/Versions'
-import InstalationContent from './components/content/Instalation'
-
-import NavbarPage from './components/NavbarPage'
-import TabsMaterial from './components/TabsMaterial'
 import ContentTabbedBar from './components/ContentTabbedBar'
-import SideLinksPage from './components/SideLinksPage'
 import CommentForm from './components/CommentForm'
 import CommentList from './components/CommentList'
 import FooterPage from './components/FooterPage'
 
 import icons from './data/logos.json'
-import menuLinks from './data/menu-links.json'
 
 export default class App extends Component {
 	constructor() {
@@ -65,37 +56,14 @@ export default class App extends Component {
 					title='Live WifiSlax'
 					contentTabs={
 						[
-							// { title: 'Inicio', content: StartContent },
-							// { title: 'Historia', content: HistoryContent },
-							// { title: 'Guia Instalación', content: InstalationContent },
-							// { title: 'Versiones', content: VertionsContent },
-
-							{ title: 'Inicio', content: (<div>Start</div>) },
-							{ title: 'Historia', content: (<div>History</div>) },
-							{ title: 'Guia Instalación', content: (<div>Instalation</div>) },
-							{ title: 'Versiones', content: (<div>Versions</div>) },
+							{ title: 'Inicio' },
+							{ title: 'Historia' },
+							{ title: 'Guia Instalación' },
+							{ title: 'Versiones' },
 						]
-					}
+					} linkTab={{ title: 'Foro', href: 'https://foro.seguridadwireless.net' }}
 				/>
-				<TabsMaterial />
-				<NavbarPage contentTabs={
-					[
-						{ title: 'Inicio', content: StartContent },
-						{ title: 'Historia', content: HistoryContent },
-						{ title: 'Guia Instalación', content: InstalationContent },
-						{ title: 'Versiones', content: VertionsContent },
-					]
-				} linkTab={{ title: 'Foro', href: 'https://foro.seguridadwireless.net' }} />
 			</header>
-
-			<section className='Middle-section row'>
-				<div className='Content-pane col-10'>
-					<StartContent />
-				</div>
-				<div className='bg-dark text-white col-2'>
-					<SideLinksPage menus={menuLinks} />
-				</div>
-			</section>
 
 			<hr />
 
