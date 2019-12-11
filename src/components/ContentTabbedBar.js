@@ -4,7 +4,7 @@ import { MDBNavbar, MDBNavItem, MDBNavbarBrand, MDBNavbarToggler, MDBCollapse, M
 
 import Start from './content/Start'
 import History from './content/History'
-import Vertions from './content/Versions'
+import Versions from './content/Versions'
 import Instalation from './content/Instalation'
 
 import SideLinksPage from './SideLinksPage'
@@ -29,6 +29,8 @@ export default class ContentTabbedBar extends Component {
 	}
 
 	render() {
+		const scrollbarStyle = { overflowY: "scroll", height: "500px" }
+
 		return <Router>
 			<MDBNavbar color="elegant-color-dark" dark expand="md">
 				<MDBNavItem>
@@ -77,19 +79,35 @@ export default class ContentTabbedBar extends Component {
 			<div className='row text-left'>
 				<MDBTabContent className="card col-10" activeItem={this.state.activeItem}>
 					<MDBTabPane tabId='1' role="tabpanel">
-						<Start />
+						<div class="card scrollbar" style={scrollbarStyle}>
+							<div class="card-body">
+								<Start />
+							</div>
+						</div>
 					</MDBTabPane>
 
 					<MDBTabPane tabId='2' role="tabpanel">
-						<History />
+						<div class="card scrollbar" style={scrollbarStyle}>
+							<div class="card-body">
+								<History />
+							</div>
+						</div>
 					</MDBTabPane>
 
 					<MDBTabPane tabId='3' role="tabpanel">
-						<Instalation />
+						<div class="card scrollbar" style={scrollbarStyle}>
+							<div class="card-body">
+								<Instalation />
+							</div>
+						</div>
 					</MDBTabPane>
 
 					<MDBTabPane tabId='4' role="tabpanel">
-						<Vertions />
+						<div class="card scrollbar" style={scrollbarStyle}>
+							<div class="card-body">
+								<Versions />
+							</div>
+						</div>
 					</MDBTabPane>
 				</MDBTabContent>
 
