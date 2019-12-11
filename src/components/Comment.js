@@ -24,15 +24,15 @@ export default class Comment extends Component {
 
 		return (
 			<div className='mb-3'>
-				<div className="media mb-1">
+				<div className="media">
 					<img
 						className="mr-2 bg-light rounded"
 						src={`https://api.adorable.io/avatars/48/${this.clear(username)}@adorable.io.png`}
 						alt={username}
 					/>
-					<div className="media-body p-2 shadow-sm rounded bg-light border">
+					<div className="media-body p-2 shadow-sm rounded bg-light border mr-2">
 						<small className="float-right text-muted">{date}</small>
-						<h6 className="mt-0 mb-1"><strong>{username}</strong></h6>
+						<h6 className="mr-2"><strong>{username}</strong></h6>
 						{content}
 					</div>
 				</div>
