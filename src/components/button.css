@@ -1,0 +1,6 @@
+.Button:hover {
+    cursor: pointer;
+}
+.Button:active {
+    opacity: inherit;
+}

@@ -1,5 +1,7 @@
 import React, { Component } from "react"
 
+import './button.css'
+
 export default class Comment extends Component {
 	constructor() {
 		super()
@@ -24,7 +26,7 @@ export default class Comment extends Component {
 
 		return (
 			<div className='mb-3'>
-				<div className="media">
+				<div className="media mb-1">
 					<img
 						className="mr-2 bg-light rounded"
 						src={`https://api.adorable.io/avatars/48/${this.clear(username)}@adorable.io.png`}
@@ -37,12 +39,12 @@ export default class Comment extends Component {
 					</div>
 				</div>
 				<div>
-					<div className='text-warning d-inline-block ml-5' style={{ hover: 'cursor: pointer' }}>
-						{this.state.replies.length + ' '}
-						<i className="fa fa-comment-alt" />
+					<div className='btn-warning d-inline-block ml-5 px-1'>
+						{this.state.replies.length}
+						<i className="fa fa-comment-alt ml-1"/>
 					</div>
-					<div className='text-danger d-inline-block ml-5' style={{ hover: 'cursor: pointer' }}>
-						<i className="fa fa-flag" />
+					<div className='btn-danger d-inline-block ml-5 px-2'>
+						<i className="fa fa-flag"/>
 					</div>
 				</div>
 			</div>
