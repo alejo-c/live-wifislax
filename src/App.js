@@ -50,7 +50,7 @@ export default class App extends Component {
 
 		return <div className="App">
 			<header className="text-center">
-				<img src={banner} className='w-60' alt='banner' />
+				<img src={banner} alt='banner' />
 				<ContentTabbedBar
 					image='https://raw.githubusercontent.com/alejo-castrillon/live-wifislax/react-structure/src/images/logo.png'
 					title='Live WifiSlax'
@@ -71,7 +71,7 @@ export default class App extends Component {
 				<div className="col-3 pt-3 border-right">
 					<CommentForm onAddComment={this.handleAddComment} />
 				</div>
-				<div className="col-8 pt-3">
+				<div className="col-9 pt-3">
 					<CommentList
 						loading={this.state.loading}
 						comments={comments}
@@ -85,6 +85,6 @@ export default class App extends Component {
 					{ text: 'Foro Principal del Sistema Operativo', href: 'https://foro.seguridadwireless.net' }
 				]
 			} iconsLinks={icons} />
-		</div>
+		</div >
 	}
 }
