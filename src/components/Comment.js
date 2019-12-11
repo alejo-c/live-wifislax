@@ -1,6 +1,4 @@
-import React, { Component } from "react";
-
-// import './icon.css'
+import React, { Component } from "react"
 
 export default class Comment extends Component {
 	constructor() {
@@ -14,7 +12,7 @@ export default class Comment extends Component {
 		})
 	}
 
-	clear = (string) => {
+	clear = string => {
 		while (string.includes(' ')) {
 			string = string.replace(' ', '')
 		}

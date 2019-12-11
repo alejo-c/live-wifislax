@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
+import React, { Component } from "react"
+import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact"
 
 import github from '../images/github-lg.png'
 

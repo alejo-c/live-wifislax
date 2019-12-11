@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { MDBContainer, MDBInput } from 'mdbreact';
+import React, { Component } from "react"
+import { MDBContainer, MDBInput } from 'mdbreact'
 
 export default class CommentForm extends Component {
 	constructor() {
@@ -7,14 +7,14 @@ export default class CommentForm extends Component {
 		this.state = { username: '', content: '' }
 	}
 
-	handleChange = (e) => {
+	handleChange = e => {
 		const { value, name } = e.target
 		this.setState({
 			[name]: value
 		})
 	}
 
-	handleSubmit = (e) => {
+	handleSubmit = e => {
 		e.preventDefault()
 		if (this.state.username && this.state.content) {
 			this.props.onAddComment(this.state)
