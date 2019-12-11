@@ -79,34 +79,26 @@ export default class ContentTabbedBar extends Component {
 			<div className='row text-left'>
 				<MDBTabContent className="card col-10" activeItem={this.state.activeItem}>
 					<MDBTabPane tabId='1' role="tabpanel">
-						<div class="card scrollbar" style={scrollbarStyle}>
-							<div class="card-body">
-								<Start />
-							</div>
+						<div class="scrollbar" style={scrollbarStyle}>
+							<Start />
 						</div>
 					</MDBTabPane>
 
 					<MDBTabPane tabId='2' role="tabpanel">
-						<div class="card scrollbar" style={scrollbarStyle}>
-							<div class="card-body">
-								<History />
-							</div>
+						<div class="scrollbar" style={scrollbarStyle}>
+							<History />
 						</div>
 					</MDBTabPane>
 
 					<MDBTabPane tabId='3' role="tabpanel">
-						<div class="card scrollbar" style={scrollbarStyle}>
-							<div class="card-body">
-								<Instalation />
-							</div>
+						<div class="scrollbar" style={scrollbarStyle}>
+							<Instalation />
 						</div>
 					</MDBTabPane>
 
 					<MDBTabPane tabId='4' role="tabpanel">
-						<div class="card scrollbar" style={scrollbarStyle}>
-							<div class="card-body">
-								<Versions />
-							</div>
+						<div class="scrollbar" style={scrollbarStyle}>
+							<Versions />
 						</div>
 					</MDBTabPane>
 				</MDBTabContent>
