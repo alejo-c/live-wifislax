@@ -21,12 +21,20 @@ export default class Comment extends Component {
 		return string.toLowerCase()
 	}
 
+	onCommentReply = () => {
+		this.props.onCommentReply(this.props.comment)
+	}
+
+	onCommentReport = () => {
+		this.props.onCommentReport(this.props.comment)
+	}
+
 	render() {
 		var { username, content, date } = this.props.comment;
 
 		return (
-			<div className='mb-3'>
-				<div className="media mb-1">
+			<div className='mb-1'>
+				<div className="media">
 					<img
 						className="mr-2 bg-light rounded"
 						src={`https://api.adorable.io/avatars/48/${this.clear(username)}@adorable.io.png`}
@@ -38,14 +46,20 @@ export default class Comment extends Component {
 						{content}
 					</div>
 				</div>
-				<div>
-					<div className='btn-warning d-inline-block ml-5 px-1'>
+				<div className='ml-2'>
+					<button
+						className='btn btn-warning d-inline-block ml-5 py-1 px-1'
+						onClick={this.onCommentReply}
+					>
 						{this.state.replies.length}
-						<i className="fa fa-comment-alt ml-1"/>
-					</div>
-					<div className='btn-danger d-inline-block ml-5 px-2'>
-						<i className="fa fa-flag"/>
-					</div>
+						<i className="fa fa-comment-alt ml-1" />
+					</button>
+					<button
+						className='btn btn-danger d-inline-block ml-5 py-1 px-2'
+						onClick={this.onCommentReport}
+					>
+						<i className="fa fa-flag" />
+					</button>
 				</div>
 			</div>
 		)
