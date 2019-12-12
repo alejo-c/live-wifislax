@@ -34,7 +34,7 @@ export default class ContentTabbedBar extends Component {
 		return <Router>
 			<MDBNavbar color="elegant-color-dark" dark expand="md">
 				<MDBNavItem>
-					<img className='mr-4' src={this.props.image} width='40' alt='tabbed-nav' />
+					<img className='mr-3' src={this.props.image} width='40' alt='tabbed-nav' />
 				</MDBNavItem>
 
 				<MDBNavbarBrand>
@@ -79,25 +79,25 @@ export default class ContentTabbedBar extends Component {
 			<div className='row text-left'>
 				<MDBTabContent className="card col-10" activeItem={this.state.activeItem}>
 					<MDBTabPane tabId='1' role="tabpanel">
-						<div class="scrollbar" style={scrollbarStyle}>
+						<div className="scrollbar" style={scrollbarStyle}>
 							<Start />
 						</div>
 					</MDBTabPane>
 
 					<MDBTabPane tabId='2' role="tabpanel">
-						<div class="scrollbar" style={scrollbarStyle}>
+						<div className="scrollbar" style={scrollbarStyle}>
 							<History />
 						</div>
 					</MDBTabPane>
 
 					<MDBTabPane tabId='3' role="tabpanel">
-						<div class="scrollbar" style={scrollbarStyle}>
+						<div className="scrollbar" style={scrollbarStyle}>
 							<Instalation />
 						</div>
 					</MDBTabPane>
 
 					<MDBTabPane tabId='4' role="tabpanel">
-						<div class="scrollbar" style={scrollbarStyle}>
+						<div className="scrollbar" style={scrollbarStyle}>
 							<Versions />
 						</div>
 					</MDBTabPane>
