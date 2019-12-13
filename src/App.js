@@ -24,7 +24,6 @@ export default class App extends Component {
 			date: new Date().toLocaleString(),
 			username: comment.username,
 			content: comment.content,
-			replies: [],
 		}
 		try {
 			window.firebase.database().ref('posted/').update(object)
@@ -34,44 +33,59 @@ export default class App extends Component {
 	}
 
 	handleCommentReply = comment => {
-		// var key = window.firebase.database().ref(`posted/${comment.key}/replies/`).push().key
-		// var object = {}
+		var key = window.firebase.database().ref(`posted/${comment.id}/replies/`).push().key
+		var object = {}
 
-		// object[key] = {
-		// 	id: key,
-		// 	date: new Date().toLocaleString(),
-		// 	username: comment.username,
-		// 	content: comment.content,
-		// 	replies: [],
-		// }
-		// try {
-		// 	window.firebase.database().ref(`posted/${comment.key}/replies/`).update(object)
-		// } catch (error) {
-		// 	console.log('error: ' + error)
-		// }
-		console.log('reply ' + comment.username)
+		object[key] = {
+			id: key,
+			date: new Date().toLocaleString(),
+			username: comment.username,
+			content: comment.content,
+		}
+		try {
+			window.firebase.database().ref(`posted/${comment.id}/replies/`).update(object)
+			this.componentWillMount()
+			console.log('replied')
+		} catch (error) {
+			console.log('error: ' + error)
+		}
 	}
 
 	handleCommentReport = comment => {
-		// window.firebase.database().ref('reported/').push(comment)
-		console.log('report ' + comment.username);
+		window.firebase.database().ref(`reported/${comment.id}`).set(comment)
 	}
 
 	componentDidMount = () => {
-		this.setState({ loading: false })
+		console.log('mounted')
 		window.firebase.database().ref('posted/').on('value', snap => {
 			const currentComments = snap.val()
 			if (currentComments !== null) {
-				this.setState({ comments: currentComments })
+				const comments = Object.keys(currentComments).map(key => {
+					var comment = currentComments[key]
+					return comment
+				})
+				this.setState({ comments: comments })
+			}
+		})
+		this.setState({ loading: false })
+	}
+
+	componen = () => {
+		console.log('updated')
+		window.firebase.database().ref('posted/').on('value', snap => {
+			const currentComments = snap.val()
+			if (currentComments !== null) {
+				const comments = Object.keys(currentComments).map(key => {
+					var comment = currentComments[key]
+					return comment
+				})
+				this.setState({ comments: comments })
 			}
 		})
 	}
 
 	render() {
-		const comments = Object.keys(this.state.comments).map(key => {
-			return this.state.comments[key]
-		});
-
+		console.log('rendered')
 		return <div className="App">
 			<header className="text-center">
 				<img src={banner} alt='banner' />
@@ -98,7 +112,7 @@ export default class App extends Component {
 				<div className="col-9 pt-3">
 					<CommentList
 						loading={this.state.loading}
-						comments={comments}
+						comments={this.state.comments}
 						onCommentReply={this.handleCommentReply}
 						onCommentReport={this.handleCommentReport}
 					/>

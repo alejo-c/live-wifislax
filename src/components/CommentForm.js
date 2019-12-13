@@ -1,10 +1,10 @@
 import React, { Component } from "react"
-import { MDBContainer, MDBInput } from 'mdbreact'
+import { MDBInput } from 'mdbreact'
 
 export default class CommentForm extends Component {
 	constructor() {
 		super()
-		this.state = { username: '', content: '' }
+		this.state = { username: '', content: '', replying: false }
 	}
 
 	handleChange = e => {
@@ -23,33 +23,31 @@ export default class CommentForm extends Component {
 	}
 
 	render() {
-		return <MDBContainer>
-			<form onSubmit={this.handleSubmit} autoComplete='off'>
-				<p className="h5 text-left mb-4">Publica un Comentario</p>
-				<div>
-					<MDBInput
-						name='username'
-						value={this.state.username}
-						onChange={this.handleChange}
-						type="text"
-						label="Nombre"
-						icon="user"
-						validate
-						error="wrong"
-						success="right"
-					/>
-					<MDBInput
-						name='content'
-						value={this.state.content}
-						onChange={this.handleChange}
-						type="textarea"
-						label="Comentario"
-						icon="pencil-alt"
-						style={{ resize: 'none' }}
-					/>
+		return <form className='ml-2' onSubmit={this.handleSubmit} autoComplete='off'>
+			<h5 className="text-left">Publica un Comentario</h5>
+			<div>
+				<MDBInput
+					name='username'
+					value={this.state.username}
+					onChange={this.handleChange}
+					type="text"
+					label="Nombre"
+					icon="user"
+				/>
+				<MDBInput
+					name='content'
+					value={this.state.content}
+					onChange={this.handleChange}
+					type="textarea"
+					label="Comentario"
+					icon="pencil-alt"
+					style={{ resize: 'none' }}
+				/>
+				<div style={{ display: this.state.replying ? '' : 'none' }}>
+
 				</div>
-				<button className='btn btn-info' type='submit'>Enviar &#10148;</button>
-			</form>
-		</MDBContainer>
+			</div>
+			<button className='btn btn-info' type='submit'>Enviar &#10148;</button>
+		</form>
 	}
 }

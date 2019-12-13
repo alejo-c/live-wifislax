@@ -1,17 +1,20 @@
 import React, { Component } from "react"
 
-import './button.css'
-
 export default class Comment extends Component {
 	constructor() {
 		super()
-		this.state = { likes: 0, replies: [] }
+		this.state = { replies: [] }
 	}
 
 	componentDidMount = () => {
-		this.setState({
-			replies: this.props.comment.replies ? this.props.comment.replies : []
-		})
+		const currentReplies = this.props.comment.replies
+		if (currentReplies != null) {
+			const replies = Object.keys(currentReplies).map(key => {
+				var reply = currentReplies[key]
+				return reply
+			})
+			this.setState({ replies: replies })
+		}
 	}
 
 	clear = string => {
@@ -21,16 +24,17 @@ export default class Comment extends Component {
 		return string.toLowerCase()
 	}
 
-	onCommentReply = () => {
+	handleCommentReply = () => {
 		this.props.onCommentReply(this.props.comment)
 	}
 
-	onCommentReport = () => {
+	handleCommentReport = () => {
 		this.props.onCommentReport(this.props.comment)
 	}
 
 	render() {
 		var { username, content, date } = this.props.comment;
+		console.log(this.state.replies);
 
 		return (
 			<div className='mb-1'>
@@ -46,17 +50,18 @@ export default class Comment extends Component {
 						{content}
 					</div>
 				</div>
+
 				<div className='ml-2'>
 					<button
 						className='btn btn-warning d-inline-block ml-5 py-1 px-1'
-						onClick={this.onCommentReply}
+						onClick={this.handleCommentReply}
 					>
 						{this.state.replies.length}
 						<i className="fa fa-comment-alt ml-1" />
 					</button>
 					<button
 						className='btn btn-danger d-inline-block ml-5 py-1 px-2'
-						onClick={this.onCommentReport}
+						onClick={this.handleCommentReport}
 					>
 						<i className="fa fa-flag" />
 					</button>
