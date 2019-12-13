@@ -4,7 +4,7 @@ import Comment from "./Comment";
 export default class CommentList extends Component {
 	render() {
 		const count = this.props.comments.length
-		const scrollbarStyle = { overflowY: "scroll", height: "444px" }
+		const scrollbarStyle = { overflowY: "scroll", height: "450px" }
 
 		const hidden = { display: (this.props.loading ? '' : 'none') }
 		const empty = { display: (count === 0 && !this.props.loading ? '' : 'none') }

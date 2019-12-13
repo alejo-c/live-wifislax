@@ -44,7 +44,6 @@ export default class App extends Component {
 		}
 		try {
 			window.firebase.database().ref(`posted/${comment.id}/replies/`).update(object)
-			this.componentWillMount()
 			console.log('replied')
 		} catch (error) {
 			console.log('error: ' + error)
@@ -55,33 +54,25 @@ export default class App extends Component {
 		window.firebase.database().ref(`reported/${comment.id}`).set(comment)
 	}
 
-	componentDidMount = () => {
-		console.log('mounted')
-		window.firebase.database().ref('posted/').on('value', snap => {
-			const currentComments = snap.val()
-			if (currentComments !== null) {
-				const comments = Object.keys(currentComments).map(key => {
-					var comment = currentComments[key]
-					return comment
-				})
-				this.setState({ comments: comments })
-			}
-		})
-		this.setState({ loading: false })
+	updateComments = snap => {
+		const currentComments = snap.val()
+		if (currentComments !== null) {
+			const comments = Object.keys(currentComments).map(key => {
+				var comment = currentComments[key]
+				return comment
+			})
+			this.setState({ comments: comments })
+		}
 	}
 
-	componen = () => {
-		console.log('updated')
-		window.firebase.database().ref('posted/').on('value', snap => {
-			const currentComments = snap.val()
-			if (currentComments !== null) {
-				const comments = Object.keys(currentComments).map(key => {
-					var comment = currentComments[key]
-					return comment
-				})
-				this.setState({ comments: comments })
-			}
+	componentDidMount = () => {
+		console.log('mounted')
+		var posted = window.firebase.database().ref('posted/')
+		posted.on('value', snap => {
+			this.updateComments(snap)
+			console.log('updated')
 		})
+		this.setState({ loading: false })
 	}
 
 	render() {
