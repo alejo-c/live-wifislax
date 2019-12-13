@@ -19,7 +19,7 @@ export default class FooterPage extends Component {
 							versiones y tutoriales de instalacion y uso.
             			</p>
 					</MDBCol>
-					<MDBCol md="4">
+					<MDBCol md="3">
 						<h5 className="title"><strong>Enlaces</strong></h5>
 						<ul>
 							{
@@ -32,7 +32,7 @@ export default class FooterPage extends Component {
 							}
 						</ul>
 					</MDBCol>
-					<MDBCol md="4">
+					<MDBCol md="3">
 						<h5 className="title"><strong>Herramientas Utilizadas</strong></h5>
 						<ul>
 							{
@@ -59,6 +59,15 @@ export default class FooterPage extends Component {
 									</li>
 								})
 							}
+						</ul>
+					</MDBCol>
+					<MDBCol md='2'>
+						<h5 className="title"><strong>Información de Contacto</strong></h5>
+						<ul>
+							<li style={{ listStyleType: 'none' }}>
+								<i className="fa fa-angle-right mr-1" />
+								<strong>E-mail:</strong> live.wifislax@gmail.com
+							</li>
 						</ul>
 					</MDBCol>
 				</MDBRow>
