@@ -13,10 +13,11 @@ export default class App extends Component {
 	constructor() {
 		super()
 		this.state = { comments: [], loading: true }
+		this.database = window.firebase.database()
 	}
 
 	handleAddComment = comment => {
-		var key = window.firebase.database().ref('posted/').push().key
+		var key = this.database.ref('posted/').push().key
 		var object = {}
 
 		object[key] = {
@@ -26,14 +27,14 @@ export default class App extends Component {
 			content: comment.content,
 		}
 		try {
-			window.firebase.database().ref('posted/').update(object)
+			this.database.ref('posted/').update(object)
 		} catch (error) {
 			console.log('error: ' + error)
 		}
 	}
 
 	handleCommentReply = comment => {
-		var key = window.firebase.database().ref(`posted/${comment.id}/replies/`).push().key
+		var key = this.database.ref(`posted/${comment.id}/replies/`).push().key
 		var object = {}
 
 		object[key] = {
@@ -43,7 +44,12 @@ export default class App extends Component {
 			content: comment.content,
 		}
 		try {
-			window.firebase.database().ref(`posted/${comment.id}/replies/`).update(object)
+			this.database.ref(`posted/${comment.id}/replies/`).update(object)
+			this.database.ref('posted/').once('value', snap => {
+				console.log('readed')
+				console.log(snap.val());
+				this.updateComments(snap.val())
+			})
 			console.log('replied')
 		} catch (error) {
 			console.log('error: ' + error)
@@ -51,25 +57,27 @@ export default class App extends Component {
 	}
 
 	handleCommentReport = comment => {
-		window.firebase.database().ref(`reported/${comment.id}`).set(comment)
+		this.database.ref(`reported/${comment.id}`).set(comment)
 	}
 
-	updateComments = snap => {
-		const currentComments = snap.val()
+	updateComments = currentComments => {
 		if (currentComments !== null) {
-			const comments = Object.keys(currentComments).map(key => {
+			var comments = Object.keys(currentComments).map(key => {
 				var comment = currentComments[key]
 				return comment
 			})
+			console.log('current:');
+			console.log(this.state.comments);
 			this.setState({ comments: comments })
+			console.log('updated:');
+			console.log(this.state.comments);
 		}
 	}
 
 	componentDidMount = () => {
 		console.log('mounted')
-		var posted = window.firebase.database().ref('posted/')
-		posted.on('value', snap => {
-			this.updateComments(snap)
+		this.database.ref('posted/').on('value', snap => {
+			this.updateComments(snap.val())
 			console.log('updated')
 		})
 		this.setState({ loading: false })
@@ -90,7 +98,7 @@ export default class App extends Component {
 							{ title: 'Guia Instalación' },
 							{ title: 'Versiones' },
 						]
-					} linkTab={{ title: 'Foro', href: 'https://foro.seguridadwireless.net' }}
+					} linkTab={{ title: 'Foro', href: 'https://foro.seguridadwireless.net/live-wifislax/' }}
 				/>
 			</header>
 
@@ -113,7 +121,7 @@ export default class App extends Component {
 			<FooterPage links={
 				[
 					{ text: 'Pagina Principal de Live WifiSlax', href: 'https://www.wifislax.com' },
-					{ text: 'Foro Principal del Sistema Operativo', href: 'https://foro.seguridadwireless.net' }
+					{ text: 'Foro Principal del Sistema Operativo', href: 'https://foro.seguridadwireless.net/live-wifislax/' }
 				]
 			} iconsLinks={icons} />
 		</div >
