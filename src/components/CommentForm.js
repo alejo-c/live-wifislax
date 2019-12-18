@@ -4,7 +4,7 @@ import { MDBInput } from 'mdbreact'
 export default class CommentForm extends Component {
 	constructor() {
 		super()
-		this.state = { username: '', content: '', replying: false }
+		this.state = { username: '', content: '' }
 	}
 
 	handleChange = e => {

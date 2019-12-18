@@ -7,13 +7,14 @@ import CommentForm from './components/CommentForm'
 import CommentList from './components/CommentList'
 import FooterPage from './components/FooterPage'
 
-import icons from './data/logos.json'
+import icons from './data/icons.json'
 
 export default class App extends Component {
 	constructor() {
 		super()
 		this.state = { comments: [], loading: true }
 		this.database = window.firebase.database()
+		// this.handleCommentReply = this.handleCommentReply.bind(this)
 	}
 
 	handleAddComment = comment => {
@@ -45,12 +46,6 @@ export default class App extends Component {
 		}
 		try {
 			this.database.ref(`posted/${comment.id}/replies/`).update(object)
-			this.database.ref('posted/').once('value', snap => {
-				console.log('readed')
-				console.log(snap.val());
-				this.updateComments(snap.val())
-			})
-			console.log('replied')
 		} catch (error) {
 			console.log('error: ' + error)
 		}
@@ -60,32 +55,24 @@ export default class App extends Component {
 		this.database.ref(`reported/${comment.id}`).set(comment)
 	}
 
-	updateComments = currentComments => {
-		if (currentComments !== null) {
-			var comments = Object.keys(currentComments).map(key => {
-				var comment = currentComments[key]
-				return comment
-			})
-			console.log('current:');
-			console.log(this.state.comments);
-			this.setState({ comments: comments })
-			console.log('updated:');
-			console.log(this.state.comments);
-		}
-	}
-
 	componentDidMount = () => {
-		console.log('mounted')
 		this.database.ref('posted/').on('value', snap => {
-			this.updateComments(snap.val())
-			console.log('updated')
+			var currentComments = snap.val()
+			if (currentComments !== null) {
+				console.log(this.state.comments);
+				var newComments = Object.keys(currentComments).map(key => {
+					return currentComments[key]
+				})
+				this.setState({ comments: newComments })
+			}
 		})
 		this.setState({ loading: false })
 	}
 
 	render() {
-		console.log('rendered')
-		return <div className="App">
+		console.log('rendered');
+
+		return <div>
 			<header className="text-center">
 				<img src={banner} alt='banner' />
 				<ContentTabbedBar
@@ -117,6 +104,8 @@ export default class App extends Component {
 					/>
 				</div>
 			</div>
+
+			<hr />
 
 			<FooterPage links={
 				[
