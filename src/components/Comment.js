@@ -1,9 +1,13 @@
 import React, { Component } from "react"
+import { MDBCollapse, MDBListGroup } from "mdbreact"
+
+import CommentForm from './CommentForm'
+import CommentList from './CommentList'
 
 export default class Comment extends Component {
 	constructor() {
 		super()
-		this.state = { replies: [] }
+		this.state = { replies: [], collapseID: "" }
 	}
 
 	clear = string => {
@@ -14,11 +18,18 @@ export default class Comment extends Component {
 	}
 
 	handleCommentReply = () => {
-		this.props.onCommentReply(this.props.comment)
+		// this.props.onCommentReply(this.props.comment)
+		console.log('reply');
 	}
 
 	handleCommentReport = () => {
 		this.props.onCommentReport(this.props.comment)
+	}
+
+	toggleCollapse = collapseID => () => {
+		this.setState(prevState => ({
+			collapseID: prevState.collapseID !== collapseID ? collapseID : ""
+		}))
 	}
 
 	render() {
@@ -46,13 +57,13 @@ export default class Comment extends Component {
 					{content}
 				</div>
 			</div>
-
 			<div className='ml-2'>
 				<button
 					className='btn btn-warning d-inline-block ml-5 py-1 px-1'
-					onClick={this.handleCommentReply}
+					// onClick={this.handleCommentReply}
+					onClick={this.toggleCollapse('collapse')}
 				>
-					{length}
+					{this.state.replies.length}
 					<i className="fa fa-comment-alt ml-1" />
 				</button>
 				<button
@@ -62,6 +73,18 @@ export default class Comment extends Component {
 					<i className="fa fa-flag" />
 				</button>
 			</div>
+
+			<MDBCollapse id='collapse' isOpen={this.state.collapseID}>
+				<MDBListGroup>
+					<CommentForm onAddComment={this.handleCommentReply} />
+					<CommentList
+						loading={false}
+						comments={this.props.comment.replies}
+						onCommentReply={this.handleCommentReply}
+						onCommentReport={this.handleCommentReport}
+					/>
+				</MDBListGroup>
+			</MDBCollapse>
 		</div>
 	}
 }
