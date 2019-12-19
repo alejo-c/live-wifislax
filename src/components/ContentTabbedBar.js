@@ -48,7 +48,7 @@ export default class ContentTabbedBar extends Component {
 						{
 							this.props.contentTabs.map((tab, i) => {
 								if (this.state.activeItem === (i + 1) + '') {
-									return <MDBNavItem className='active' key={i}>
+									return <MDBNavItem key={i} active>
 										<MDBNavLink
 											to="#"
 											onClick={this.toggle((i + 1) + '')}
@@ -79,7 +79,7 @@ export default class ContentTabbedBar extends Component {
 			</MDBNavbar>
 
 			<div className='row text-left'>
-				<div className="tab-content card col-10" activeItem={this.state.activeItem}>
+				<MDBTabContent className="card col-10" activeItem={this.state.activeItem}>
 					<MDBTabPane tabId='1' role="tabpanel">
 						<div className="scrollbar" style={scrollbarStyle}>
 							<Start />
@@ -103,12 +103,12 @@ export default class ContentTabbedBar extends Component {
 							<Versions />
 						</div>
 					</MDBTabPane>
-				</div>
+				</MDBTabContent>
 
 				<div className='bg-dark text-white col-2'>
 					<SideLinksPage menus={menuLinks} />
 				</div>
 			</div>
-		</Router >
+		</Router>
 	}
 }
