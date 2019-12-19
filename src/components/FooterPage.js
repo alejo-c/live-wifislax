@@ -10,7 +10,7 @@ export default class FooterPage extends Component {
 		return <MDBFooter color="elegant-color" className="font-small pt-4 mt-4">
 			<MDBContainer fluid className="text-center text-md-left">
 				<MDBRow className='text-left'>
-					<MDBCol md="4">
+					<MDBCol md="5">
 						<h5 className="title"><strong>Live WifiSlax</strong></h5>
 						<p>
 							Pagina Web que muestra el contenido principal del
@@ -19,7 +19,8 @@ export default class FooterPage extends Component {
 							versiones y tutoriales de instalacion y uso.
             			</p>
 					</MDBCol>
-					<MDBCol md="3">
+
+					<MDBCol md="2">
 						<h5 className="title"><strong>Enlaces</strong></h5>
 						<ul>
 							{
@@ -32,25 +33,27 @@ export default class FooterPage extends Component {
 							}
 						</ul>
 					</MDBCol>
+
+					<MDBCol md='2'>
+						<h5 className="title"><strong>Información de Contacto</strong></h5>
+						<ul>
+							<li style={{ listStyleType: 'none' }}>
+								<i className="fa fa-envelope mr-1" />
+								<strong>E-mail:</strong>
+								<a href="mailto: live.wifislax@gmail.com">live.wifislax@gmail.com</a>
+							</li>
+						</ul>
+					</MDBCol>
+
 					<MDBCol md="3">
 						<h5 className="title"><strong>Herramientas Utilizadas</strong></h5>
 						<ul>
 							{
 								this.props.iconsLinks.map((iconLink, i) => {
-									if (iconLink.spinning === true) {
-										return <li className='Icon list-unstyled' key={i}>
-											<img
-												className={`Spinning-icon py-1 mr-${iconLink.mr}`}
-												src={iconLink.src}
-												width={iconLink.size}
-												alt={iconLink.alt}
-											/>
-											<a href={iconLink.href}>{iconLink.text}</a>
-										</li>
-									}
+									let spinning = iconLink.spinning === true ? 'Spinning-icon' : ''
 									return <li className='Icon list-unstyled' key={i}>
 										<img
-											className={`py-1 mr-${iconLink.mr}`}
+											className={`py-1 mr-${iconLink.mr} ` + spinning}
 											src={iconLink.src}
 											width={iconLink.size}
 											alt={iconLink.alt}
@@ -61,21 +64,13 @@ export default class FooterPage extends Component {
 							}
 						</ul>
 					</MDBCol>
-					<MDBCol md='2'>
-						<h5 className="title"><strong>Información de Contacto</strong></h5>
-						<ul>
-							<li style={{ listStyleType: 'none' }}>
-								<i className="fa fa-angle-right mr-1" />
-								<strong>E-mail:</strong> live.wifislax@gmail.com
-							</li>
-						</ul>
-					</MDBCol>
 				</MDBRow>
 			</MDBContainer>
+
 			<div className="footer-copyright text-center py-3">
 				<MDBContainer fluid>
 					<img className='mr-1' src={github} width='17' alt='github-logo' />
-					Repositorio de Github: <a href="https://github.com/alejo-castrillon/live-wifislax"> live-wifislax.git</a>
+					Repositorio de Github:<a href="https://github.com/alejo-castrillon/live-wifislax">live-wifislax.git</a>
 				</MDBContainer>
 			</div>
 		</MDBFooter>
