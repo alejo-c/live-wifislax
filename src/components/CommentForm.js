@@ -24,7 +24,7 @@ export default class CommentForm extends Component {
 
 	render() {
 		return <form className='ml-2' onSubmit={this.handleSubmit} autoComplete='off'>
-			<h5 className="text-left">Publica un Comentario</h5>
+			<h5 className="text-left">{this.props.title}</h5>
 			<div>
 				<MDBInput
 					name='username'
@@ -43,11 +43,8 @@ export default class CommentForm extends Component {
 					icon="pencil-alt"
 					style={{ resize: 'none' }}
 				/>
-				<div style={{ display: this.state.replying ? '' : 'none' }}>
-
-				</div>
 			</div>
-			<button className='btn btn-info' type='submit'>Enviar &#10148;</button>
+			<button className='btn btn-info' type='submit'>{this.props.action} &#10148;</button>
 		</form>
 	}
 }

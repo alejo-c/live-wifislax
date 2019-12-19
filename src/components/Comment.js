@@ -17,9 +17,8 @@ export default class Comment extends Component {
 		return string.toLowerCase()
 	}
 
-	handleCommentReply = () => {
-		// this.props.onCommentReply(this.props.comment)
-		console.log('reply');
+	handleCommentReply = reply => {
+		this.props.onCommentReply(this.props.comment, reply)
 	}
 
 	handleCommentReport = () => {
@@ -34,11 +33,13 @@ export default class Comment extends Component {
 
 	render() {
 		var { username, content, date } = this.props.comment;
+		var replies
 		var length
 		if (this.props.comment.replies === undefined) {
+			replies = []
 			length = 0
 		} else {
-			var replies = Object.keys(this.props.comment.replies).map(key => {
+			replies = Object.keys(this.props.comment.replies).map(key => {
 				return this.props.comment.replies[key]
 			})
 			length = replies.length
@@ -60,10 +61,9 @@ export default class Comment extends Component {
 			<div className='ml-2'>
 				<button
 					className='btn btn-warning d-inline-block ml-5 py-1 px-1'
-					// onClick={this.handleCommentReply}
 					onClick={this.toggleCollapse('collapse')}
 				>
-					{this.state.replies.length}
+					{length}
 					<i className="fa fa-comment-alt ml-1" />
 				</button>
 				<button
@@ -76,13 +76,23 @@ export default class Comment extends Component {
 
 			<MDBCollapse id='collapse' isOpen={this.state.collapseID}>
 				<MDBListGroup>
-					<CommentForm onAddComment={this.handleCommentReply} />
-					<CommentList
-						loading={false}
-						comments={this.props.comment.replies}
-						onCommentReply={this.handleCommentReply}
-						onCommentReport={this.handleCommentReport}
-					/>
+					<div className="ml-5">
+						<div className='ml-1'>
+							<CommentForm
+								title="Responde al Comentario"
+								action='Responder'
+								onAddComment={this.handleCommentReply}
+							/>
+						</div>
+						<div className='ml-3'>
+							<CommentList
+								loading={false}
+								comments={replies}
+								onCommentReply={this.handleCommentReply}
+								onCommentReport={this.handleCommentReport}
+							/>
+						</div>
+					</div>
 				</MDBListGroup>
 			</MDBCollapse>
 		</div>

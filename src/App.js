@@ -4,7 +4,7 @@ import banner from './images/banner.png'
 
 import ContentTabbedBar from './components/ContentTabbedBar'
 import CommentForm from './components/CommentForm'
-import CommentList from './components/CommentList'
+import CommentListContainer from './components/CommentListContainer'
 import FooterPage from './components/FooterPage'
 
 import icons from './data/icons.json'
@@ -14,7 +14,6 @@ export default class App extends Component {
 		super()
 		this.state = { comments: [], loading: true }
 		this.database = window.firebase.database()
-		// this.handleCommentReply = this.handleCommentReply.bind(this)
 	}
 
 	handleAddComment = comment => {
@@ -34,15 +33,15 @@ export default class App extends Component {
 		}
 	}
 
-	handleCommentReply = comment => {
+	handleCommentReply = (comment, reply) => {
 		var key = this.database.ref(`posted/${comment.id}/replies/`).push().key
 		var object = {}
 
 		object[key] = {
 			id: key,
 			date: new Date().toLocaleString(),
-			username: comment.username,
-			content: comment.content,
+			username: reply.username,
+			content: reply.content,
 		}
 		try {
 			this.database.ref(`posted/${comment.id}/replies/`).update(object)
@@ -59,7 +58,6 @@ export default class App extends Component {
 		this.database.ref('posted/').on('value', snap => {
 			var currentComments = snap.val()
 			if (currentComments !== null) {
-				console.log(this.state.comments);
 				var newComments = Object.keys(currentComments).map(key => {
 					return currentComments[key]
 				})
@@ -70,8 +68,6 @@ export default class App extends Component {
 	}
 
 	render() {
-		console.log('rendered');
-
 		return <div>
 			<header className="text-center">
 				<img src={banner} alt='banner' />
@@ -89,14 +85,16 @@ export default class App extends Component {
 				/>
 			</header>
 
-			<hr />
-
 			<div className="row">
 				<div className="col-3 pt-3 border-right">
-					<CommentForm onAddComment={this.handleAddComment} />
+					<CommentForm
+						title="Publica un Comentario"
+						action='Publicar'
+						onAddComment={this.handleAddComment}
+					/>
 				</div>
 				<div className="col-9 pt-3">
-					<CommentList
+					<CommentListContainer
 						loading={this.state.loading}
 						comments={this.state.comments}
 						onCommentReply={this.handleCommentReply}
@@ -104,8 +102,6 @@ export default class App extends Component {
 					/>
 				</div>
 			</div>
-
-			<hr />
 
 			<FooterPage links={
 				[
