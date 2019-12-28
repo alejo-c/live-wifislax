@@ -39,7 +39,7 @@ export default class FooterPage extends Component {
 						<ul>
 							<li style={{ listStyleType: 'none' }}>
 								<i className="fa fa-envelope mr-1" />
-								<strong>E-mail:</strong>
+								<strong>E-mail: </strong>
 								<a href="mailto: live.wifislax@gmail.com">live.wifislax@gmail.com</a>
 							</li>
 						</ul>
