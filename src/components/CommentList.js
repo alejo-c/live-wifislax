@@ -8,6 +8,7 @@ export default class CommentList extends Component {
 			return <Comment
 				key={index}
 				comment={this.props.comments[key]}
+				path={this.props.path}
 				onCommentReply={this.props.onCommentReply}
 				onCommentReport={this.props.onCommentReport}
 			/>

@@ -18,7 +18,10 @@ export default class Comment extends Component {
 	}
 
 	handleCommentReply = reply => {
-		this.props.onCommentReply(this.props.comment, reply)
+		this.props.onCommentReply(
+			`${this.props.path}/${this.props.comment.id}/replies/`,
+			reply
+		)
 	}
 
 	handleCommentReport = () => {
@@ -88,8 +91,9 @@ export default class Comment extends Component {
 							<CommentList
 								loading={false}
 								comments={replies}
-								onCommentReply={this.handleCommentReply}
-								onCommentReport={this.handleCommentReport}
+								path={`${this.props.path}/${this.props.comment.id}/replies`}
+								onCommentReply={this.props.onCommentReply}
+								onCommentReport={this.props.onCommentReport}
 							/>
 						</div>
 					</div>

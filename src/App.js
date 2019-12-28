@@ -29,12 +29,12 @@ export default class App extends Component {
 		try {
 			this.database.ref('posted/').update(object)
 		} catch (error) {
-			console.log('error: ' + error)
+			console.log(error)
 		}
 	}
 
-	handleCommentReply = (comment, reply) => {
-		var key = this.database.ref(`posted/${comment.id}/replies/`).push().key
+	handleCommentReply = (path, reply) => {
+		var key = this.database.ref(path).push().key
 		var object = {}
 
 		object[key] = {
@@ -44,9 +44,9 @@ export default class App extends Component {
 			content: reply.content,
 		}
 		try {
-			this.database.ref(`posted/${comment.id}/replies/`).update(object)
+			this.database.ref(path).update(object)
 		} catch (error) {
-			console.log('error: ' + error)
+			console.log(error)
 		}
 	}
 
