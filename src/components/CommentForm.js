@@ -1,6 +1,8 @@
 import React, { Component } from "react"
 import { MDBInput } from 'mdbreact'
 
+import './scrollable.css'
+
 export default class CommentForm extends Component {
 	constructor() {
 		super()
@@ -35,12 +37,14 @@ export default class CommentForm extends Component {
 					icon="user"
 				/>
 				<MDBInput
+					className="scrollable"
 					name='content'
 					value={this.state.content}
 					onChange={this.handleChange}
 					type="textarea"
 					label="Comentario"
 					icon="pencil-alt"
+					rows={2}
 					style={{ resize: 'none' }}
 				/>
 			</div>
