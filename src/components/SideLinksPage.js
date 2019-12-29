@@ -14,30 +14,33 @@ export default class SideLinksPage extends Component {
 	}
 
 	render() {
-		return this.props.menus.map((menu, i) => {
-			var angle = this.state.collapseID === i ? "fa fa-angle-up" : "fa fa-angle-down"
-			return <MDBListGroup key={i}>
-				<div
-					className='container'
-					onClick={this.toggleCollapse(i)}
-					style={{ marginTop: "10px" }}
-				>
-					{menu.title}
-					<i className={'ml-1 ' + angle} />
-				</div>
+		return <MDBListGroup>
+			{
+				this.props.menus.map((menu, i) => {
+					var angle = this.state.collapseID === i ? "fa fa-angle-up" : "fa fa-angle-down"
+					return <MDBListGroupItem className="text-white elegant-color-dark" key={i}>
+						<div
+							className='container'
+							onClick={this.toggleCollapse(i)}
+							style={{ marginTop: "10px" }}
+						>
+							{menu.title}  <i className={'ml-1 ' + angle} />
+						</div>
 
-				<MDBCollapse id={i} isOpen={this.state.collapseID}>
-					<MDBListGroup>
-						{
-							menu.links.map((link, j) => {
-								return <MDBListGroupItem className='elegant-color' key={j}>
-									<a className='text-white' href={link.href}>{link.text}</a>
-								</MDBListGroupItem>
-							})
-						}
-					</MDBListGroup>
-				</MDBCollapse>
-			</MDBListGroup>
-		})
+						<MDBCollapse id={i} isOpen={this.state.collapseID}>
+							<MDBListGroup>
+								{
+									menu.links.map((link, j) => {
+										return <MDBListGroupItem className='elegant-color' key={j}>
+											<a className='text-white' href={link.href}>{link.text}</a>
+										</MDBListGroupItem>
+									})
+								}
+							</MDBListGroup>
+						</MDBCollapse>
+					</MDBListGroupItem>
+				})
+			}
+		</MDBListGroup>
 	}
 }

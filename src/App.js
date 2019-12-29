@@ -1,19 +1,30 @@
 import React, { Component } from 'react'
+import { MDBContainer } from "mdbreact"
 
 import banner from './images/banner.png'
 
-import ContentTabbedBar from './components/ContentTabbedBar'
+import TabbedNavbar from './components/TabbedNavbar'
+import ContentTabs from "./components/ContentTabs";
+import SideLinksPage from './components/SideLinksPage'
+
 import CommentForm from './components/CommentForm'
 import CommentListContainer from './components/CommentListContainer'
 import FooterPage from './components/FooterPage'
 
+import menuLinks from './data/menu-links.json'
 import icons from './data/icons.json'
 
 export default class App extends Component {
 	constructor() {
 		super()
-		this.state = { comments: [], loading: true }
+		this.state = { comments: [], loading: true, activeTab: "1" }
 		this.database = window.firebase.database()
+	}
+
+	handleToggleTab = tab => () => {
+		if (this.state.activeTab !== tab) {
+			this.setState({ activeTab: tab })
+		}
 	}
 
 	handleAddComment = comment => {
@@ -71,9 +82,10 @@ export default class App extends Component {
 		return <div>
 			<header className="text-center">
 				<img src={banner} alt='banner' />
-				<ContentTabbedBar
+				<TabbedNavbar
 					image='https://raw.githubusercontent.com/alejo-castrillon/live-wifislax/react-structure/src/images/logo.png'
 					title='Live WifiSlax'
+					activeTab={this.state.activeTab}
 					contentTabs={
 						[
 							{ title: 'Inicio' },
@@ -81,27 +93,41 @@ export default class App extends Component {
 							{ title: 'Guia Instalación' },
 							{ title: 'Versiones' },
 						]
-					} linkTab={{ title: 'Foro', href: 'https://foro.seguridadwireless.net/live-wifislax/' }}
+					}
+					linkTabs={[{ title: 'Foro', href: 'https://foro.seguridadwireless.net/live-wifislax/' }]}
+					onToggleTab={this.handleToggleTab}
 				/>
 			</header>
 
-			<div className="row">
-				<div className="col-3 pt-3 border-right">
-					<CommentForm
-						title="Publica un Comentario"
-						action='Publicar'
-						onAddComment={this.handleAddComment}
-					/>
+			<MDBContainer fluid>
+				<div className="row">
+					<div className="col-10">
+						<ContentTabs activeTab={this.state.activeTab} />
+
+						<div className="row">
+							<div className="col-3 pt-3 border-right">
+								<CommentForm
+									title="Publica un Comentario"
+									action='Publicar'
+									onAddComment={this.handleAddComment}
+								/>
+							</div>
+							<div className="col-9 pt-3">
+								<CommentListContainer
+									loading={this.state.loading}
+									comments={this.state.comments}
+									onCommentReply={this.handleCommentReply}
+									onCommentReport={this.handleCommentReport}
+								/>
+							</div>
+						</div>
+					</div>
+
+					<div className="col-2 elegant-color-dark pr-0 text-left">
+						<SideLinksPage menus={menuLinks} />
+					</div>
 				</div>
-				<div className="col-9 pt-3">
-					<CommentListContainer
-						loading={this.state.loading}
-						comments={this.state.comments}
-						onCommentReply={this.handleCommentReply}
-						onCommentReport={this.handleCommentReport}
-					/>
-				</div>
-			</div>
+			</MDBContainer>
 
 			<FooterPage links={
 				[
@@ -109,6 +135,6 @@ export default class App extends Component {
 					{ text: 'Foro Principal del Sistema Operativo', href: 'https://foro.seguridadwireless.net/live-wifislax/' }
 				]
 			} iconsLinks={icons} />
-		</div >
+		</div>
 	}
 }
