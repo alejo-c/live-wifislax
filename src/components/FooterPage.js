@@ -7,7 +7,7 @@ import './icon.css'
 
 export default class FooterPage extends Component {
 	render() {
-		return <MDBFooter color="elegant-color" className="font-small pt-4 mt-4">
+		return <MDBFooter color="elegant-color" className="font-small pt-3">
 			<MDBContainer fluid className="text-center text-md-left">
 				<MDBRow className='text-left'>
 					<MDBCol md="5">
@@ -67,7 +67,7 @@ export default class FooterPage extends Component {
 				</MDBRow>
 			</MDBContainer>
 
-			<div className="footer-copyright text-center py-3">
+			<div className="footer-copyright text-center py-3 elegant-color-dark">
 				<MDBContainer fluid>
 					<img className='mr-1' src={github} width='17' alt='github-logo' />
 					Repositorio de Github:<a href="https://github.com/alejo-castrillon/live-wifislax">live-wifislax.git</a>
