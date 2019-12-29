@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/live-wifislax/precache-manifest.c803e47c351d1832326abfeb62dfa895.js"
+  "/live-wifislax/precache-manifest.4a7bbfe38c77ac1faaba25983dd7d0e1.js"
 );
 
 self.addEventListener('message', (event) => {
