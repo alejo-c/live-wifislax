@@ -18,7 +18,7 @@ export default class SideLinksPage extends Component {
 			{
 				this.props.menus.map((menu, i) => {
 					var angle = this.state.collapseID === i ? "fa fa-angle-up" : "fa fa-angle-down"
-					return <MDBListGroupItem className="text-white elegant-color-dark" key={i}>
+					return <MDBListGroupItem className="text-white elegant-color-dark px-0 pb-0 text-left" key={i}>
 						<div
 							className='container'
 							onClick={this.toggleCollapse(i)}
