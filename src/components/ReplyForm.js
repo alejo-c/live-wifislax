@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 import { MDBInput } from 'mdbreact'
 
 import './scrollable.css'
 
-export default class CommentForm extends Component {
+export default class ReplyFrom extends Component {
 	constructor() {
 		super()
 		this.state = { content: '' }
@@ -30,14 +30,14 @@ export default class CommentForm extends Component {
 	}
 
 	render() {
-		return <form className='text-left pr-2' onSubmit={this.handleSubmit} autoComplete='off'>
+		return <form className='text-left pr-2 mb-2' onSubmit={this.handleSubmit} autoComplete='off'>
 			<MDBInput
 				className='scrollable my-0 mr-0 px-0'
 				name='content'
 				value={this.state.content}
 				onChange={this.handleChange}
 				type='textarea'
-				label='Publicar un Comentario'
+				label='Responder al Comentario'
 				icon='pencil-alt'
 				style={{ resize: 'none' }}
 			/>
@@ -46,10 +46,10 @@ export default class CommentForm extends Component {
 					className='btn btn-info m-0'
 					type='submit'
 					data-toggle="tooltip"
-					title="Publica el Comentario"
+					title="Responde al Comentario"
 				>
-					Publicar &#10148;
-				</button>
+					Responder &#10148;
+					</button>
 			</div>
 		</form>
 	}

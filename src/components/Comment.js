@@ -1,13 +1,13 @@
-import React, { Component } from "react"
-import { MDBCollapse, MDBListGroup } from "mdbreact"
+import React, { Component } from 'react'
+import { MDBCollapse } from 'mdbreact'
 
-import CommentForm from './CommentForm'
+import ReplyForm from './ReplyForm'
 import CommentList from './CommentList'
 
 export default class Comment extends Component {
 	constructor() {
 		super()
-		this.state = { replies: [], collapseID: "" }
+		this.state = { replies: [], collapseID: '', reported: false }
 	}
 
 	clear = string => {
@@ -26,11 +26,12 @@ export default class Comment extends Component {
 
 	handleCommentReport = () => {
 		this.props.onCommentReport(this.props.comment)
+		this.setState({ reported: true })
 	}
 
 	toggleCollapse = collapseID => () => {
 		this.setState(prevState => ({
-			collapseID: prevState.collapseID !== collapseID ? collapseID : ""
+			collapseID: prevState.collapseID !== collapseID ? collapseID : ''
 		}))
 	}
 
@@ -48,16 +49,16 @@ export default class Comment extends Component {
 			length = replies.length
 		}
 
-		return <div className='mb-1'>
-			<div className="media">
+		return <div>
+			<div className='media'>
 				<img
-					className="mr-2 bg-light rounded"
+					className='mr-2 bg-light rounded'
 					src={`https://api.adorable.io/avatars/48/${this.clear(username)}@adorable.io.png`}
 					alt={username}
 				/>
-				<div className="media-body p-2 shadow-sm rounded bg-light border mr-2">
-					<small className="float-right text-muted">{date}</small>
-					<h6 className="mr-2"><strong>{username}</strong></h6>
+				<div className='media-body p-2 shadow-sm rounded bg-light border mr-2'>
+					<small className='float-right text-muted'>{date}</small>
+					<h6 className='mr-2'><strong>{username}</strong></h6>
 					{content}
 				</div>
 			</div>
@@ -65,39 +66,42 @@ export default class Comment extends Component {
 				<button
 					className='btn btn-warning d-inline-block ml-5 py-1 px-1'
 					onClick={this.toggleCollapse('collapse')}
+					data-toggle="tooltip"
+					title="Ver Respuestas"
 				>
 					{length}
-					<i className="fa fa-comment-alt ml-1" />
+					<i className='fa fa-comment-alt ml-1' />
 				</button>
 				<button
 					className='btn btn-danger d-inline-block ml-5 py-1 px-2'
 					onClick={this.handleCommentReport}
+					data-toggle="tooltip"
+					title="Reportar Comentario"
 				>
-					<i className="fa fa-flag" />
+					<i className='fa fa-flag' />
 				</button>
+				<span className={'badge badge-info ml-5 ' + (this.state.reported ? 'visible' : 'invisible')}>
+					Comentario reportado <i className='fa fa-check-circle' />
+				</span>
 			</div>
 
-			<MDBCollapse id='collapse' isOpen={this.state.collapseID}>
-				<MDBListGroup>
-					<div className="ml-5">
-						<div className='ml-1'>
-							<CommentForm
-								title="Responde al Comentario"
-								action='Responder'
-								onAddComment={this.handleCommentReply}
-							/>
-						</div>
-						<div className='ml-3'>
-							<CommentList
-								loading={false}
-								comments={replies}
-								path={`${this.props.path}/${this.props.comment.id}/replies`}
-								onCommentReply={this.props.onCommentReply}
-								onCommentReport={this.props.onCommentReport}
-							/>
-						</div>
-					</div>
-				</MDBListGroup>
+			<MDBCollapse className='ml-2 mb-2' id='collapse' isOpen={this.state.collapseID}>
+				<div className='m-0 p-0 ml-5'>
+					<ReplyForm
+						username={this.props.username}
+						onAddComment={this.handleCommentReply}
+						onCommentError={this.props.onCommentError}
+					/>
+					<h6 className={replies.length ? '' : 'text-white'}>Respuestas</h6>
+					<CommentList
+						username={this.props.username}
+						comments={replies}
+						path={`${this.props.path}/${this.props.comment.id}/replies`}
+						onCommentReply={this.props.onCommentReply}
+						onCommentReport={this.props.onCommentReport}
+						onCommentError={this.props.onCommentError}
+					/>
+				</div>
 			</MDBCollapse>
 		</div>
 	}
