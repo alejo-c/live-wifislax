@@ -3,12 +3,41 @@
 		"title": "Versiones",
 		"links": [
 			{
-				"text": 1.1,
-				"href": "https://google.com"
+				"text": "WifiSlax-64 2.0",
+				"href": "https://foro.seguridadwireless.net/live-wifislax/wifislax64-2-0-final-para-descarga/"
 			},
 			{
-				"text": 1.2,
-				"href": "https://google.com"
+				"text": "WifiSlax-64 1.1",
+				"href": "https://foro.seguridadwireless.net/live-wifislax/wifislax64-1-1-final-para-descarga/"
+			},
+			{
+				"text": "WifiSlax-64 1.0",
+				"href": "https://foro.seguridadwireless.net/live-wifislax/liberada-wifislax64-1-0-version-final-para-descargar/"
+			},
+			{
+				"text": "WifiSlax-32 4.12",
+				"href": "https://foro.seguridadwireless.net/live-wifislax/enlaces-wifislax-4-12/"
+			},
+			{
+				"text": "Todas",
+				"href": "http://descargas.seguridadwireless.es"
+			}
+		]
+	},
+	{
+		"title": "Descarga",
+		"links": [
+			{
+				"text": "Modulos Adicionales 64 2.0",
+				"href": "https://foro.seguridadwireless.net/live-wifislax/modulos-extra-wifislax64-2-0/"
+			},
+			{
+				"text": "Modulos Adicionales 64 1.1",
+				"href": "https://foro.seguridadwireless.net/live-wifislax/modulos-extra-para-wifislax64-1-1/"
+			},
+			{
+				"text": "Modulos Adicionales 64 1.0",
+				"href": "https://www.wifislax.com/modulos-extra-para-wifislax64-1-0/"
 			}
 		]
 	},
@@ -16,8 +45,52 @@
 		"title": "Tutoriales",
 		"links": [
 			{
-				"text": "videos",
-				"href": "https://google.com"
+				"text": "Instalacion WifiSlax",
+				"href": "https://www.youtube.com/watch?v=zkwBwexAj5k&t"
+			},
+			{
+				"text": "Instalacion WifiSlax VirtualBox",
+				"href": "https://www.youtube.com/watch?v=pP8OZ0ijRcA&t"
+			},
+			{
+				"text": "Defensa ante intrusos redes Wifi",
+				"href": "https://www.youtube.com/watch?v=r7rnm928Kd4&feature=emb_title"
+			},
+			{
+				"text": "Claves WPA WPA2 - Diccionario externo",
+				"href": "https://www.youtube.com/watch?v=VGVvbY-iP5k&feature=emb_title"
+			},
+			{
+				"text": "Claves WPA WPA2 - Diccionario externo",
+				"href": "https://www.youtube.com/watch?v=xjRmW1hAHVw&feature=emb_title"
+			},
+			{
+				"text": "Claves WPA WPA2 - WPSPinGenerator",
+				"href": "https://www.youtube.com/watch?v=sGhvhh0w8QI&feature=emb_title"
+			},
+			{
+				"text": "Claves WPA WPA2 - Geminis Auditor",
+				"href": "https://www.youtube.com/watch?v=4EL6ePVSUH0&feature=emb_title"
+			},
+			{
+				"text": "Crear diccionario - StrinGenerator",
+				"href": "https://www.youtube.com/watch?v=YJLDlppcNAU&feature=emb_title"
+			},
+			{
+				"text": "Capturar credenciales de sesión en navegadores",
+				"href": "https://www.youtube.com/watch?v=luijyA7-kbs&feature=emb_title"
+			},
+			{
+				"text": "Cambiar MAC - MACCHANGER",
+				"href": "https://www.youtube.com/watch?v=a040EOHPZEc&feature=emb_title"
+			},
+			{
+				"text": "Saber quien esta conectado a la red - Angry IP Scaner",
+				"href": "https://www.youtube.com/watch?v=SBs0TofRMzQ&feature=emb_title"
+			},
+			{
+				"text": "Otros",
+				"href": "https://www.wifislax.com/youtube/"
 			}
 		]
 	}
