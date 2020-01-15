@@ -27,7 +27,7 @@ export default class FooterPage extends Component {
 								this.props.links.map((link, i) => {
 									return <li key={i} className='mb-1' style={{ listStyleType: 'none' }}>
 										<i className="fa fa-angle-right mr-1" />
-										<a href={link.href}>{link.text}</a>
+										<a href={link.href} target='_blank' rel='noopener noreferrer'>{link.text}</a>
 									</li>
 								})
 							}
@@ -40,7 +40,7 @@ export default class FooterPage extends Component {
 							<li style={{ listStyleType: 'none' }}>
 								<i className="fa fa-envelope mr-1" />
 								<strong>E-mail: </strong>
-								<a href="mailto: live.wifislax@gmail.com">live.wifislax@gmail.com</a>
+								<a href="mailto: live.wifislax@gmail.com" target='_blank' rel='noopener noreferrer'>live.wifislax@gmail.com</a>
 							</li>
 						</ul>
 					</MDBCol>
@@ -58,7 +58,7 @@ export default class FooterPage extends Component {
 											width={iconLink.size}
 											alt={iconLink.alt}
 										/>
-										<a href={iconLink.href}>{iconLink.text}</a>
+										<a href={iconLink.href} target='_blank' rel='noopener noreferrer'>{iconLink.text}</a>
 									</li>
 								})
 							}

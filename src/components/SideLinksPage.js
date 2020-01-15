@@ -29,7 +29,7 @@ export default class SideLinksPage extends Component {
 								{
 									menu.links.map((link, j) => {
 										return <MDBListGroupItem className='elegant-color' key={j}>
-											<a className='text-white' href={link.href}>{link.text}</a>
+											<a className='text-white' href={link.href} target='_blank' rel='noopener noreferrer'>{link.text}</a>
 										</MDBListGroupItem>
 									})
 								}
