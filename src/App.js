@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { MDBContainer, MDBInput } from 'mdbreact'
 
 import banner from './images/banner.png'
 
@@ -17,7 +16,7 @@ import icons from './data/icons.json'
 export default class App extends Component {
 	constructor() {
 		super()
-		this.state = { activeTab: '1', username: '', errorMessage: '', comments: [] }
+		this.state = { activeTab: '1', comments: [] }
 		this.database = window.firebase.database()
 	}
 
@@ -31,13 +30,9 @@ export default class App extends Component {
 		this.setState({ [name]: value })
 	}
 
-	handleCommentError = message => {
-		this.setState({ errorMessage: message })
-	}
-
 	handleAddComment = comment => {
-		var key = this.database.ref('posted/').push().key
-		var object = {}
+		const key = this.database.ref('posted/').push().key
+		let object = {}
 
 		object[key] = {
 			id: key,
@@ -53,8 +48,8 @@ export default class App extends Component {
 	}
 
 	handleCommentReply = (path, reply) => {
-		var key = this.database.ref(path).push().key
-		var object = {}
+		const key = this.database.ref(path).push().key
+		let object = {}
 
 		object[key] = {
 			id: key,
@@ -75,21 +70,20 @@ export default class App extends Component {
 
 	componentDidMount = () => {
 		this.database.ref('posted/').on('value', snap => {
-			var currentComments = snap.val()
+			const currentComments = snap.val()
 			if (currentComments !== null) {
-				var newComments = Object.keys(currentComments).map(key => {
+				const newComments = Object.keys(currentComments).map(key => {
 					return currentComments[key]
 				})
 				this.setState({ comments: newComments })
 			}
 		})
-		this.setState({ loading: false })
 	}
 
 	render() {
 		return <div>
-			<header className='text-center'>
-				<img src={banner} alt='banner' style={{ width: '60%' }} />
+			<header>
+				<div className='text-center'><img src={banner} alt='banner' style={{ width: '60%' }} /></div>
 				<TabbedNavbar
 					image='https://raw.githubusercontent.com/alejo-castrillon/live-wifislax/react-structure/src/images/logo.png'
 					title='Live WifiSlax'
@@ -107,48 +101,31 @@ export default class App extends Component {
 				/>
 			</header>
 
-			<MDBContainer fluid>
+			<section className='container-fluid'>
 				<div className='row'>
-					<div className='col-10'>
+					<div className='col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xl-10'>
 						<ContentTabs activeTab={this.state.activeTab} />
 						<div className='row my-2'>
-							<div className='col-4 pt-2 border-right'>
-								<small className={'badge badge-danger m-0 ' + (this.state.errorMessage ? 'visible' : 'invisible')}>
-									{this.state.errorMessage} <i className="fas fa-exclamation-circle"></i>
-								</small>
-								<MDBInput
-									className='my-0 mr-0 px-0 d-inline'
-									name='username'
-									value={this.state.username}
-									onChange={this.handleChange}
-									type='text'
-									label='Nombre'
-									icon='user'
-								/>
-								<hr />
+							<div className='pt-2 border-right col-xs-12 col-sm-12 col-md-12 col-lg-5 col-xl-5'>
 								<CommentForm
-									username={this.state.username}
 									onAddComment={this.handleAddComment}
-									onCommentError={this.handleCommentError}
 								/>
 							</div>
-							<div className='col-8 pt-2'>
+							<div className='pt-2 col-xs-12 col-sm-12 col-md-12 col-lg-7 col-xl-7'>
 								<CommentListContainer
-									username={this.state.username}
 									comments={this.state.comments}
 									onCommentReply={this.handleCommentReply}
 									onCommentReport={this.handleCommentReport}
-									onCommentError={this.handleCommentError}
 								/>
 							</div>
 						</div>
 					</div>
 
-					<div className='col-2 elegant-color-dark px-0'>
+					<div className='elegant-color-dark m-0 p-0 col-xs-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 text-left'>
 						<SideLinksPage menus={menuLinks} />
 					</div>
 				</div>
-			</MDBContainer>
+			</section>
 
 			<FooterPage links={
 				[

@@ -11,9 +11,8 @@ export default class Comment extends Component {
 	}
 
 	clear = string => {
-		while (string.includes(' ')) {
+		while (string.includes(' '))
 			string = string.replace(' ', '')
-		}
 		return string.toLowerCase()
 	}
 
@@ -36,9 +35,12 @@ export default class Comment extends Component {
 	}
 
 	render() {
-		var { username, content, date } = this.props.comment;
-		var replies
-		var length
+		const angle = this.state.collapseID === 'collapse' ? "fa fa-angle-up" : "fa fa-angle-down"
+
+		const { username, content, date } = this.props.comment
+		let replies
+		let length
+
 		if (this.props.comment.replies === undefined) {
 			replies = []
 			length = 0
@@ -49,11 +51,11 @@ export default class Comment extends Component {
 			length = replies.length
 		}
 
-		return <div>
+		return <div className='mb-1'>
 			<div className='media'>
 				<img
-					className='mr-2 bg-light rounded'
-					src={`https://api.adorable.io/avatars/48/${this.clear(username)}@adorable.io.png`}
+					className='mr-1 bg-light rounded'
+					src={`https://api.adorable.io/avatars/50/${this.clear(username)}@adorable.io.png`}
 					alt={username}
 				/>
 				<div className='media-body p-2 shadow-sm rounded bg-light border mr-2'>
@@ -62,7 +64,7 @@ export default class Comment extends Component {
 					{content}
 				</div>
 			</div>
-			<div className='ml-2'>
+			<div className='ml-3'>
 				<button
 					className='btn btn-warning d-inline-block ml-5 py-1 px-1'
 					onClick={this.toggleCollapse('collapse')}
@@ -71,6 +73,7 @@ export default class Comment extends Component {
 				>
 					{length}
 					<i className='fa fa-comment-alt ml-1' />
+					<i className={'ml-1 ' + angle} />
 				</button>
 				<button
 					className='btn btn-danger d-inline-block ml-5 py-1 px-2'
@@ -85,24 +88,20 @@ export default class Comment extends Component {
 				</span>
 			</div>
 
-			<MDBCollapse className='ml-2 mb-2' id='collapse' isOpen={this.state.collapseID}>
-				<div className='m-0 p-0 ml-5'>
+			<MDBCollapse className='ml-2' id='collapse' isOpen={this.state.collapseID}>
+				<div className='pl-2 ml-5'>
 					<ReplyForm
-						username={this.props.username}
 						onAddComment={this.handleCommentReply}
-						onCommentError={this.props.onCommentError}
 					/>
-					<h6 className={replies.length ? '' : 'text-white'}>Respuestas</h6>
+					<h6 className={replies.length ? '' : 'text-white '}>Respuestas</h6>
 					<CommentList
-						username={this.props.username}
-						comments={replies}
 						path={`${this.props.path}/${this.props.comment.id}/replies`}
+						comments={replies}
 						onCommentReply={this.props.onCommentReply}
 						onCommentReport={this.props.onCommentReport}
-						onCommentError={this.props.onCommentError}
 					/>
 				</div>
 			</MDBCollapse>
-		</div>
+		</div >
 	}
 }
