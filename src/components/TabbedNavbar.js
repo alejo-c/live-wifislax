@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import { BrowserRouter as Router } from 'react-router-dom'
-import { MDBNavbar, MDBNavItem, MDBNavbarToggler, MDBCollapse, MDBNavbarNav, MDBNavLink } from "mdbreact"
+import { MDBNavItem, MDBNavbarToggler, MDBCollapse, MDBNavbarNav, MDBNavLink } from "mdbreact"
 
 export default class ContentTabbedBar extends Component {
 	constructor() {
@@ -15,15 +15,13 @@ export default class ContentTabbedBar extends Component {
 
 	render() {
 		return <Router>
-			<MDBNavbar color="elegant-color-dark" dark expand="md">
+			<div className='navbar navbar-expand-md navbar-dark bg-dark text-center'>
 				<div className='nav-item'>
 					<img className='mr-3' src={this.props.image} width='40' alt='tabbed-nav' />
 				</div>
-
 				<div className='navbar-brand'>
 					<strong className="white-text">{this.props.title}</strong>
 				</div>
-
 				<MDBNavbarToggler onClick={this.toggleCollapse} />
 
 				<MDBCollapse isOpen={this.state.isOpen} navbar>
@@ -63,7 +61,7 @@ export default class ContentTabbedBar extends Component {
 						}
 					</MDBNavbarNav>
 				</MDBCollapse>
-			</MDBNavbar>
+			</div>
 		</Router>
 	}
 }
