@@ -25,7 +25,7 @@ export default class FooterPage extends Component {
 						<ul>
 							{
 								this.props.links.map((link, i) => {
-									return <li key={i} style={{ listStyleType: 'none' }}>
+									return <li key={i} className='mb-1' style={{ listStyleType: 'none' }}>
 										<i className="fa fa-angle-right mr-1" />
 										<a href={link.href}>{link.text}</a>
 									</li>
