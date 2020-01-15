@@ -1,15 +1,15 @@
-import React, { Component } from "react"
-import { MDBCollapse, MDBListGroup, MDBListGroupItem } from "mdbreact"
+import React, { Component } from 'react'
+import { MDBCollapse, MDBListGroup, MDBListGroupItem } from 'mdbreact'
 
 export default class SideLinksPage extends Component {
 	constructor() {
 		super()
-		this.state = { collapseID: "" }
+		this.state = { collapseID: '' }
 	}
 
 	toggleCollapse = collapseID => () => {
 		this.setState(prevState => ({
-			collapseID: prevState.collapseID !== collapseID ? collapseID : ""
+			collapseID: prevState.collapseID !== collapseID ? collapseID : ''
 		}))
 	}
 
@@ -17,14 +17,11 @@ export default class SideLinksPage extends Component {
 		return <MDBListGroup>
 			{
 				this.props.menus.map((menu, i) => {
-					var angle = this.state.collapseID === i ? "fa fa-angle-up" : "fa fa-angle-down"
-					return <MDBListGroupItem className="text-white elegant-color-dark px-0 pb-0 text-left" key={i}>
-						<div
-							className='container'
-							onClick={this.toggleCollapse(i)}
-							style={{ marginTop: "10px" }}
-						>
-							{menu.title}  <i className={'ml-1 ' + angle} />
+					const angle = this.state.collapseID === i ? 'fa fa-angle-up' : 'fa fa-angle-down'
+					return <MDBListGroupItem className='text-white elegant-color-dark m-0 pr-0 text-left' key={i}>
+
+						<div onClick={this.toggleCollapse(i)}>
+							{menu.title}<i className={'ml-1 ' + angle} />
 						</div>
 
 						<MDBCollapse id={i} isOpen={this.state.collapseID}>
