@@ -7,12 +7,10 @@ export default class CommentList extends Component {
 		return Object.keys(this.props.comments).map((key, index) => {
 			return <Comment
 				key={index}
-				username={this.props.username}
-				comment={this.props.comments[key]}
 				path={this.props.path}
+				comment={this.props.comments[key]}
 				onCommentReply={this.props.onCommentReply}
 				onCommentReport={this.props.onCommentReport}
-				onCommentError={this.props.onCommentError}
 			/>
 		})
 	}
