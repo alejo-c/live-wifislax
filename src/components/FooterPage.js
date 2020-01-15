@@ -21,7 +21,7 @@ export default class FooterPage extends Component {
 					</MDBCol>
 
 					<MDBCol md="2">
-						<h5 className="title"><strong>Enlaces</strong></h5>
+						<h5 className="title"><strong>Otros Enlaces</strong></h5>
 						<ul>
 							{
 								this.props.links.map((link, i) => {
