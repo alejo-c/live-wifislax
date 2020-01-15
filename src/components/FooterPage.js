@@ -13,7 +13,7 @@ export default class FooterPage extends Component {
 					<MDBCol md="5">
 						<h5 className="title"><strong>Live WifiSlax</strong></h5>
 						<p>
-							Pagina Web que muestra el contenido principal del
+							Pagina Web que muestra una descripción general del
 							sistema operativo Live WifiSlax, historia, pasos de
 							instalacion, links de descarga para diferentes
 							versiones y tutoriales de instalacion y uso.
