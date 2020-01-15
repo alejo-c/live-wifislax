@@ -121,7 +121,7 @@ export default class App extends Component {
 						</div>
 					</div>
 
-					<div className='elegant-color-dark m-0 p-0 col-xs-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 text-left'>
+					<div className='elegant-color-dark m-0 p-0 col-xs-12 col-sm-12 col-md-2 col-lg-2 col-xl-2'>
 						<SideLinksPage menus={menuLinks} />
 					</div>
 				</div>

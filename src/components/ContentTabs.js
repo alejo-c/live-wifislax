@@ -13,7 +13,7 @@ export default class ContentTab extends Component {
 		const scrollbarStyle = { overflowY: 'scroll', height: '500px' }
 
 		return <div className='text-left mt-3'>
-			<MDBTabContent className='card' activeItem={this.props.activeTab}>
+			<MDBTabContent className='card p-3' activeItem={this.props.activeTab}>
 				<MDBTabPane tabId='1' role='tabpanel'>
 					<div className='scrollable' style={scrollbarStyle}>
 						<Start />
