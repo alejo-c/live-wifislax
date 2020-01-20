@@ -93,7 +93,7 @@ export default class Comment extends Component {
 					<ReplyForm
 						onAddComment={this.handleCommentReply}
 					/>
-					<h6 className={replies.length ? '' : 'text-white '}>Respuestas</h6>
+					<h6 className={'text-muted' + (replies.length ? '' : ' invisible')}>Respuestas</h6>
 					<CommentList
 						path={`${this.props.path}/${this.props.comment.id}/replies`}
 						comments={replies}
