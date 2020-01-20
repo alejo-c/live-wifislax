@@ -1,31 +1,31 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "75dc8e5194f4898a8af13a5e4c45fe3f",
+    "revision": "0b7abf31f44b02c1221f30036bbce96a",
     "url": "/live-wifislax/index.html"
   },
   {
-    "revision": "ca1904fc2e2c91ae3be8",
-    "url": "/live-wifislax/static/css/2.f3b33858.chunk.css"
+    "revision": "804bf8e6dbba3745b32e",
+    "url": "/live-wifislax/static/css/2.0fda1cf3.chunk.css"
   },
   {
-    "revision": "4a92e64defcbb08d7a5d",
-    "url": "/live-wifislax/static/css/main.3f8562ff.chunk.css"
+    "revision": "a9228d87280ffd1fc217",
+    "url": "/live-wifislax/static/css/main.dc4be136.chunk.css"
   },
   {
-    "revision": "ca1904fc2e2c91ae3be8",
-    "url": "/live-wifislax/static/js/2.8ecee12d.chunk.js"
+    "revision": "804bf8e6dbba3745b32e",
+    "url": "/live-wifislax/static/js/2.65efc222.chunk.js"
   },
   {
     "revision": "54f6e2d0ef339619d0a432be7ac0ab75",
-    "url": "/live-wifislax/static/js/2.8ecee12d.chunk.js.LICENSE"
+    "url": "/live-wifislax/static/js/2.65efc222.chunk.js.LICENSE"
   },
   {
-    "revision": "4a92e64defcbb08d7a5d",
-    "url": "/live-wifislax/static/js/main.5a1d0f14.chunk.js"
+    "revision": "a9228d87280ffd1fc217",
+    "url": "/live-wifislax/static/js/main.08dd620f.chunk.js"
   },
   {
-    "revision": "60e1b8bd17f2624abbe6",
-    "url": "/live-wifislax/static/js/runtime-main.0fd0338b.js"
+    "revision": "e18ea2c199fe4170b5ad",
+    "url": "/live-wifislax/static/js/runtime-main.8c161879.js"
   },
   {
     "revision": "39b2c3031be6b4ea96e2e3e95d307814",
@@ -120,63 +120,63 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/live-wifislax/static/media/banner.7de7847e.png"
   },
   {
-    "revision": "06147b6cd88c7346cecd1edd060cd5de",
-    "url": "/live-wifislax/static/media/fa-brands-400.06147b6c.ttf"
+    "revision": "088a34f78f530102fd9661173b4a4f26",
+    "url": "/live-wifislax/static/media/fa-brands-400.088a34f7.eot"
   },
   {
-    "revision": "5063b105c7646c8043d58c5289f02cca",
-    "url": "/live-wifislax/static/media/fa-brands-400.5063b105.eot"
+    "revision": "273dc9bf9778fd37fa61357645d46a28",
+    "url": "/live-wifislax/static/media/fa-brands-400.273dc9bf.ttf"
   },
   {
-    "revision": "a9c4bb7348f42626454c988dbde1d0a0",
-    "url": "/live-wifislax/static/media/fa-brands-400.a9c4bb73.svg"
+    "revision": "822d94f19fe57477865209e1242a3c63",
+    "url": "/live-wifislax/static/media/fa-brands-400.822d94f1.woff2"
   },
   {
-    "revision": "c5e0f14f88a828261ba01558ce2bf26f",
-    "url": "/live-wifislax/static/media/fa-brands-400.c5e0f14f.woff"
+    "revision": "d72293118cda50ec50c39957d9d836d0",
+    "url": "/live-wifislax/static/media/fa-brands-400.d7229311.svg"
   },
   {
-    "revision": "cccc9d29470e879e40eb70249d9a2705",
-    "url": "/live-wifislax/static/media/fa-brands-400.cccc9d29.woff2"
+    "revision": "f4920c94c0861c537f72ba36590f6362",
+    "url": "/live-wifislax/static/media/fa-brands-400.f4920c94.woff"
   },
   {
-    "revision": "65b286af947c0d982ca01b40e1fcab38",
-    "url": "/live-wifislax/static/media/fa-regular-400.65b286af.ttf"
+    "revision": "3ac49cb33f43a6471f21ab3df40d1b1e",
+    "url": "/live-wifislax/static/media/fa-regular-400.3ac49cb3.eot"
   },
   {
-    "revision": "7b9568e6389b1f8ae0902cd39665fc1e",
-    "url": "/live-wifislax/static/media/fa-regular-400.7b9568e6.svg"
+    "revision": "9efb86976bd53e159166c12365f61e25",
+    "url": "/live-wifislax/static/media/fa-regular-400.9efb8697.woff2"
   },
   {
-    "revision": "c1a866ec0e04a5e1915b41fcf261457c",
-    "url": "/live-wifislax/static/media/fa-regular-400.c1a866ec.eot"
+    "revision": "a57bcf76c178aee452db7a57b75509b6",
+    "url": "/live-wifislax/static/media/fa-regular-400.a57bcf76.woff"
   },
   {
-    "revision": "c4f508e7c4f01a9eeba7f08155cde04e",
-    "url": "/live-wifislax/static/media/fa-regular-400.c4f508e7.woff"
+    "revision": "d2e53334c22a9a4937bc26e84b36e1e0",
+    "url": "/live-wifislax/static/media/fa-regular-400.d2e53334.svg"
   },
   {
-    "revision": "f5f2566b93e89391da4db79462b8078b",
-    "url": "/live-wifislax/static/media/fa-regular-400.f5f2566b.woff2"
+    "revision": "ece54318791c51b52dfdc689efdb6271",
+    "url": "/live-wifislax/static/media/fa-regular-400.ece54318.ttf"
   },
   {
-    "revision": "0bff33a5fd7ec390235476b4859747a0",
-    "url": "/live-wifislax/static/media/fa-solid-900.0bff33a5.ttf"
+    "revision": "2aa6edf8f296a43b32df35f330b7c81c",
+    "url": "/live-wifislax/static/media/fa-solid-900.2aa6edf8.ttf"
   },
   {
-    "revision": "333bae208dc363746961b234ff6c2500",
-    "url": "/live-wifislax/static/media/fa-solid-900.333bae20.woff"
+    "revision": "7a5de9b08012e4da40504f2cf126a351",
+    "url": "/live-wifislax/static/media/fa-solid-900.7a5de9b0.svg"
   },
   {
-    "revision": "44d537ab79f921fde5a28b2c1636f397",
-    "url": "/live-wifislax/static/media/fa-solid-900.44d537ab.woff2"
+    "revision": "7fb1cdd9c3b889161216a13267b55fe2",
+    "url": "/live-wifislax/static/media/fa-solid-900.7fb1cdd9.eot"
   },
   {
-    "revision": "8e4a6dcc692b3887f9f542cd6894d6d4",
-    "url": "/live-wifislax/static/media/fa-solid-900.8e4a6dcc.eot"
+    "revision": "93f284548b42ab76fe3fd03a9d3a2180",
+    "url": "/live-wifislax/static/media/fa-solid-900.93f28454.woff"
   },
   {
-    "revision": "c2801fb415f03c7b170934769d7b5397",
-    "url": "/live-wifislax/static/media/fa-solid-900.c2801fb4.svg"
+    "revision": "f6121be597a72928f54e7ab5b95512a1",
+    "url": "/live-wifislax/static/media/fa-solid-900.f6121be5.woff2"
   }
 ]);
