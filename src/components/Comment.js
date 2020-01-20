@@ -5,10 +5,7 @@ import ReplyForm from './ReplyForm'
 import CommentList from './CommentList'
 
 export default class Comment extends Component {
-	constructor() {
-		super()
-		this.state = { replies: [], collapseID: '', reported: false }
-	}
+	state = { replies: [], collapseID: '', reported: false }
 
 	clear = string => {
 		while (string.includes(' '))
@@ -64,7 +61,7 @@ export default class Comment extends Component {
 					{content}
 				</div>
 			</div>
-			<div className='ml-3'>
+			<div className='ml-2'>
 				<button
 					className='btn btn-warning d-inline-block ml-5 py-1 px-1'
 					onClick={this.toggleCollapse('collapse')}
@@ -88,7 +85,7 @@ export default class Comment extends Component {
 				</span>
 			</div>
 
-			<MDBCollapse className='ml-2' id='collapse' isOpen={this.state.collapseID}>
+			<MDBCollapse id='collapse' isOpen={this.state.collapseID}>
 				<div className='pl-2 ml-5'>
 					<ReplyForm
 						onAddComment={this.handleCommentReply}
