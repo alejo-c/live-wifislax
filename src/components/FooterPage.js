@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact"
+import { MDBFooter } from "mdbreact"
 
 import github from '../images/github-lg.png'
 
@@ -8,9 +8,9 @@ import './icon.css'
 export default class FooterPage extends Component {
 	render() {
 		return <MDBFooter color="elegant-color" className="font-small pt-3">
-			<MDBContainer fluid className="text-center text-md-left">
-				<MDBRow className='text-left'>
-					<MDBCol md="5">
+			<div className='container-fluid ml-3'>
+				<div className='row'>
+					<div className="col-xs-12 col-sm-12 col-md-12 col-lg-5 col-xl-5">
 						<h5 className="title"><strong>Live WifiSlax</strong></h5>
 						<p>
 							Pagina Web que muestra una descripción general del
@@ -18,34 +18,33 @@ export default class FooterPage extends Component {
 							instalacion, links de descarga para diferentes
 							versiones y tutoriales de instalacion y uso.
             			</p>
-					</MDBCol>
+					</div>
 
-					<MDBCol md="2">
+					<div className="col-xs-5 col-sm-5 col-md-4 col-lg-2 col-xl-2">
 						<h5 className="title"><strong>Otros Enlaces</strong></h5>
 						<ul>
 							{
 								this.props.links.map((link, i) => {
-									return <li key={i} className='mb-1' style={{ listStyleType: 'none' }}>
+									return <li key={i} style={{ listStyleType: 'none' }}>
 										<i className="fa fa-angle-right mr-1" />
 										<a href={link.href} target='_blank' rel='noopener noreferrer'>{link.text}</a>
 									</li>
 								})
 							}
 						</ul>
-					</MDBCol>
+					</div>
 
-					<MDBCol md='2'>
+					<div className='col-xs-12 col-sm-12 col-md-4 col-lg-2 col-xl-2'>
 						<h5 className="title"><strong>Información de Contacto</strong></h5>
 						<ul>
 							<li style={{ listStyleType: 'none' }}>
 								<i className="fa fa-envelope mr-1" />
-								<strong>E-mail: </strong>
-								<a href="mailto: live.wifislax@gmail.com" target='_blank' rel='noopener noreferrer'>live.wifislax@gmail.com</a>
+								<strong>E-mail: </strong><a href="mailto: live.wifislax@gmail.com" target='_blank' rel='noopener noreferrer'>live.wifislax@gmail.com</a>
 							</li>
 						</ul>
-					</MDBCol>
+					</div>
 
-					<MDBCol md="3">
+					<div className="col-xs-12 col-sm-12 col-md-4 col-lg-3 col-xl-3">
 						<h5 className="title"><strong>Herramientas Utilizadas</strong></h5>
 						<ul>
 							{
@@ -58,20 +57,30 @@ export default class FooterPage extends Component {
 											width={iconLink.size}
 											alt={iconLink.alt}
 										/>
-										<a href={iconLink.href} target='_blank' rel='noopener noreferrer'>{iconLink.text}</a>
+										<a
+											href={iconLink.href}
+											target='_blank'
+											rel='noopener noreferrer'
+										>{iconLink.text}</a>
 									</li>
 								})
 							}
 						</ul>
-					</MDBCol>
-				</MDBRow>
-			</MDBContainer>
+					</div>
+
+				</div>
+			</div>
 
 			<div className="footer-copyright text-center py-3 elegant-color-dark">
-				<MDBContainer fluid>
+				<div className='containter-fluid m-0 p-0'>
 					<img className='mr-1' src={github} width='17' alt='github-logo' />
-					Repositorio de Github:<a href="https://github.com/alejo-castrillon/live-wifislax">live-wifislax.git</a>
-				</MDBContainer>
+					Repositorio en Github:
+					<a
+						href="https://github.com/alejo-castrillon/live-wifislax"
+						target='_blank'
+						rel='noopener noreferrer'
+					> live-wifislax.git</a>
+				</div>
 			</div>
 		</MDBFooter>
 	}
