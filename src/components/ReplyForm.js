@@ -44,7 +44,7 @@ export default class ReplyFrom extends Component {
 				value={this.state.content}
 				onChange={this.handleChange}
 				type='textarea'
-				label='Responder al Comentario'
+				label='Comentario'
 				icon='pencil-alt'
 				style={{ resize: 'none' }}
 			/>
@@ -59,9 +59,9 @@ export default class ReplyFrom extends Component {
 					className='btn btn-info m-0'
 					type='submit'
 					data-toggle="tooltip"
-					title="Publica el Comentario"
+					title="Responder al Comentario"
 				>
-					Publicar &#10148;
+					Responder &#10148;
 				</button>
 			</div>
 		</form >
