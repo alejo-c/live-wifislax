@@ -3,11 +3,7 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import { MDBNavItem, MDBNavbarToggler, MDBCollapse, MDBNavbarNav, MDBNavLink } from "mdbreact"
 
 export default class ContentTabbedBar extends Component {
-	constructor() {
-		super()
-		this.state = { isOpen: false }
-		this.scrollSpyText = React.createRef()
-	}
+	state = { isOpen: false }
 
 	toggleCollapse = () => {
 		this.setState({ isOpen: !this.state.isOpen });

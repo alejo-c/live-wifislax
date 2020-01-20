@@ -4,10 +4,7 @@ import { MDBInput } from 'mdbreact'
 import './scrollable.css'
 
 export default class CommentForm extends Component {
-	constructor() {
-		super()
-		this.state = { username: '', content: '', errorMessage: '' }
-	}
+	state = { username: '', content: '', errorMessage: '' }
 
 	handleChange = e => {
 		const { value, name } = e.target

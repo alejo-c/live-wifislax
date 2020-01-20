@@ -2,10 +2,7 @@ import React, { Component } from 'react'
 import { MDBCollapse, MDBListGroup, MDBListGroupItem } from 'mdbreact'
 
 export default class SideLinksPage extends Component {
-	constructor() {
-		super()
-		this.state = { collapseID: '' }
-	}
+	state = { collapseID: '' }
 
 	toggleCollapse = collapseID => () => {
 		this.setState(prevState => ({
