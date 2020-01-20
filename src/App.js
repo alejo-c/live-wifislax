@@ -14,11 +14,8 @@ import menuLinks from './data/menu-links.json'
 import icons from './data/icons.json'
 
 export default class App extends Component {
-	constructor() {
-		super()
-		this.state = { activeTab: '1', comments: [] }
-		this.database = window.firebase.database()
-	}
+	state = { activeTab: '1', comments: [] }
+	database = window.firebase.database()
 
 	handleToggleTab = tab => () => {
 		if (this.state.activeTab !== tab)
