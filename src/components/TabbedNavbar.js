@@ -50,9 +50,12 @@ export default class ContentTabbedBar extends Component {
 						}
 						{
 							this.props.linkTabs.map((tab, i) => {
-								return <MDBNavItem key={i}>
+								return <MDBNavItem key={i}
+									data-toggle="tooltip"
+									title={tab.tooltip}
+								>
 									<MDBNavLink to="#" onClick={() => {
-										window.open(tab.href, '_self')
+										window.open(tab.href, '_blank')
 									}}>
 										{tab.title}
 									</MDBNavLink>

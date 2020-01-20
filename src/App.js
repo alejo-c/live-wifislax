@@ -96,7 +96,13 @@ export default class App extends Component {
 							{ title: 'Versiones' },
 						]
 					}
-					linkTabs={[{ title: 'Foro', href: 'https://foro.seguridadwireless.net/live-wifislax/' }]}
+					linkTabs={[
+						{
+							title: 'Foro',
+							href: 'https://foro.seguridadwireless.net/live-wifislax/',
+							tooltip: 'SeguridadWireless.net'
+						}
+					]}
 					onToggleTab={this.handleToggleTab}
 				/>
 			</header>
