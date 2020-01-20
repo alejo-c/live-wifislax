@@ -14,7 +14,7 @@ export default class SideLinksPage extends Component {
 	}
 
 	render() {
-		return <MDBListGroup>
+		return <div>
 			{
 				this.props.menus.map((menu, i) => {
 					const angle = this.state.collapseID === i ? 'fa fa-angle-up' : 'fa fa-angle-down'
@@ -24,7 +24,7 @@ export default class SideLinksPage extends Component {
 							{menu.title}<i className={'ml-1 ' + angle} />
 						</div>
 
-						<MDBCollapse id={i} isOpen={this.state.collapseID}>
+						<MDBCollapse id={`${i}`} isOpen={this.state.collapseID}>
 							<MDBListGroup>
 								{
 									menu.links.map((link, j) => {
@@ -38,6 +38,6 @@ export default class SideLinksPage extends Component {
 					</MDBListGroupItem>
 				})
 			}
-		</MDBListGroup>
+		</div>
 	}
 }
