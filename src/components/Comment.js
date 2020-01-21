@@ -80,7 +80,7 @@ export default class Comment extends Component {
 				>
 					<i className='fa fa-flag' />
 				</button>
-				<span className={'badge badge-info ml-5 ' + (this.state.reported ? 'visible' : 'invisible')}>
+				<span className={'badge badge-info ml-4 ' + (this.state.reported ? 'visible' : 'invisible')}>
 					Comentario reportado <i className='fa fa-check-circle' />
 				</span>
 			</div>
