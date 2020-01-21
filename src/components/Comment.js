@@ -51,7 +51,7 @@ export default class Comment extends Component {
 		return <div className='mb-1'>
 			<div className='media'>
 				<img
-					className='mr-1 bg-light rounded'
+					className='mr-1 rounded'
 					src={`https://api.adorable.io/avatars/50/${this.clear(username)}@adorable.io.png`}
 					alt={username}
 				/>
@@ -73,14 +73,14 @@ export default class Comment extends Component {
 					<i className={'ml-1 ' + angle} />
 				</button>
 				<button
-					className='btn btn-danger d-inline-block ml-5 py-1 px-2'
+					className='btn btn-danger d-inline-block ml-4 py-1 px-2'
 					onClick={this.handleCommentReport}
 					data-toggle="tooltip"
 					title="Reportar Comentario"
 				>
 					<i className='fa fa-flag' />
 				</button>
-				<span className={'badge badge-info ml-4 ' + (this.state.reported ? 'visible' : 'invisible')}>
+				<span className={'badge badge-info ' + (this.state.reported ? 'visible' : 'invisible')}>
 					Comentario reportado <i className='fa fa-check-circle' />
 				</span>
 			</div>
