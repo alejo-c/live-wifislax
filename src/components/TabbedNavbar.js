@@ -6,7 +6,12 @@ export default class ContentTabbedBar extends Component {
 	state = { isOpen: false }
 
 	toggleCollapse = () => {
-		this.setState({ isOpen: !this.state.isOpen });
+		this.setState({ isOpen: !this.state.isOpen })
+	}
+
+	handleToggleTab = tab => () => {
+		this.props.onToggleTab(`${tab + 1}`)
+		this.setState({ isOpen: !this.state.isOpen })
 	}
 
 	render() {
@@ -28,7 +33,7 @@ export default class ContentTabbedBar extends Component {
 									return <MDBNavItem key={i} active>
 										<MDBNavLink
 											to="#"
-											onClick={this.props.onToggleTab(`${i + 1}`)}
+											onClick={this.handleToggleTab(i)}
 										>
 											{tab.title}
 										</MDBNavLink>
@@ -37,7 +42,7 @@ export default class ContentTabbedBar extends Component {
 								return <MDBNavItem key={i}>
 									<MDBNavLink
 										to="#"
-										onClick={this.props.onToggleTab(`${i + 1}`)}
+										onClick={this.handleToggleTab(i)}
 									>
 										{tab.title}
 									</MDBNavLink>

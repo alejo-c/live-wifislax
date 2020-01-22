@@ -17,7 +17,7 @@ export default class App extends Component {
 	state = { activeTab: '1', comments: [] }
 	database = window.firebase.database()
 
-	handleToggleTab = tab => () => {
+	handleToggleTab = tab => {
 		if (this.state.activeTab !== tab)
 			this.setState({ activeTab: tab })
 	}
