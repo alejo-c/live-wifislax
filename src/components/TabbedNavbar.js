@@ -11,7 +11,8 @@ export default class ContentTabbedBar extends Component {
 
 	handleToggleTab = tab => () => {
 		this.props.onToggleTab(`${tab + 1}`)
-		this.setState({ isOpen: !this.state.isOpen })
+		if (window.innerWidth < 768)
+			this.setState({ isOpen: !this.state.isOpen })
 	}
 
 	render() {
