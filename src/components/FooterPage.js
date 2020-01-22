@@ -8,7 +8,7 @@ import './icon.css'
 export default class FooterPage extends Component {
 	render() {
 		return <MDBFooter color="elegant-color" className="font-small pt-3">
-			<div className='container-fluid ml-3'>
+			<div className='container-fluid'>
 				<div className='row'>
 					<div className="col-xs-12 col-sm-12 col-md-12 col-lg-5 col-xl-5">
 						<h5 className="title"><strong>Live WifiSlax</strong></h5>
