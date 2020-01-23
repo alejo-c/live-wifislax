@@ -106,15 +106,15 @@ export default class App extends Component {
 
 			<section className='container-fluid'>
 				<div className='row'>
-					<div className='m-0 p-0 col-md-10 col-lg-10 col-xl-10'>
+					<div className='m-0 p-0 col-lg-10 col-xl-10'>
 						<ContentTabs activeTab={this.state.activeTab} />
-						<div className='row m-0 p-0 pb-3'>
-							<div className='pt-2 border-right col-lg-5 col-xl-5'>
+						<div className='row m-0 p-0 pb-md-3 pb-lg-3 pb-xl-3'>
+							<div className='pt-2 border-right col-md-5 col-lg-5 col-xl-5'>
 								<CommentForm
 									onAddComment={this.handleAddComment}
 								/>
 							</div>
-							<div className='pt-2 col-lg-7 col-xl-7'>
+							<div className='border-left col-md-7 col-lg-7 col-xl-7'>
 								<CommentListContainer
 									comments={this.state.comments}
 									onCommentReply={this.handleCommentReply}
@@ -124,7 +124,7 @@ export default class App extends Component {
 						</div>
 					</div>
 
-					<div className='elegant-color-dark m-0 p-0 col-md-2 col-lg-2 col-xl-2'>
+					<div className='elegant-color-dark m-0 p-0 col-lg-2 col-xl-2'>
 						<SideLinksPage menus={menuLinks} />
 					</div>
 				</div>
