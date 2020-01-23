@@ -18,7 +18,7 @@ export default class SideLinksPage extends Component {
 						? 'fa fa-angle-up'
 						: 'fa fa-angle-down'
 					return <MDBListGroupItem
-						className='text-white elegant-color-dark m-0 pr-0 text-left'
+						className='text-white elegant-color-dark m-0 pl-2 pr-1'
 						key={i}
 					>
 						<div onClick={this.toggleCollapse(`${i}`)}>
@@ -29,7 +29,7 @@ export default class SideLinksPage extends Component {
 								{
 									menu.links.map((link, j) => {
 										return <MDBListGroupItem
-											className='elegant-color'
+											className='elegant-color-dark'
 											key={j}
 										>
 											<a
