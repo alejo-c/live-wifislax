@@ -14,7 +14,7 @@ export default class SideLinksPage extends Component {
 		return <div>
 			{
 				this.props.menus.map((menu, i) => {
-					const angle = this.state.collapseID === i
+					const angle = this.state.collapseID === `${i}`
 						? 'fa fa-angle-up'
 						: 'fa fa-angle-down'
 					return <MDBListGroupItem
@@ -37,6 +37,7 @@ export default class SideLinksPage extends Component {
 												href={link.href}
 												target='_blank'
 												rel='noopener noreferrer'
+												onClick={this.toggleCollapse(`${i}`)}
 											>{link.text}</a>
 										</MDBListGroupItem>
 									})
