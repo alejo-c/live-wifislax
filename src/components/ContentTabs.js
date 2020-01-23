@@ -12,32 +12,42 @@ export default class ContentTab extends Component {
 	render() {
 		const scrollbarStyle = { overflowY: 'scroll', height: '500px' }
 
-		return <div className='text-left mt-3'>
-			<MDBTabContent className='card p-3' activeItem={this.props.activeTab}>
-				<MDBTabPane tabId='1' role='tabpanel'>
-					<div className='scrollable' style={scrollbarStyle}>
-						<Start />
-					</div>
-				</MDBTabPane>
+		return <MDBTabContent className='card mt-sm-2 mx-sm-2' activeItem={this.props.activeTab}>
+			<MDBTabPane
+				tabId='1'
+				role='tabpanel'
+				className='scrollable'
+				style={scrollbarStyle}
+			>
+				<Start />
+			</MDBTabPane>
 
-				<MDBTabPane tabId='2' role='tabpanel'>
-					<div className='scrollable' style={scrollbarStyle}>
-						<History />
-					</div>
-				</MDBTabPane>
+			<MDBTabPane
+				tabId='2'
+				role='tabpanel'
+				className='scrollable'
+				style={scrollbarStyle}
+			>
+				<History />
+			</MDBTabPane>
 
-				<MDBTabPane tabId='3' role='tabpanel'>
-					<div className='scrollable' style={scrollbarStyle}>
-						<Instalation />
-					</div>
-				</MDBTabPane>
+			<MDBTabPane
+				tabId='3'
+				role='tabpanel'
+				className='scrollable'
+				style={scrollbarStyle}
+			>
+				<Instalation />
+			</MDBTabPane>
 
-				<MDBTabPane tabId='4' role='tabpanel'>
-					<div className='scrollable' style={scrollbarStyle}>
-						<Versions />
-					</div>
-				</MDBTabPane>
-			</MDBTabContent>
-		</div>
+			<MDBTabPane
+				tabId='4'
+				role='tabpanel'
+				className='scrollable'
+				style={scrollbarStyle}
+			>
+				<Versions />
+			</MDBTabPane>
+		</MDBTabContent>
 	}
 }
