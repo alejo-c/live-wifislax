@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 
 export default class Instalation extends Component {
 	render() {
-		return <div>
+		return <div className='text-justify px-3 pt-2'>
+			<h1 className='text-muted font-weight-bold'>INSTALACIÓN</h1>
 			<ol>
 				<li>Descarga el archivo *.iso correspondiente a la version del sistema operativo.</li>
 				Usando el BOOT desde el computador o mediante un emulador como
