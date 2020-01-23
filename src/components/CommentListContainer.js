@@ -10,8 +10,8 @@ export default class CommentListContainer extends Component {
 		// const scrollbarStyle = { overflowY: "scroll", height: "500px" }
 		return <div className="scrollbar pt-2">
 			<h5 className="text-muted">
-				<div className="badge badge-info mr-1 mb-1">{count}</div>
-				{`Comentario${count === 1 ? "" : "s"}`}
+				<div className="badge badge-info mb-md-1">{count}</div>
+				{` Comentario${count === 1 ? "" : "s"}`}
 			</h5>
 
 			<div className="alert text-center alert-info" style={empty}>

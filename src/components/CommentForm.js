@@ -24,7 +24,7 @@ export default class CommentForm extends Component {
 	}
 
 	render() {
-		return <form className='text-left pr-2' onSubmit={this.handleSubmit} autoComplete='off'>
+		return <form className='text-left' onSubmit={this.handleSubmit} autoComplete='off'>
 			<h4 className="text-muted pt-2">Publicar Comentario</h4>
 			<MDBInput
 				className='my-0 mr-0 px-0'

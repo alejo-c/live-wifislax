@@ -55,7 +55,7 @@ export default class Comment extends Component {
 					src={`https://api.adorable.io/avatars/50/${this.clear(username)}@adorable.io.png`}
 					alt={username}
 				/>
-				<div className='media-body p-2 shadow-sm rounded bg-light border mr-2'>
+				<div className='media-body p-2 shadow-sm rounded bg-light border'>
 					<small className='float-right text-muted'>{date}</small>
 					<h6 className='mr-2'><strong>{username}</strong></h6>
 					{content}
