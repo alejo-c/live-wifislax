@@ -1,10 +1,10 @@
 {
-	"short_name": "Live-WifiSlax",
-	"name": "Live WifiSlax",
+	"short_name": "Live WifiSlax",
+	"name": "Live WifiSlax Website",
 	"icons": [
 		{
 			"src": "logo.png",
-			"sizes": "64x64 32x32 24x24 16x16",
+			"sizes": "48x64 24x32 18x24 12x16",
 			"type": "image/png"
 		}
 	],
