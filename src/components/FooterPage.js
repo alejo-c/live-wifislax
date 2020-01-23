@@ -10,42 +10,51 @@ export default class FooterPage extends Component {
 		return <MDBFooter color="elegant-color" className="font-small pt-3">
 			<div className='container-fluid'>
 				<div className='row'>
-					<div className="col-xs-12 col-sm-12 col-md-12 col-lg-5 col-xl-5">
-						<h5 className="title"><strong>Live WifiSlax</strong></h5>
+					<div className="col-lg-5 col-xl-5">
+						<h5 className="font-weight-bold">Live WifiSlax</h5>
 						<p>
-							Pagina Web que muestra una descripción general del
-							sistema operativo Live WifiSlax, historia, pasos de
-							instalacion, links de descarga para diferentes
-							versiones y tutoriales de instalacion y uso.
+							Pagina Web que muestra una descripción general del sistema
+							operativo Live WifiSlax, historia, pasos de instalacion,
+							links de descarga para diferentes versiones y tutoriales de
+							instalacion y uso.
             			</p>
 					</div>
 
-					<div className="col-xs-5 col-sm-5 col-md-4 col-lg-2 col-xl-2">
-						<h5 className="title"><strong>Otros Enlaces</strong></h5>
+					<div className="col-sm-6 col-md-4 col-lg-2 col-xl-2">
+						<h5 className="font-weight-bold">Otros Enlaces</h5>
 						<ul>
 							{
 								this.props.links.map((link, i) => {
 									return <li key={i} style={{ listStyleType: 'none' }}>
 										<i className="fa fa-angle-right mr-1" />
-										<a href={link.href} target='_blank' rel='noopener noreferrer'>{link.text}</a>
+										<a
+											href={link.href}
+											target='_blank'
+											rel='noopener noreferrer'
+										>{link.text}</a>
 									</li>
 								})
 							}
 						</ul>
 					</div>
 
-					<div className='col-xs-12 col-sm-12 col-md-4 col-lg-2 col-xl-2'>
-						<h5 className="title"><strong>Información de Contacto</strong></h5>
+					<div className='col-sm-6 col-md-4 col-lg-2 col-xl-2'>
+						<h5 className="font-weight-bold">Información de Contacto</h5>
 						<ul>
 							<li style={{ listStyleType: 'none' }}>
 								<i className="fa fa-envelope mr-1" />
-								<strong>E-mail: </strong><a href="mailto: live.wifislax@gmail.com" target='_blank' rel='noopener noreferrer'>live.wifislax@gmail.com</a>
+								<strong>E-mail: </strong>
+								<a
+									href="mailto: live.wifislax@gmail.com"
+									target='_blank'
+									rel='noopener noreferrer'
+								>live.wifislax@gmail.com</a>
 							</li>
 						</ul>
 					</div>
 
-					<div className="col-xs-12 col-sm-12 col-md-4 col-lg-3 col-xl-3">
-						<h5 className="title"><strong>Herramientas Utilizadas</strong></h5>
+					<div className="col-md-4 col-lg-3 col-xl-3">
+						<h5 className="font-weight-bold">Herramientas Utilizadas</h5>
 						<ul>
 							{
 								this.props.iconsLinks.map((iconLink, i) => {
