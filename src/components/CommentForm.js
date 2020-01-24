@@ -25,7 +25,9 @@ export default class CommentForm extends Component {
 
 	render() {
 		return <form className='text-left' onSubmit={this.handleSubmit} autoComplete='off'>
-			<h4 className="text-muted pt-2">Publicar Comentario</h4>
+			<div className={'text-muted ' + (this.props.reply ? 'h6' : 'h4 pt-2')}>
+				{this.props.title}
+			</div>
 			<MDBInput
 				className='my-0 mr-0 px-0'
 				name='username'
@@ -56,11 +58,11 @@ export default class CommentForm extends Component {
 					className='btn btn-info m-0'
 					type='submit'
 					data-toggle="tooltip"
-					title="Publica el Comentario"
+					title={this.props.tooltip}
 				>
-					Publicar &#10148;
+					{this.props.button} &#10148;
 				</button>
 			</div>
-		</form>
+		</form >
 	}
 }
