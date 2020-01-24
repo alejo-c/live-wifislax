@@ -18,7 +18,7 @@ export default class CommentListContainer extends Component {
 			</div>
 
 			<CommentList
-				path={'posted'}
+				path={this.props.initialPath}
 				comments={this.props.comments}
 				onCommentReply={this.props.onCommentReply}
 				onCommentReport={this.props.onCommentReport}
