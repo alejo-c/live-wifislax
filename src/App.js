@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import banner from './images/banner.png'
 
 import TabbedNavbar from './components/TabbedNavbar'
-import ContentTabs from './components/ContentTabs';
+import ContentTabs from './components/ContentTabs'
 import SideLinksPage from './components/SideLinksPage'
 
 import CommentForm from './components/CommentForm'
