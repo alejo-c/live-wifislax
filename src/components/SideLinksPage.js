@@ -22,7 +22,7 @@ export default class SideLinksPage extends Component {
 						key={i}
 					>
 						<div onClick={this.toggleCollapse(`${i}`)}>
-							{menu.title}<i className={'ml-1 ' + angle} />
+							{menu.title} <i className={angle} />
 						</div>
 						<MDBCollapse id={`${i}`} isOpen={this.state.collapseID}>
 							<MDBListGroup>

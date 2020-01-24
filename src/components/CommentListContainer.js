@@ -8,12 +8,12 @@ export default class CommentListContainer extends Component {
 		const empty = { display: (count === 0 && !this.props.loading ? '' : 'none') }
 
 		return <div className="pt-md-3 pt-lg-3 pt-xl-3">
-			<h5 className="text-muted">
+			<h5>
 				<div className="badge badge-info mb-md-1">{count}</div>
 				{` Comentario${count === 1 ? "" : "s"}`}
 			</h5>
 
-			<div className="alert text-center alert-info" style={empty}>
+			<div className="alert alert-info text-center" style={empty}>
 				Se el primero en comentar <i className="far fa-comment-alt"></i>
 			</div>
 
