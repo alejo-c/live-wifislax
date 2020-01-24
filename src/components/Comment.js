@@ -1,17 +1,11 @@
 import React, { Component } from 'react'
 import { MDBCollapse } from 'mdbreact'
 
-import ReplyForm from './ReplyForm'
+import CommentForm from './CommentForm'
 import CommentList from './CommentList'
 
 export default class Comment extends Component {
 	state = { replies: [], collapseID: '', reported: false }
-
-	clear = string => {
-		while (string.includes(' '))
-			string = string.replace(' ', '')
-		return string.toLowerCase()
-	}
 
 	handleCommentReply = reply => {
 		this.props.onCommentReply(
@@ -52,7 +46,7 @@ export default class Comment extends Component {
 			<div className='media'>
 				<img
 					className='mr-1 rounded'
-					src={`https://api.adorable.io/avatars/50/${this.clear(username)}@adorable.io.png`}
+					src={`https://api.adorable.io/avatars/50/${username}@adorable.io.png`}
 					alt={username}
 				/>
 				<div className='media-body p-2 shadow-sm rounded bg-light border'>
@@ -87,10 +81,16 @@ export default class Comment extends Component {
 
 			<MDBCollapse id='collapse' isOpen={this.state.collapseID}>
 				<div className='pl-2 ml-5'>
-					<ReplyForm
+					<CommentForm
+						reply={true}
+						title='Responder al Comentario'
+						tooltip='Responder al Comentario'
+						button='Responder'
 						onAddComment={this.handleCommentReply}
 					/>
-					<h6 className={'text-muted' + (replies.length ? '' : ' invisible')}>Respuestas</h6>
+					<div
+						className={replies.length ? 'h6 text-muted' : 'alert alert-info m-0 mt-1 p-0 py-1 text-center'}
+					>{replies.length ? 'Respuestas' : 'Se el primero en responder'}</div>
 					<CommentList
 						path={`${this.props.path}/${this.props.comment.id}/replies`}
 						comments={replies}
