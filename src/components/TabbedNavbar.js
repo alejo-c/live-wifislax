@@ -17,13 +17,10 @@ export default class ContentTabbedBar extends Component {
 
 	render() {
 		return <Router>
-			<div className='navbar navbar-expand-md navbar-dark bg-dark text-center'>
-				<div className='nav-item'>
-					<img className='mr-3' src={this.props.image} width='40' alt='tabbed-nav' />
-				</div>
-				<div className='navbar-brand'>
-					<strong className="white-text">{this.props.title}</strong>
-				</div>
+			<div className='navbar navbar-expand-md navbar-dark bg-dark'>
+				<img className='mr-3' src={this.props.image} width='35' alt='tabbed-nav' />
+				<div className='navbar-brand'><strong>{this.props.title}</strong></div>
+
 				<MDBNavbarToggler onClick={this.toggleCollapse} />
 
 				<MDBCollapse isOpen={this.state.isOpen} navbar>
@@ -35,18 +32,14 @@ export default class ContentTabbedBar extends Component {
 										<MDBNavLink
 											to="#"
 											onClick={this.handleToggleTab(i)}
-										>
-											{tab.title}
-										</MDBNavLink>
+										>{tab}</MDBNavLink>
 									</MDBNavItem>
 								}
 								return <MDBNavItem key={i}>
 									<MDBNavLink
 										to="#"
 										onClick={this.handleToggleTab(i)}
-									>
-										{tab.title}
-									</MDBNavLink>
+									>{tab}</MDBNavLink>
 								</MDBNavItem>
 							})
 						}
@@ -58,9 +51,7 @@ export default class ContentTabbedBar extends Component {
 								>
 									<MDBNavLink to="#" onClick={() => {
 										window.open(tab.href, '_blank')
-									}}>
-										{tab.title}
-									</MDBNavLink>
+									}}>{tab.title}</MDBNavLink>
 								</MDBNavItem>
 							})
 						}
