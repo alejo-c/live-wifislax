@@ -10,6 +10,11 @@ import CommentForm from './components/CommentForm'
 import CommentListContainer from './components/CommentListContainer'
 import FooterPage from './components/FooterPage'
 
+import Start from './components/content/Start'
+import History from './components/content/History'
+import Instalation from './components/content/Instalation'
+import Versions from './components/content/Versions'
+
 import menuLinks from './data/menu-links.json'
 import icons from './data/icons.json'
 
@@ -80,19 +85,14 @@ export default class App extends Component {
 	render() {
 		return <div>
 			<header>
-				<div className='text-center'><img src={banner} alt='banner' style={{ width: '60%' }} /></div>
+				<div className='text-center'>
+					<img src={banner} alt='banner' style={{ width: '60%' }} />
+				</div>
 				<TabbedNavbar
 					image='https://raw.githubusercontent.com/alejo-castrillon/live-wifislax/react-structure/src/images/logo.png'
 					title='Live WifiSlax'
 					activeTab={this.state.activeTab}
-					contentTabs={
-						[
-							{ title: 'Inicio' },
-							{ title: 'Historia' },
-							{ title: 'Guia Instalación' },
-							{ title: 'Versiones' },
-						]
-					}
+					contentTabs={['Inicio', 'Historia', 'Guia Instalación', 'Versiones']}
 					linkTabs={[
 						{
 							title: 'Foro',
@@ -107,15 +107,22 @@ export default class App extends Component {
 			<section className='container-fluid'>
 				<div className='row'>
 					<div className='m-0 p-0 col-lg-10 col-xl-10'>
-						<ContentTabs activeTab={this.state.activeTab} />
+						<ContentTabs
+							activeTab={this.state.activeTab}
+							contents={[<Start />, <History />, <Instalation />, <Versions />]}
+						/>
 						<div className='row m-0 p-0 pb-md-3 pb-lg-3 pb-xl-3'>
 							<div className='pt-2 border-right col-md-5 col-lg-5 col-xl-5'>
 								<CommentForm
+									title='Publicar Comentario'
+									tooltip='Publicar el Comentario'
+									button='Publicar'
 									onAddComment={this.handleAddComment}
 								/>
 							</div>
 							<div className='border-left col-md-7 col-lg-7 col-xl-7'>
 								<CommentListContainer
+									initialPath='posted'
 									comments={this.state.comments}
 									onCommentReply={this.handleCommentReply}
 									onCommentReport={this.handleCommentReport}
@@ -130,12 +137,16 @@ export default class App extends Component {
 				</div>
 			</section>
 
-			<FooterPage links={
-				[
-					{ text: 'Pagina Principal de Live WifiSlax', href: 'https://www.wifislax.com' },
-					{ text: 'Foro Principal del Sistema Operativo', href: 'https://foro.seguridadwireless.net/live-wifislax/' }
-				]
-			} iconsLinks={icons} />
+			<FooterPage links={[
+				{
+					text: 'Pagina Principal de Live WifiSlax',
+					href: 'https://www.wifislax.com'
+				},
+				{
+					text: 'Foro Principal del Sistema Operativo',
+					href: 'https://foro.seguridadwireless.net/live-wifislax/'
+				}
+			]} iconsLinks={icons} />
 		</div>
 	}
 }
