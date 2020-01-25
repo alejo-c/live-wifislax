@@ -1,7 +1,7 @@
 [
 	{
 		"mr": 3,
-		"src": "https://github.com/alejo-castrillon/live-wifislax/blob/react-structure/src/images/reactjs.png?raw=true",
+		"src": "https://raw.githubusercontent.com/alejo-castrillon/live-wifislax/master/src/images/reactjs.png",
 		"size": 30,
 		"alt": "reactjs-logo",
 		"href": "https://es.reactjs.org/",
@@ -10,7 +10,7 @@
 	},
 	{
 		"mr": 1,
-		"src": "https://github.com/alejo-castrillon/live-wifislax/blob/react-structure/src/images/mdbreact.png?raw=true",
+		"src": "https://raw.githubusercontent.com/alejo-castrillon/live-wifislax/master/src/images/mdbreact.png",
 		"size": 41,
 		"alt": "mdbreact-logo",
 		"href": "https://mdbootstrap.com/docs/react/",
@@ -19,7 +19,7 @@
 	},
 	{
 		"mr": 3,
-		"src": "https://github.com/alejo-castrillon/live-wifislax/blob/react-structure/src/images/github-lg.png?raw=true",
+		"src": "https://raw.githubusercontent.com/alejo-castrillon/live-wifislax/master/src/images/github.png",
 		"size": 30,
 		"alt": "github-logo",
 		"href": "https://pages.github.com/",
@@ -28,7 +28,7 @@
 	},
 	{
 		"mr": 3,
-		"src": "https://github.com/alejo-castrillon/live-wifislax/blob/react-structure/src/images/firebase.png?raw=true",
+		"src": "https://raw.githubusercontent.com/alejo-castrillon/live-wifislax/master/src/images/firebase.png",
 		"size": 30,
 		"alt": "firebase-logo",
 		"href": "https://firebase.google.com/products/realtime-database/",

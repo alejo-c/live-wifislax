@@ -89,7 +89,7 @@ export default class App extends Component {
 					<img src={banner} alt='banner' style={{ width: '60%' }} />
 				</div>
 				<TabbedNavbar
-					image='https://raw.githubusercontent.com/alejo-castrillon/live-wifislax/react-structure/src/images/logo.png'
+					image='https://raw.githubusercontent.com/alejo-castrillon/live-wifislax/master/src/images/logo.png'
 					title='Live WifiSlax'
 					activeTab={this.state.activeTab}
 					contentTabs={['Inicio', 'Historia', 'Guia Instalación', 'Versiones']}
