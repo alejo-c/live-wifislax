@@ -17,7 +17,7 @@ export default class ContentTabbedBar extends Component {
 
 	render() {
 		return <Router>
-			<div className='navbar navbar-expand-md navbar-dark bg-dark'>
+			<div className='navbar navbar-expand-md navbar-dark bg-dark text-center'>
 				<img className='mr-3' src={this.props.image} width='35' alt='tabbed-nav' />
 				<div className='navbar-brand'><strong>{this.props.title}</strong></div>
 
@@ -27,15 +27,10 @@ export default class ContentTabbedBar extends Component {
 					<MDBNavbarNav left>
 						{
 							this.props.contentTabs.map((tab, i) => {
-								if (this.props.activeTab === `${i + 1}`) {
-									return <MDBNavItem key={i} active>
-										<MDBNavLink
-											to="#"
-											onClick={this.handleToggleTab(i)}
-										>{tab}</MDBNavLink>
-									</MDBNavItem>
-								}
-								return <MDBNavItem key={i}>
+								return <MDBNavItem
+									key={i}
+									className={this.props.activeTab === `${i + 1}` ? 'active' : ''}
+								>
 									<MDBNavLink
 										to="#"
 										onClick={this.handleToggleTab(i)}
