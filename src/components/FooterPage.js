@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { MDBFooter } from "mdbreact"
 
-import github from '../images/github-lg.png'
+import github from '../images/github.png'
 
 import './icon.css'
 
