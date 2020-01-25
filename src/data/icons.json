@@ -11,7 +11,7 @@
 	{
 		"mr": 1,
 		"src": "https://raw.githubusercontent.com/alejo-castrillon/live-wifislax/master/src/images/mdbreact.png",
-		"size": 41,
+		"size": 40,
 		"alt": "mdbreact-logo",
 		"href": "https://mdbootstrap.com/docs/react/",
 		"text": "Material Design Bootstrap React",
@@ -29,7 +29,7 @@
 	{
 		"mr": 3,
 		"src": "https://raw.githubusercontent.com/alejo-castrillon/live-wifislax/master/src/images/firebase.png",
-		"size": 30,
+		"size": 31,
 		"alt": "firebase-logo",
 		"href": "https://firebase.google.com/products/realtime-database/",
 		"text": "Firebase Realtime Database",

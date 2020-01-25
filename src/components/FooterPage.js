@@ -11,7 +11,7 @@ export default class FooterPage extends Component {
 			<div className='container-fluid'>
 				<div className='row'>
 					<div className="col-lg-5 col-xl-5">
-						<h5 className="font-weight-bold">Live WifiSlax</h5>
+						<div className="h5 font-weight-bold">Live WifiSlax</div>
 						<p>
 							Pagina Web que muestra una descripción general del sistema
 							operativo Live WifiSlax, historia, pasos de instalacion,
@@ -21,60 +21,60 @@ export default class FooterPage extends Component {
 					</div>
 
 					<div className="col-sm-6 col-md-4 col-lg-2 col-xl-2">
-						<h5 className="font-weight-bold">Otros Enlaces</h5>
-						<ul>
+						<div className="h5 font-weight-bold">Otros Enlaces</div>
+						<div className='ml-3 mb-3'>
 							{
 								this.props.links.map((link, i) => {
-									return <li key={i} style={{ listStyleType: 'none' }}>
+									return <div key={i} style={{ listStyleType: 'none' }}>
 										<i className="fa fa-angle-right mr-1" />
 										<a
 											href={link.href}
 											target='_blank'
 											rel='noopener noreferrer'
 										>{link.text}</a>
-									</li>
+									</div>
 								})
 							}
-						</ul>
+						</div>
 					</div>
 
 					<div className='col-sm-6 col-md-4 col-lg-2 col-xl-2'>
-						<h5 className="font-weight-bold">Información de Contacto</h5>
-						<ul>
-							<li style={{ listStyleType: 'none' }}>
-								<i className="fa fa-envelope mr-1" />
-								<strong>E-mail: </strong>
-								<a
-									href="mailto: live.wifislax@gmail.com"
-									target='_blank'
-									rel='noopener noreferrer'
-								>live.wifislax@gmail.com</a>
-							</li>
-						</ul>
+						<div className="h5 font-weight-bold">Información de Contacto</div>
+						<div className='ml-3 mb-3' style={{ listStyleType: 'none' }}>
+							<i className="fa fa-envelope mr-1" />
+							<strong>E-mail: </strong>
+							<a
+								href="mailto: live.wifislax@gmail.com"
+								target='_blank'
+								rel='noopener noreferrer'
+							>live.wifislax@gmail.com</a>
+						</div>
 					</div>
 
 					<div className="col-md-4 col-lg-3 col-xl-3">
 						<h5 className="font-weight-bold">Herramientas Utilizadas</h5>
-						<ul>
+						<div className='ml-4'>
 							{
 								this.props.iconsLinks.map((iconLink, i) => {
 									let spinning = iconLink.spinning === true ? 'Spinning-icon' : ''
-									return <li className='Icon list-unstyled' key={i}>
-										<img
-											className={`py-1 mr-${iconLink.mr} ` + spinning}
-											src={iconLink.src}
-											width={iconLink.size}
-											alt={iconLink.alt}
-										/>
+									return <div className='Icon list-unstyled' key={i}>
 										<a
 											href={iconLink.href}
 											target='_blank'
 											rel='noopener noreferrer'
-										>{iconLink.text}</a>
-									</li>
+										>
+											<img
+												className={`py-1 mr-${iconLink.mr} ` + spinning}
+												src={iconLink.src}
+												width={iconLink.size}
+												alt={iconLink.alt}
+											/>
+											{iconLink.text}
+										</a>
+									</div>
 								})
 							}
-						</ul>
+						</div>
 					</div>
 
 				</div>
