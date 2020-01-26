@@ -52,7 +52,7 @@ export default class CommentForm extends Component {
 					className={'text-muted badge badge-danger m-0 ' + (this.state.errorMessage ? 'visible' : 'invisible')}
 					style={{ height: '0%' }}
 				>
-					{this.state.errorMessage} <i className="fas fa-exclamation-circle"></i>
+					{this.state.errorMessage} <i className="fas fa-exclamation-circle" />
 				</div>
 				<button
 					className='btn btn-info m-0'
