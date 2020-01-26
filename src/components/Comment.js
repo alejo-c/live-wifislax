@@ -28,7 +28,7 @@ export default class Comment extends Component {
 	render() {
 		const angle = this.state.collapseID === 'collapse' ? "fa fa-angle-up" : "fa fa-angle-down"
 
-		const { username, content, date } = this.props.comment
+		let { username, content, date } = this.props.comment
 		let replies
 		let length
 
@@ -36,11 +36,12 @@ export default class Comment extends Component {
 			replies = []
 			length = 0
 		} else {
-			replies = Object.keys(this.props.comment.replies).map(key => {
-				return this.props.comment.replies[key]
-			})
+			replies = Object.keys(this.props.comment.replies)
+				.map(key => this.props.comment.replies[key])
 			length = replies.length
 		}
+
+		content = content.split('\n').map((line, i) => <div key={i}>{line}<br /></div>)
 
 		return <div className='mb-1'>
 			<div className='media'>
@@ -58,7 +59,7 @@ export default class Comment extends Component {
 			<div className='ml-2'>
 				<button
 					className='btn btn-warning d-inline-block ml-5 py-1 px-1'
-					onClick={this.toggleCollapse('collapse')}
+					onClick={this.toggleCollapse('replies')}
 					data-toggle="tooltip"
 					title="Ver Respuestas"
 				>
@@ -74,29 +75,31 @@ export default class Comment extends Component {
 				>
 					<i className='fa fa-flag' />
 				</button>
-				<span className={'badge badge-info ' + (this.state.reported ? 'visible' : 'invisible')}>
+				<span className={'badge badge-info ' + (this.state.reported ? '' : 'd-none')}>
 					Comentario reportado <i className='fa fa-check-circle' />
 				</span>
 			</div>
 
-			<MDBCollapse id='collapse' isOpen={this.state.collapseID}>
-				<div className='pl-2 ml-5'>
-					<CommentForm
-						reply={true}
-						title='Responder al Comentario'
-						tooltip='Responder al Comentario'
-						button='Responder'
-						onAddComment={this.handleCommentReply}
-					/>
-					<div
-						className={replies.length ? 'h6 text-muted' : 'alert alert-info m-0 mt-1 p-0 py-1 text-center'}
-					>{replies.length ? 'Respuestas' : 'Se el primero en responder'}</div>
-					<CommentList
-						path={`${this.props.path}/${this.props.comment.id}/replies`}
-						comments={replies}
-						onCommentReply={this.props.onCommentReply}
-						onCommentReport={this.props.onCommentReport}
-					/>
+			<MDBCollapse id='replies' isOpen={this.state.collapseID}>
+				<div className='pl-xs-3 pl-sm-5 border-left'>
+					<div className='pl-3 pl-sm-2'>
+						<CommentForm
+							reply={true}
+							title='Responder al Comentario'
+							tooltip='Responder al Comentario'
+							button='Responder'
+							onAddComment={this.handleCommentReply}
+						/>
+						<div
+							className={replies.length ? 'h6 text-muted' : 'alert alert-info m-0 mt-1 p-0 py-1 text-center'}
+						>{replies.length ? 'Respuestas' : 'Se el primero en responder'}</div>
+						<CommentList
+							path={`${this.props.path}/${this.props.comment.id}/replies`}
+							comments={replies}
+							onCommentReply={this.props.onCommentReply}
+							onCommentReport={this.props.onCommentReport}
+						/>
+					</div>
 				</div>
 			</MDBCollapse>
 		</div >
