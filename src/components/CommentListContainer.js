@@ -14,7 +14,7 @@ export default class CommentListContainer extends Component {
 			</h5>
 
 			<div className="alert alert-info text-center" style={empty}>
-				Se el primero en comentar <i className="far fa-comment-alt"></i>
+				Se el primero en comentar <i className="far fa-comment-alt" />
 			</div>
 
 			<CommentList
