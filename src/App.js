@@ -74,9 +74,7 @@ export default class App extends Component {
 		this.database.ref('posted/').on('value', snap => {
 			const currentComments = snap.val()
 			if (currentComments !== null) {
-				const newComments = Object.keys(currentComments).map(key => {
-					return currentComments[key]
-				})
+				const newComments = Object.keys(currentComments).map(key => currentComments[key])
 				this.setState({ comments: newComments })
 			}
 		})

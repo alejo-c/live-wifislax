@@ -24,8 +24,8 @@ export default class FooterPage extends Component {
 						<div className="h5 font-weight-bold">Otros Enlaces</div>
 						<div className='ml-3 mb-3'>
 							{
-								this.props.links.map((link, i) => {
-									return <div key={i} style={{ listStyleType: 'none' }}>
+								this.props.links.map((link, i) =>
+									<div key={i} style={{ listStyleType: 'none' }}>
 										<i className="fa fa-angle-right mr-1" />
 										<a
 											href={link.href}
@@ -33,7 +33,7 @@ export default class FooterPage extends Component {
 											rel='noopener noreferrer'
 										>{link.text}</a>
 									</div>
-								})
+								)
 							}
 						</div>
 					</div>

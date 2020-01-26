@@ -19,36 +19,36 @@ export default class ContentTabbedBar extends Component {
 		return <Router>
 			<div className='navbar navbar-expand-md navbar-dark bg-dark text-center'>
 				<img className='mr-3' src={this.props.image} width='35' alt='tabbed-nav' />
-				<div className='navbar-brand'><strong>{this.props.title}</strong></div>
+				<div className='navbar-brand font-weight-bold'>{this.props.title}</div>
 
 				<MDBNavbarToggler onClick={this.toggleCollapse} />
 
 				<MDBCollapse isOpen={this.state.isOpen} navbar>
 					<MDBNavbarNav left>
 						{
-							this.props.contentTabs.map((tab, i) => {
-								return <MDBNavItem
+							this.props.contentTabs.map((tab, i) =>
+								<MDBNavItem
 									key={i}
 									className={this.props.activeTab === `${i + 1}` ? 'active' : ''}
 								>
 									<MDBNavLink
-										to="#"
+										to=""
 										onClick={this.handleToggleTab(i)}
 									>{tab}</MDBNavLink>
 								</MDBNavItem>
-							})
+							)
 						}
 						{
-							this.props.linkTabs.map((tab, i) => {
-								return <MDBNavItem key={i}
+							this.props.linkTabs.map((tab, i) =>
+								<MDBNavItem key={i}
 									data-toggle="tooltip"
 									title={tab.tooltip}
 								>
-									<MDBNavLink to="#" onClick={() => {
+									<MDBNavLink to="" onClick={() => {
 										window.open(tab.href, '_blank')
 									}}>{tab.title}</MDBNavLink>
 								</MDBNavItem>
-							})
+							)
 						}
 					</MDBNavbarNav>
 				</MDBCollapse>

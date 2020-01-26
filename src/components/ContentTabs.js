@@ -10,15 +10,15 @@ export default class ContentTab extends Component {
 			activeItem={this.props.activeTab}
 		>
 			{
-				this.props.contents.map((content, i) => {
-					return <MDBTabPane
+				this.props.contents.map((content, i) => 
+					<MDBTabPane
 						key={i}
 						tabId={`${i + 1}`}
 						role='tabpanel'
 						className='scrollable'
-						style={{ overflowY: 'scroll', height: '500px' }}
+						style={{ height: `500px${window.innerWidth < 768 ? '.' : ''}` }}
 					>{content}</MDBTabPane>
-				})
+				)
 			}
 		</MDBTabContent>
 	}

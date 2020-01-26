@@ -27,8 +27,8 @@ export default class SideLinksPage extends Component {
 						<MDBCollapse id={`${i}`} isOpen={this.state.collapseID}>
 							<MDBListGroup>
 								{
-									menu.links.map((link, j) => {
-										return <MDBListGroupItem
+									menu.links.map((link, j) => 
+										<MDBListGroupItem
 											className='elegant-color-dark'
 											key={j}
 										>
@@ -40,7 +40,7 @@ export default class SideLinksPage extends Component {
 												onClick={this.toggleCollapse(`${i}`)}
 											>{link.text}</a>
 										</MDBListGroupItem>
-									})
+									)
 								}
 							</MDBListGroup>
 						</MDBCollapse>
