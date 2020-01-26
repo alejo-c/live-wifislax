@@ -53,7 +53,7 @@ export default class FooterPage extends Component {
 
 					<div className="col-md-4 col-lg-3 col-xl-3">
 						<h5 className="font-weight-bold">Herramientas Utilizadas</h5>
-						<div className='ml-4'>
+						<div className='ml-4 mb-2'>
 							{
 								this.props.iconsLinks.map((iconLink, i) => {
 									let spinning = iconLink.spinning === true ? 'Spinning-icon' : ''
