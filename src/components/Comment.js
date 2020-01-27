@@ -5,13 +5,12 @@ import CommentForm from './CommentForm'
 import CommentList from './CommentList'
 
 export default class Comment extends Component {
-	state = { replies: [], collapseID: '', reported: false }
+	state = { replies: [], collapseReplies: '', collapseForm: '', reported: false }
 
 	handleCommentReply = reply => {
 		this.props.onCommentReply(
-			`${this.props.path}/${this.props.comment.id}/replies/`,
-			reply
-		)
+			`${this.props.path}/${this.props.comment.id}/replies/`, reply)
+		this.setState({ collapseReplies: 'replies' })
 	}
 
 	handleCommentReport = () => {
@@ -19,70 +18,91 @@ export default class Comment extends Component {
 		this.setState({ reported: true })
 	}
 
-	toggleCollapse = collapseID => () => {
+	toggleCollapseForm = collapseForm => () => {
 		this.setState(prevState => ({
-			collapseID: prevState.collapseID !== collapseID ? collapseID : ''
+			collapseForm:
+				prevState.collapseForm !== collapseForm ? collapseForm : ''
+		}))
+	}
+
+	toggleCollapseReplies = collapseReplies => () => {
+		this.setState(prevState => ({
+			collapseReplies:
+				prevState.collapseReplies !== collapseReplies ?
+					collapseReplies : ''
 		}))
 	}
 
 	render() {
-		const angle = this.state.collapseID === 'collapse' ? "fa fa-angle-up" : "fa fa-angle-down"
-
 		let { username, content, date } = this.props.comment
-		let replies
-		let length
+		content = content.split('\n').map(
+			(line, i) => <div key={i}>{line}<br /></div>
+		)
 
+		let replies
+		let count
 		if (this.props.comment.replies === undefined) {
 			replies = []
-			length = 0
+			count = 0
 		} else {
 			replies = Object.keys(this.props.comment.replies)
 				.map(key => this.props.comment.replies[key])
-			length = replies.length
+			count = replies.length
 		}
-
-		content = content.split('\n').map((line, i) => <div key={i}>{line}<br /></div>)
+		let image = `https://api.adorable.io/avatars/44/${username}@adorable.io.png`
 
 		return <div className='mb-1'>
 			<div className='media'>
-				<img
-					className='mr-1 rounded'
-					src={`https://api.adorable.io/avatars/50/${username}@adorable.io.png`}
-					alt={username}
-				/>
+				<img className='mr-1 rounded' src={image} alt={username} />
 				<div className='media-body p-2 shadow-sm rounded bg-light border'>
 					<small className='float-right text-muted'>{date}</small>
-					<h6 className='mr-2'><strong>{username}</strong></h6>
+					<div className='h6 mr-2'><strong>{username}</strong></div>
 					{content}
 				</div>
 			</div>
-			<div className='ml-2'>
+			<div>
 				<button
-					className='btn btn-warning d-inline-block ml-5 py-1 px-1'
-					onClick={this.toggleCollapse('replies')}
+					className='btn btn-primary ml-0 ml-sm-5 py-1 px-2'
+					onClick={this.toggleCollapseForm('reply-form')}
+					data-toggle="tooltip"
+					title="Publicar Respuesta"
+				>
+					<i className='fa fa-comment-alt' />
+					<i className={
+						'ml-1 fas fa-chevron-' + (this.state.collapseForm === 'reply-form' ? 'up' : 'down')
+					} />
+				</button>
+
+				<button
+					className='btn btn-warning ml-sm-4 py-1 px-1'
+					onClick={this.toggleCollapseReplies('replies')}
 					data-toggle="tooltip"
 					title="Ver Respuestas"
 				>
-					{length}
-					<i className='fa fa-comment-alt ml-1' />
-					<i className={'ml-1 ' + angle} />
+					{count}
+					<i className="fas fa-comments ml-1" />
+					<i className={
+						'ml-1 fas fa-chevron-' + (this.state.collapseReplies === 'replies' ? 'up' : 'down')
+					} />
 				</button>
+
 				<button
-					className='btn btn-danger d-inline-block ml-4 py-1 px-2'
+					className='btn btn-danger ml-sm-4 py-1 px-2'
 					onClick={this.handleCommentReport}
 					data-toggle="tooltip"
 					title="Reportar Comentario"
 				>
 					<i className='fa fa-flag' />
 				</button>
-				<span className={'badge badge-info ' + (this.state.reported ? '' : 'd-none')}>
+
+				<span className={'badge badge-info ml-1 ' + (this.state.reported ? '' : 'd-none')}>
 					Comentario reportado <i className='fa fa-check-circle' />
 				</span>
 			</div>
 
-			<MDBCollapse id='replies' isOpen={this.state.collapseID}>
-				<div className='pl-xs-3 pl-sm-5 border-left'>
-					<div className='pl-3 pl-sm-2'>
+			<div className='pl-sm-5'>
+				<div className='pl-3 pl-sm-2 border-left'>
+					<MDBCollapse id='reply-form' isOpen={this.state.collapseForm}>
 						<CommentForm
 							reply={true}
 							title='Responder al Comentario'
@@ -90,8 +110,14 @@ export default class Comment extends Component {
 							button='Responder'
 							onAddComment={this.handleCommentReply}
 						/>
+					</MDBCollapse>
+					<MDBCollapse id='replies' isOpen={this.state.collapseReplies}>
 						<div
-							className={replies.length ? 'h6 text-muted' : 'alert alert-info m-0 mt-1 p-0 py-1 text-center'}
+							className={
+								replies.length ?
+									'h6 text-muted' :
+									'alert alert-info m-0 mt-1 p-0 py-1 text-center'
+							}
 						>{replies.length ? 'Respuestas' : 'Se el primero en responder'}</div>
 						<CommentList
 							path={`${this.props.path}/${this.props.comment.id}/replies`}
@@ -99,9 +125,9 @@ export default class Comment extends Component {
 							onCommentReply={this.props.onCommentReply}
 							onCommentReport={this.props.onCommentReport}
 						/>
-					</div>
+					</MDBCollapse>
 				</div>
-			</MDBCollapse>
-		</div >
+			</div>
+		</div>
 	}
 }
