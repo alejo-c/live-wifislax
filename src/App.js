@@ -3,11 +3,11 @@ import React, { Component } from 'react'
 import banner from './images/banner.png'
 
 import TabbedNavbar from './components/TabbedNavbar'
-import ContentTabs from './components/ContentTabs'
+import ContentPages from './components/ContentPages'
 import SideLinksPage from './components/SideLinksPage'
 
-import CommentForm from './components/CommentForm'
-import CommentListContainer from './components/CommentListContainer'
+import CommentForm from './components/comments/CommentForm'
+import CommentListContainer from './components/comments/CommentListContainer'
 import FooterPage from './components/FooterPage'
 
 import Start from './components/content/Start'
@@ -105,9 +105,9 @@ export default class App extends Component {
 			<section className='container-fluid'>
 				<div className='row'>
 					<div className='m-0 p-0 col-lg-10 col-xl-10'>
-						<ContentTabs
+						<ContentPages
 							activeTab={this.state.activeTab}
-							contents={[<Start />, <History />, <Instalation />, <Versions />]}
+							pages={[<Start />, <History />, <Instalation />, <Versions />]}
 						/>
 						<div className='row m-0 p-0 pb-md-3 pb-lg-3 pb-xl-3'>
 							<div className='pt-2 border-right col-md-5 col-lg-5 col-xl-5'>

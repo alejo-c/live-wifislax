@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { MDBInput } from 'mdbreact'
 
-import './scrollable.css'
-
 export default class CommentForm extends Component {
 	state = { username: '', content: '', errorMessage: '' }
 

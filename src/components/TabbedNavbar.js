@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import { BrowserRouter as Router } from 'react-router-dom'
 import { MDBNavItem, MDBNavbarToggler, MDBCollapse, MDBNavbarNav, MDBNavLink } from "mdbreact"
 
-export default class ContentTabbedBar extends Component {
+export default class TabbedNavbar extends Component {
 	state = { isOpen: false }
 
 	toggleCollapse = () => {
