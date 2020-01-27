@@ -11,10 +11,10 @@
 	{
 		"mr": 1,
 		"src": "https://raw.githubusercontent.com/alejo-castrillon/live-wifislax/master/src/images/mdbreact.png",
-		"size": 40,
+		"size": 42,
 		"alt": "mdbreact-logo",
 		"href": "https://mdbootstrap.com/docs/react/",
-		"text": "Material Design Bootstrap React",
+		"text": "React Bootstrap with Material Design",
 		"spinning": false
 	},
 	{
