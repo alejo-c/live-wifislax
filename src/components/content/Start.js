@@ -3,7 +3,7 @@ import React, { Component } from "react";
 export default class Start extends Component {
 	render() {
 		return <div className='text-justify px-3 pt-2'>
-			<h1 className='text-muted font-weight-bold'>DESCRIPCIÓN</h1>
+			<h1 className='text-muted font-weight-bold'>SISTEMA OPERATIVO</h1>
 			<p>
 				WiFiSlax es una distribución GNU/Linux en formato *.iso con
 				uncionalidades pensadas y diseñadas para la auditoría de seguridad

@@ -27,9 +27,28 @@ export default class App extends Component {
 			this.setState({ activeTab: tab })
 	}
 
-	handleChange = e => {
-		const { value, name } = e.target
-		this.setState({ [name]: value })
+	getDate = date => {
+		let time = date.toLocaleTimeString().toLowerCase()
+		date = date.toLocaleDateString()
+
+		let array = time.split(':')
+
+		let hour = parseInt(array[0])
+		let foo = ' a. m.'
+		while (hour > 12)
+			foo = ' p. m.'
+		hour -= 1
+
+		time = `${hour}`
+		for (let i = 1; i < array.length; i++)
+			time += `:${array[i]}`
+
+		if (time.includes('a') || time.includes('p'))
+			time = time.replace('am', 'a. m.').replace('pm', 'p. m.')
+		else
+			time += foo
+
+		return `${date}, ${time}`
 	}
 
 	handleAddComment = comment => {
@@ -38,7 +57,7 @@ export default class App extends Component {
 
 		object[key] = {
 			id: key,
-			date: new Date().toLocaleString(),
+			date: this.getDate(new Date()),
 			username: comment.username,
 			content: comment.content,
 		}

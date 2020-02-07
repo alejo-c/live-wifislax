@@ -105,7 +105,7 @@ export default class Comment extends Component {
 					<MDBCollapse id='reply-form' isOpen={this.state.collapseForm}>
 						<CommentForm
 							reply={true}
-							title='Responder al Comentario'
+							title={`Responder a ${username}`}
 							tooltip='Responder al Comentario'
 							button='Responder'
 							onAddComment={this.handleCommentReply}
@@ -118,7 +118,7 @@ export default class Comment extends Component {
 									'h6 text-muted' :
 									'alert alert-info m-0 mt-1 p-0 py-1 text-center'
 							}
-						>{replies.length ? 'Respuestas' : 'Se el primero en responder'}</div>
+						>{replies.length ? 'Respuestas' : 'Se el primero en responder'} a {username}</div>
 						<CommentList
 							path={`${this.props.path}/${this.props.comment.id}/replies`}
 							comments={replies}

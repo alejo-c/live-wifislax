@@ -29,7 +29,7 @@ export default class SideLinksPage extends Component {
 								{
 									menu.links.map((link, j) => 
 										<MDBListGroupItem
-											className='elegant-color-dark'
+											className='elegant-color-dark border-0'
 											key={j}
 										>
 											<a
