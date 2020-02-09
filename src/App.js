@@ -119,7 +119,7 @@ export default class App extends Component {
 			</header>
 
 			<section className='container-fluid'>
-				<div className='row'>
+				<div className='row mx-xl-5'>
 					<div className='m-0 p-0 col-lg-10 col-xl-10'>
 						<ContentPages
 							activeTab={this.state.activeTab}
