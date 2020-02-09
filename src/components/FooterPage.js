@@ -8,9 +8,9 @@ import './icon.css'
 export default class FooterPage extends Component {
 	render() {
 		return <MDBFooter color="elegant-color" className="font-small pt-3">
-			<div className='container-fluid'>
-				<div className='row'>
-					<div className="col-lg-5 col-xl-5">
+			<div className='container-fluid mx-lg-5'>
+				<div className='row mx-lg-5'>
+					<div className="col-xl-5">
 						<div className="h5 font-weight-bold">Live WifiSlax</div>
 						<p>
 							Pagina Web que muestra una descripción general del sistema
@@ -20,8 +20,8 @@ export default class FooterPage extends Component {
             			</p>
 					</div>
 
-					<div className="col-sm-6 col-md-4 col-lg-2 col-xl-2">
-						<div className="h5 font-weight-bold">Otros Enlaces</div>
+					<div className="col-sm-6 col-md-4 col-lg-4 col-xl-2">
+						<div className="h5 font-weight-bold">Enlaces</div>
 						<div className='ml-3 mb-3'>
 							{
 								this.props.links.map((link, i) =>
@@ -38,11 +38,11 @@ export default class FooterPage extends Component {
 						</div>
 					</div>
 
-					<div className='col-sm-6 col-md-4 col-lg-2 col-xl-2'>
+					<div className='col-sm-6 col-md-4 col-lg-4 col-xl-2'>
 						<div className="h5 font-weight-bold">Información de Contacto</div>
 						<div className='ml-3 mb-3' style={{ listStyleType: 'none' }}>
-							<i className="fa fa-envelope mr-1" />
-							<strong>E-mail: </strong>
+
+							<strong><i className="fa fa-envelope mr-1" />E-mail: </strong>
 							<a
 								href="mailto: live.wifislax@gmail.com"
 								target='_blank'
@@ -51,7 +51,7 @@ export default class FooterPage extends Component {
 						</div>
 					</div>
 
-					<div className="col-md-4 col-lg-3 col-xl-3">
+					<div className="col-md-4 col-lg-4 col-xl-3">
 						<h5 className="font-weight-bold">Herramientas Utilizadas</h5>
 						<div className='ml-4 mb-2'>
 							{
