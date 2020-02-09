@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b9072179fdcffa106d9b30253eadc6c2",
+    "revision": "97776b6374a89345974b844ad81d2442",
     "url": "/live-wifislax/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/live-wifislax/static/css/2.f3b33858.chunk.css"
   },
   {
-    "revision": "c8fbd95494516e9dff52",
+    "revision": "72d218513302e552d1b1",
     "url": "/live-wifislax/static/css/main.3f8562ff.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/live-wifislax/static/js/2.4abb1e2d.chunk.js.LICENSE"
   },
   {
-    "revision": "c8fbd95494516e9dff52",
-    "url": "/live-wifislax/static/js/main.6a6b4f71.chunk.js"
+    "revision": "72d218513302e552d1b1",
+    "url": "/live-wifislax/static/js/main.b071ff83.chunk.js"
   },
   {
     "revision": "60e1b8bd17f2624abbe6",
