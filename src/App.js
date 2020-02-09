@@ -29,26 +29,23 @@ export default class App extends Component {
 
 	getDate = date => {
 		let time = date.toLocaleTimeString().toLowerCase()
-		date = date.toLocaleDateString()
+		let day = date.getDate()
+		let month = date.getMonth() + 1
+		let year = date.getYear() + 1900
+		date = ``
 
-		let array = time.split(':')
+		let array = date.split
+
+		array = time.split(':')
 
 		let hour = parseInt(array[0])
 		let foo = ' a. m.'
-		while (hour > 12)
+		while (hour > 12) {
 			foo = ' p. m.'
-		hour -= 1
+			hour -= 1
+		}
 
-		time = `${hour}`
-		for (let i = 1; i < array.length; i++)
-			time += `:${array[i]}`
-
-		if (time.includes('a') || time.includes('p'))
-			time = time.replace('am', 'a. m.').replace('pm', 'p. m.')
-		else
-			time += foo
-
-		return `${date}, ${time}`
+		return `${day}/${month}/${year}, ${hour}:${array[1]}${foo}`
 	}
 
 	handleAddComment = comment => {
