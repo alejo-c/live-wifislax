@@ -1,28 +1,29 @@
 {
   "files": {
-    "main.css": "/live-wifislax/static/css/main.3f8562ff.chunk.css",
-    "main.js": "/live-wifislax/static/js/main.b071ff83.chunk.js",
-    "main.js.map": "/live-wifislax/static/js/main.b071ff83.chunk.js.map",
+    "main.css": "/live-wifislax/static/css/main.dc4be136.chunk.css",
+    "main.js": "/live-wifislax/static/js/main.c9b953ae.chunk.js",
+    "main.js.map": "/live-wifislax/static/js/main.c9b953ae.chunk.js.map",
     "runtime-main.js": "/live-wifislax/static/js/runtime-main.0fd0338b.js",
     "runtime-main.js.map": "/live-wifislax/static/js/runtime-main.0fd0338b.js.map",
     "static/css/2.f3b33858.chunk.css": "/live-wifislax/static/css/2.f3b33858.chunk.css",
-    "static/js/2.4abb1e2d.chunk.js": "/live-wifislax/static/js/2.4abb1e2d.chunk.js",
-    "static/js/2.4abb1e2d.chunk.js.map": "/live-wifislax/static/js/2.4abb1e2d.chunk.js.map",
+    "static/js/2.a0e6a823.chunk.js": "/live-wifislax/static/js/2.a0e6a823.chunk.js",
+    "static/js/2.a0e6a823.chunk.js.map": "/live-wifislax/static/js/2.a0e6a823.chunk.js.map",
     "index.html": "/live-wifislax/index.html",
-    "precache-manifest.797267e5e2ff4db022fa52fb4df5c849.js": "/live-wifislax/precache-manifest.797267e5e2ff4db022fa52fb4df5c849.js",
+    "precache-manifest.7eb371efab073cdb88059f5384d61e90.js": "/live-wifislax/precache-manifest.7eb371efab073cdb88059f5384d61e90.js",
     "service-worker.js": "/live-wifislax/service-worker.js",
     "static/css/2.f3b33858.chunk.css.map": "/live-wifislax/static/css/2.f3b33858.chunk.css.map",
-    "static/css/main.3f8562ff.chunk.css.map": "/live-wifislax/static/css/main.3f8562ff.chunk.css.map",
-    "static/js/2.4abb1e2d.chunk.js.LICENSE": "/live-wifislax/static/js/2.4abb1e2d.chunk.js.LICENSE",
+    "static/css/main.dc4be136.chunk.css.map": "/live-wifislax/static/css/main.dc4be136.chunk.css.map",
+    "static/js/2.a0e6a823.chunk.js.LICENSE": "/live-wifislax/static/js/2.a0e6a823.chunk.js.LICENSE",
     "static/media/mdb.css": "/live-wifislax/static/media/arrow_right.8ef6a08c.svg",
     "static/media/banner.png": "/live-wifislax/static/media/banner.7de7847e.png",
-    "static/media/all.min.css": "/live-wifislax/static/media/fa-solid-900.c2801fb4.svg"
+    "static/media/all.min.css": "/live-wifislax/static/media/fa-solid-900.c2801fb4.svg",
+    "static/media/start1.jpg": "/live-wifislax/static/media/start1.dcf6d859.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.0fd0338b.js",
     "static/css/2.f3b33858.chunk.css",
-    "static/js/2.4abb1e2d.chunk.js",
-    "static/css/main.3f8562ff.chunk.css",
-    "static/js/main.b071ff83.chunk.js"
+    "static/js/2.a0e6a823.chunk.js",
+    "static/css/main.dc4be136.chunk.css",
+    "static/js/main.c9b953ae.chunk.js"
   ]
 }
