@@ -29,12 +29,12 @@ export default class Start extends Component {
 				gran número de tarjetas de red cableadas e inalámbricas.
 			</p>
 			<p>
-				Esta suite de seguridad se basa en la
-				distribución <strong>Linux Slackware</strong> y viene de base
-				con una gran colección de herramientas de seguridad y
-				auditoría, tanto para comprobar la seguridad de las redes Wi-Fi
-				como de otros aspectos de una red, como los puertos y su
-				protección contra diferentes exploits, entre otros.
+				Esta suite de seguridad se basa en la distribución <strong>
+				Linux Slackware</strong> y viene de base con una gran colección
+				de herramientas de seguridad y auditoría, tanto para comprobar
+				la seguridad de las redes Wi-Fi como de otros aspectos de una
+				red, como los puertos y su protección contra diferentes
+				exploits, entre otros.
 			</p>
 			<p>
 				A pesar de que existen otras distribuciones de hacking ético en
