@@ -10,7 +10,9 @@ export default class CommentListContainer extends Component {
 		return <div className="pt-md-3 pt-lg-3 pt-xl-3">
 			<h5>
 				<div className="badge badge-info mb-md-1">{count}</div>
-				{` Comentario${count === 1 ? "" : "s"}`}
+				<span className='text-muted'>
+					{` Comentario${count === 1 ? "" : "s"}`}
+				</span>
 			</h5>
 
 			<div className="alert alert-info text-center" style={empty}>
