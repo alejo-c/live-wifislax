@@ -28,21 +28,17 @@ export default class App extends Component {
 	}
 
 	getDate = date => {
-		let time = date.toLocaleTimeString().toLowerCase()
+		let time = date.toTimeString().substr(0, 8)
 		let day = date.getDate()
 		let month = date.getMonth() + 1
 		let year = date.getYear() + 1900
-		date = ``
-
-		let array = date.split
-
-		array = time.split(':')
+		let array = time.split(':')
 
 		let hour = parseInt(array[0])
 		let foo = ' a. m.'
-		while (hour > 12) {
+		if (hour > 12) {
 			foo = ' p. m.'
-			hour -= 1
+			hour -= 12
 		}
 
 		return `${day}/${month}/${year}, ${hour}:${array[1]}${foo}`
