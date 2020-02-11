@@ -125,6 +125,20 @@ export default class App extends Component {
 							activeTab={this.state.activeTab}
 							pages={[<Start />, <History />, <Instalation />, <Versions />]}
 						/>
+
+						<div className='alert alert-info mx-2 mt-2'>
+							<p>
+								Gracias por visitar nuestra pagina, deja un
+								comentario para ayudarnos a mejorar. Tambien
+								puedes responder a otros usuarios.
+							</p>
+							<p>
+								En el caso de que quieras editar o eliminar tu
+								commentario contacta con nosotros.
+							</p>
+							<p>Recuerda no usar lenguaje inapropiado.</p>
+						</div>
+
 						<div className='row m-0 p-0 pb-md-3 pb-lg-3 pb-xl-3'>
 							<div className='pt-2 border-right col-md-5 col-lg-5 col-xl-5'>
 								<CommentForm
