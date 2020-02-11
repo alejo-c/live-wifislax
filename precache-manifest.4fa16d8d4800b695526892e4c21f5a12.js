@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "015a3f8c88fb2c6d1f77082b6f005176",
+    "revision": "3836d668ea9e8d5dcd072af31d2f1d75",
     "url": "/live-wifislax/index.html"
   },
   {
-    "revision": "2664785a77f65f2bc0bb",
+    "revision": "23a641acc0b2ff0c8ea9",
     "url": "/live-wifislax/static/css/2.f3b33858.chunk.css"
   },
   {
-    "revision": "e298593a6b16db2170a8",
+    "revision": "9a63269add8b3965b9b3",
     "url": "/live-wifislax/static/css/main.dc4be136.chunk.css"
   },
   {
-    "revision": "2664785a77f65f2bc0bb",
-    "url": "/live-wifislax/static/js/2.a0e6a823.chunk.js"
+    "revision": "23a641acc0b2ff0c8ea9",
+    "url": "/live-wifislax/static/js/2.2e0f253e.chunk.js"
   },
   {
     "revision": "54f6e2d0ef339619d0a432be7ac0ab75",
-    "url": "/live-wifislax/static/js/2.a0e6a823.chunk.js.LICENSE"
+    "url": "/live-wifislax/static/js/2.2e0f253e.chunk.js.LICENSE"
   },
   {
-    "revision": "e298593a6b16db2170a8",
-    "url": "/live-wifislax/static/js/main.c9b953ae.chunk.js"
+    "revision": "9a63269add8b3965b9b3",
+    "url": "/live-wifislax/static/js/main.bfbfe50a.chunk.js"
   },
   {
     "revision": "60e1b8bd17f2624abbe6",
@@ -178,6 +178,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "c2801fb415f03c7b170934769d7b5397",
     "url": "/live-wifislax/static/media/fa-solid-900.c2801fb4.svg"
+  },
+  {
+    "revision": "bbbcf573a467621396a4f4064d811ce8",
+    "url": "/live-wifislax/static/media/history1.bbbcf573.png"
   },
   {
     "revision": "dcf6d85954ca437c07c1224a3deba7d9",
