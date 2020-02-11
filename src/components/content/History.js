@@ -29,8 +29,12 @@ export default class HistoryContent extends Component {
 				que hoy es el encargado del desarrollo y mantenimiento de la
 				actual Wifislax.
 			</p>
-			<div className='text-center mb-3'>
-				<img className='image' src={image1} width="600px" alt='imagen' />
+			<div className='text-center mb-3 mx-md-5'>
+				<img
+					className='img-fluid'
+					src={image1}
+					alt='imagen'
+				/>
 			</div>
 			<p>
 				El nombre proviene de su base y su función Wifi por ser una
