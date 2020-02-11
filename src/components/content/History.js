@@ -7,9 +7,6 @@ export default class HistoryContent extends Component {
 		return <div className='text-justify px-3 pt-2'>
 			<h1 className='text-muted font-weight-bold'>HISTORIA</h1>
 			<p>
-				Algunos usuarios que eranEl hacia de moderador en una web llamada hwagm.elhacker.net en ella conoció a gente y barajaron la posibilidad de crear una web enfocada a las redes wifi. Creo su propio dominio y la llamo seguridadwireless.net Finalmente debido a las necesidades que habían tenido los miembros de la comunidad se vio la necesidad de diseñar su propio live CD (Wifilax 1.0) y tras el gran éxito la creación de su dominio wifislax.com que a sido necesario para dedicarlo exclusivamente a esta herramienta
-			</p>
-			<p>
 				Wifislax es la evolución de <strong>Wifiway</strong> (el cual a
 				su vez se basaba en <strong>SlackWare</strong>) que fue creada
 				en el foro

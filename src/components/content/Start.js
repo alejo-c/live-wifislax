@@ -43,12 +43,12 @@ export default class Start extends Component {
 				gran número de tarjetas de red cableadas e inalámbricas.
 			</p>
 			<p>
-				Esta suite de seguridad se basa en la distribución <strong>
-					Linux Slackware</strong> y viene de base con una gran colección
-de herramientas de seguridad y auditoría, tanto para comprobar
-la seguridad de las redes Wi-Fi como de otros aspectos de una
-red, como los puertos y su protección contra diferentes
-exploits, entre otros.
+				Esta suite de seguridad se basa en la distribución
+				<strong> Linux Slackware</strong> y viene de base con una gran
+				colección de herramientas de seguridad y auditoría, tanto para
+				comprobar la seguridad de las redes Wi-Fi como de otros
+				aspectos de una red, como los puertos y su protección contra
+				diferentes exploits, entre otros.
 			</p>
 			<p>
 				A pesar de que existen otras distribuciones de hacking ético en
@@ -59,6 +59,13 @@ exploits, entre otros.
 				hicieron a ella, ya que, aunque puede no ser la más sencilla de
 				utilizar, es de las más completas para auditar todo tipo de
 				redes, en especial redes Wi-Fi.
+			</p>
+			<p>
+				Es llamado tambien <strong>Live WifiSlax</strong> ya que es un
+				Live CD (Live Distro o CD autonomo), esto quiere decir que es
+				un sistema operativo que puede ser almacenado facilmente en un
+				medio extraible como un CD y con la posibilidad de ejecutarse
+				directamente en una computadora.
 			</p>
 		</div>
 	}
