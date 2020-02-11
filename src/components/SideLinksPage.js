@@ -12,6 +12,9 @@ export default class SideLinksPage extends Component {
 
 	render() {
 		return <div>
+			<h5 className='m-2 text-white'>
+				<strong>Enlaces de Interés:</strong>
+			</h5>
 			{
 				this.props.menus.map((menu, i) => {
 					const angle = this.state.collapseID === `${i}`
@@ -27,7 +30,7 @@ export default class SideLinksPage extends Component {
 						<MDBCollapse id={`${i}`} isOpen={this.state.collapseID}>
 							<MDBListGroup>
 								{
-									menu.links.map((link, j) => 
+									menu.links.map((link, j) =>
 										<MDBListGroupItem
 											className='elegant-color-dark border-0'
 											key={j}
