@@ -118,7 +118,10 @@ export default class Comment extends Component {
 									'h6 text-muted' :
 									'alert alert-info m-0 mt-1 p-0 py-1 text-center'
 							}
-						>{replies.length ? 'Respuestas' : 'Se el primero en responder'} a {username}</div>
+						>
+							{replies.length ? `Respuestas a ${username}`
+								: `${username} no tiene respuestas`}
+						</div>
 						<CommentList
 							path={`${this.props.path}/${this.props.comment.id}/replies`}
 							comments={replies}

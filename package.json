@@ -1,6 +1,6 @@
 {
 	"name": "live-wifislax",
-	"version": "3.37.0",
+	"version": "3.37.1",
 	"private": true,
 	"homepage": "https://alejo-castrillon.github.io/live-wifislax",
 	"dependencies": {
