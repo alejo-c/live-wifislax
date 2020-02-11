@@ -21,7 +21,7 @@ export default class FooterPage extends Component {
 					</div>
 
 					<div className="col-sm-6 col-md-4 col-lg-4 col-xl-2">
-						<div className="h5 font-weight-bold">Enlaces</div>
+						<div className="h5 font-weight-bold">Otros Enlaces</div>
 						<div className='ml-3 mb-3'>
 							{
 								this.props.links.map((link, i) =>
@@ -41,13 +41,23 @@ export default class FooterPage extends Component {
 					<div className='col-sm-6 col-md-4 col-lg-4 col-xl-2'>
 						<div className="h5 font-weight-bold">Información de Contacto</div>
 						<div className='ml-3 mb-3' style={{ listStyleType: 'none' }}>
+							<div>
+								<i className="fa fa-envelope mr-2" />
+								<a
+									href="mailto: live.wifislax@gmail.com"
+									target='_blank'
+									rel='noopener noreferrer'
+								>live.wifislax@gmail.com</a>
+							</div>
 
-							<strong><i className="fa fa-envelope mr-1" />E-mail: </strong>
-							<a
-								href="mailto: live.wifislax@gmail.com"
-								target='_blank'
-								rel='noopener noreferrer'
-							>live.wifislax@gmail.com</a>
+							<div>
+								<i class="fas fa-phone-square-alt mr-2" />
+								<a
+									href="mailto: live.wifislax@gmail.com"
+									target='_blank'
+									rel='noopener noreferrer'
+								><strong>+57</strong> 322 747 7218</a>
+							</div>
 						</div>
 					</div>
 
@@ -64,7 +74,7 @@ export default class FooterPage extends Component {
 											rel='noopener noreferrer'
 										>
 											<img
-												className={`py-1 mr-${iconLink.mr} ` + spinning}
+												className={`pb-1 mr-${iconLink.mr} ` + spinning}
 												src={iconLink.src}
 												width={iconLink.size}
 												alt={iconLink.alt}
