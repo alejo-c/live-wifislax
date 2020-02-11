@@ -35,13 +35,13 @@ export default class App extends Component {
 		let array = time.split(':')
 
 		let hour = parseInt(array[0])
-		let foo = ' a. m.'
+		let meridiem = ' a. m.'
 		if (hour > 12) {
-			foo = ' p. m.'
+			meridiem = ' p. m.'
 			hour -= 12
 		}
 
-		return `${day}/${month}/${year}, ${hour}:${array[1]}${foo}`
+		return `${day}/${month}/${year}, ${hour}:${array[1]}${meridiem}`
 	}
 
 	handleAddComment = comment => {
@@ -86,7 +86,9 @@ export default class App extends Component {
 		this.database.ref('posted/').on('value', snap => {
 			const currentComments = snap.val()
 			if (currentComments !== null) {
-				const newComments = Object.keys(currentComments).map(key => currentComments[key])
+				const newComments = Object.keys(currentComments).map(
+					key => currentComments[key]
+				)
 				this.setState({ comments: newComments })
 			}
 		})
@@ -102,7 +104,9 @@ export default class App extends Component {
 					image='https://raw.githubusercontent.com/alejo-castrillon/live-wifislax/master/src/images/logo.png'
 					title='Live WifiSlax'
 					activeTab={this.state.activeTab}
-					contentTabs={['Inicio', 'Historia', 'Guia Instalación', 'Versiones']}
+					contentTabs={
+						['Inicio', 'Historia', 'Guia Instalación', 'Versiones']
+					}
 					linkTabs={[
 						{
 							title: 'Foro',
@@ -119,7 +123,9 @@ export default class App extends Component {
 					<div className='m-0 p-0 col-lg-10 col-xl-10'>
 						<ContentPages
 							activeTab={this.state.activeTab}
-							pages={[<Start />, <History />, <Instalation />, <Versions />]}
+							pages={
+								[<Start />, <History />, <Instalation />, <Versions />]
+							}
 						/>
 
 						<div className='alert alert-info mx-2 mt-2'>
