@@ -133,8 +133,9 @@ export default class App extends Component {
 								puedes responder a otros usuarios.
 							</p>
 							<p>
-								En el caso de que quieras editar o eliminar tu
-								commentario contacta con nosotros.
+								En el caso de que quieras editar o eliminar
+								alguno de tus comentarios contacta con
+								nosotros.
 							</p>
 							<p>Recuerda no usar lenguaje inapropiado.</p>
 						</div>
