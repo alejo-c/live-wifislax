@@ -51,7 +51,7 @@ export default class FooterPage extends Component {
 							</div>
 
 							<div>
-								<i class="fas fa-phone-square-alt mr-2" />
+								<i className="fas fa-phone-square-alt mr-2" />
 								<a
 									href="mailto: live.wifislax@gmail.com"
 									target='_blank'
