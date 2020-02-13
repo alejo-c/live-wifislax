@@ -32,9 +32,9 @@ export default class TabbedNavbar extends Component {
 									className={this.props.activeTab === `${i + 1}` ? 'active' : ''}
 								>
 									<MDBNavLink
-										to={`/live-wifislax/${tab.link}`}
+										to={`/live-wifislax`}
 										onClick={this.handleToggleTab(i)}
-									>{tab.name}</MDBNavLink>
+									>{tab}</MDBNavLink>
 								</MDBNavItem>
 							)
 						}
