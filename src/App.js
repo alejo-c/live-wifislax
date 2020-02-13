@@ -105,7 +105,12 @@ export default class App extends Component {
 					title='Live WifiSlax'
 					activeTab={this.state.activeTab}
 					contentTabs={
-						['Inicio', 'Historia', 'Guia Instalación', 'Versiones']
+						[
+							{ name: 'Inicio', link: 'start' },
+							{ name: 'Historia', link: 'history' },
+							{ name: 'Guia Instalación', link: 'install' },
+							{ name: 'Versiones', link: 'versions' }
+						]
 					}
 					linkTabs={[
 						{
