@@ -128,7 +128,7 @@ export default class Instalation extends Component {
 						frameBorder="0"
 						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 						allowFullScreen
-						style={{ maxWidth: '100%', height: 'auto' }}
+						style={{ maxWidth: '100%' }}
 					/>
 				</div>
 
@@ -146,7 +146,7 @@ export default class Instalation extends Component {
 						frameBorder="0"
 						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 						allowFullScreen
-						style={{ maxWidth: '100%', height: 'auto' }}
+						style={{ maxWidth: '100%' }}
 					/>
 				</div>
 			</ol>
