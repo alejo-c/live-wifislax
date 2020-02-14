@@ -3,18 +3,8 @@ import React, { Component } from "react";
 import image1 from "../../images/start1.jpg";
 
 export default class Start extends Component {
-	// state = { width: 0 }
-	// componentDidMount = () => {
-	// 	React.useEffect(() => {
-	// 		function handleResize() {
-	// 			console.log('resized to: ', window.innerWidth, 'x', window.innerHeight)
-	// 			window.addEventListener('resize', handleResize)
-	// 		}
-	// 	})
-	// }
 	render() {
-		// console.log(this.state.width)
-		return <div className='text-justify px-3 pt-2'>
+		return <div className='text-justify px-3 pt-2 lead'>
 			<h1 className='text-muted font-weight-bold'>SISTEMA OPERATIVO</h1>
 			<p>
 				WiFiSlax es una distribución <strong>GNU/Linux</strong> en
@@ -30,13 +20,16 @@ export default class Start extends Component {
 				análisis forense y herramientas para la <strong>auditoría
 				wireless</strong>.
 			</p>
+
 			<div className='text-center mb-3 mx-md-5'>
 				<img
 					className='img-fluid'
 					src={image1}
 					alt='imagen'
+					width='700px'
 				/>
 			</div>
+
 			<p>
 				Posee una gran integración de varios controladores de red no
 				oficiales en el kernel de Linux, y da así soporte inmediato para un
@@ -61,12 +54,12 @@ export default class Start extends Component {
 				redes, en especial redes Wi-Fi.
 			</p>
 			<p>
-				Es llamado tambien <strong>Live WifiSlax</strong> ya que es un
+				Es llamado tambien <strong>Live Wifislax</strong> ya que es un
 				Live CD (Live Distro o CD autonomo), esto quiere decir que es
 				un sistema operativo que puede ser almacenado facilmente en un
 				medio extraible como un CD y con la posibilidad de ejecutarse
 				directamente en una computadora.
 			</p>
-		</div>
+		</div >
 	}
 }

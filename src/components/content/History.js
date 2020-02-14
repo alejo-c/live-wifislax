@@ -4,7 +4,7 @@ import image1 from "../../images/history1.png";
 
 export default class HistoryContent extends Component {
 	render() {
-		return <div className='text-justify px-3 pt-2'>
+		return <div className='text-justify px-3 pt-2 lead'>
 			<h1 className='text-muted font-weight-bold'>HISTORIA</h1>
 			<p>
 				Wifislax es la evolución de <strong>Wifiway</strong> (el cual a
@@ -31,6 +31,7 @@ export default class HistoryContent extends Component {
 					className='img-fluid'
 					src={image1}
 					alt='imagen'
+					width='550px'
 				/>
 			</div>
 			<p>
