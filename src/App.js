@@ -98,11 +98,13 @@ export default class App extends Component {
 		return <div>
 			<header>
 				<div className='text-center'>
-					<img src={banner} alt='banner' style={{ width: '60%' }} />
+					<a href='/live-wifislax/'>
+						<img src={banner} alt='banner' style={{ width: '60%' }} />
+					</a>
 				</div>
 				<TabbedNavbar
 					image='https://raw.githubusercontent.com/alejo-castrillon/live-wifislax/master/src/images/logo.png'
-					title='Live WifiSlax'
+					title='Live Wifislax'
 					activeTab={this.state.activeTab}
 					contentTabs={
 						['Inicio', 'Historia', 'Guia Instalación', 'Versiones']
@@ -119,58 +121,62 @@ export default class App extends Component {
 			</header>
 
 			<section className='container-fluid'>
-				<div className='row mx-xl-5'>
-					<div className='m-0 p-0 col-lg-10 col-xl-10'>
-						<ContentPages
-							activeTab={this.state.activeTab}
-							pages={
-								[<Start />, <History />, <Instalation />, <Versions />]
-							}
-						/>
-
-						<div className='alert alert-info mx-2 mt-2'>
-							<p>
-								Gracias por visitar nuestra pagina, deja un
-								comentario para ayudarnos a mejorar. Tambien
-								puedes responder a otros usuarios.
-							</p>
-							<p>
-								En el caso de que quieras editar o eliminar
-								alguno de tus comentarios contacta con
-								nosotros.
-							</p>
-							<p>Recuerda no usar lenguaje inapropiado.</p>
-						</div>
-
-						<div className='row m-0 p-0 pb-md-3 pb-lg-3 pb-xl-3'>
-							<div className='pt-2 border-right col-md-5 col-lg-5 col-xl-5'>
-								<CommentForm
-									title='Publicar Comentario'
-									tooltip='Publicar el Comentario'
-									button='Publicar'
-									onAddComment={this.handleAddComment}
+				<div className='mx-xl-5'>
+					<div className='mx-xl-5'>
+						<div className='row mx-xl-5 mx-xl-5'>
+							<div className='m-0 p-0 col-lg-10 col-xl-10'>
+								<ContentPages
+									activeTab={this.state.activeTab}
+									pages={
+										[<Start />, <History />, <Instalation />, <Versions />]
+									}
 								/>
+
+								<div className='alert alert-info mx-2 mt-2'>
+									<p>
+										Gracias por visitar nuestra pagina, deja un
+										comentario para ayudarnos a mejorar. Tambien
+										puedes responder a otros usuarios.
+								</p>
+									<p>
+										En el caso de que quieras editar o eliminar
+										alguno de tus comentarios contacta con
+										nosotros.
+								</p>
+									<p>Recuerda no usar lenguaje inapropiado.</p>
+								</div>
+
+								<div className='row m-0 p-0 pb-md-3 pb-lg-3 pb-xl-3'>
+									<div className='pt-2 border-right col-md-5 col-lg-5 col-xl-5'>
+										<CommentForm
+											title='Publicar Comentario'
+											tooltip='Publicar el Comentario'
+											button='Publicar'
+											onAddComment={this.handleAddComment}
+										/>
+									</div>
+									<div className='border-left col-md-7 col-lg-7 col-xl-7'>
+										<CommentListContainer
+											initialPath='posted'
+											comments={this.state.comments}
+											onCommentReply={this.handleCommentReply}
+											onCommentReport={this.handleCommentReport}
+										/>
+									</div>
+								</div>
 							</div>
-							<div className='border-left col-md-7 col-lg-7 col-xl-7'>
-								<CommentListContainer
-									initialPath='posted'
-									comments={this.state.comments}
-									onCommentReply={this.handleCommentReply}
-									onCommentReport={this.handleCommentReport}
-								/>
+
+							<div className='elegant-color-dark m-0 p-0 col-lg-2 col-xl-2'>
+								<SideLinksPage menus={menuLinks} />
 							</div>
 						</div>
-					</div>
-
-					<div className='elegant-color-dark m-0 p-0 col-lg-2 col-xl-2'>
-						<SideLinksPage menus={menuLinks} />
 					</div>
 				</div>
 			</section>
 
 			<FooterPage links={[
 				{
-					text: 'Pagina Principal de Live WifiSlax',
+					text: 'Pagina Principal de Live Wifislax',
 					href: 'https://www.wifislax.com'
 				},
 				{
