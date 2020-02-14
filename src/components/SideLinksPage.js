@@ -24,8 +24,10 @@ export default class SideLinksPage extends Component {
 						className='text-white elegant-color-dark m-0 pl-2 pr-1'
 						key={i}
 					>
-						<div onClick={this.toggleCollapse(`${i}`)}>
-							{menu.title} <i className={angle} />
+						<div
+							onClick={this.toggleCollapse(`${i}`)}
+							className={this.state.collapseID === `${i}` ? 'font-weight-bold' : ''}
+						>{menu.title} <i className={angle} />
 						</div>
 						<MDBCollapse id={`${i}`} isOpen={this.state.collapseID}>
 							<MDBListGroup>
