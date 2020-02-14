@@ -15,8 +15,7 @@ export default class ContentPages extends Component {
 						key={i}
 						tabId={`${i + 1}`}
 						role='tabpanel'
-						className='scrollable'
-						// style={{ height: `500px${window.innerWidth < 768 ? '.' : ''}` }}
+						className='scrollable mx-xl-5'
 					>{page}</MDBTabPane>
 				)
 			}
