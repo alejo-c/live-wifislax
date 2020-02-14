@@ -11,7 +11,7 @@ export default class FooterPage extends Component {
 			<div className='container-fluid mx-xl-5'>
 				<div className='row mx-xl-5'>
 					<div className="col-xl-5">
-						<div className="h5 font-weight-bold">Live WifiSlax</div>
+						<div className="h5 font-weight-bold">Live Wifislax</div>
 						<p>
 							Wifislax es un sistema operativo orientado al
 							hacking etico/auditoria de informatica de redes
@@ -21,7 +21,7 @@ export default class FooterPage extends Component {
 						</p>
 						<p>
 							Pagina Web que muestra una descripción general del
-							sistema operativo Live WifiSlax, historia, pasos de
+							sistema operativo Live Wifislax, historia, pasos de
 							instalacion, links de descarga para diferentes
 							versiones incluyendo tutoriales de instalacion y
 							uso.
