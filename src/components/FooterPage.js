@@ -8,15 +8,23 @@ import './icon.css'
 export default class FooterPage extends Component {
 	render() {
 		return <MDBFooter color="elegant-color" className="font-small pt-3">
-			<div className='container-fluid mx-lg-5'>
-				<div className='row mx-lg-5'>
+			<div className='container-fluid mx-xl-5'>
+				<div className='row mx-xl-5'>
 					<div className="col-xl-5">
 						<div className="h5 font-weight-bold">Live WifiSlax</div>
 						<p>
-							Pagina Web que muestra una descripción general del sistema
-							operativo Live WifiSlax, historia, pasos de instalacion,
-							links de descarga para diferentes versiones y tutoriales de
-							instalacion y uso.
+							Wifislax es un sistema operativo orientado al
+							hacking etico/auditoria de informatica de redes
+							wireless, proporciona herramientas variadas y
+							diferentes elementos de seguridad en una distro
+							Linux.
+						</p>
+						<p>
+							Pagina Web que muestra una descripción general del
+							sistema operativo Live WifiSlax, historia, pasos de
+							instalacion, links de descarga para diferentes
+							versiones incluyendo tutoriales de instalacion y
+							uso.
             			</p>
 					</div>
 
@@ -52,11 +60,7 @@ export default class FooterPage extends Component {
 
 							<div>
 								<i className="fas fa-phone-square-alt mr-2" />
-								<a
-									href="mailto: live.wifislax@gmail.com"
-									target='_blank'
-									rel='noopener noreferrer'
-								><strong>+57</strong> 322 747 7218</a>
+								<strong>+57</strong> 322 747 7218
 							</div>
 						</div>
 					</div>
