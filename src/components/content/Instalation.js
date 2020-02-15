@@ -17,13 +17,13 @@ export default class Instalation extends Component {
 						<code>512MB de RAM</code> si se utilizara en Modo Live.
 					</li>
 					<li>
-						<code>1GB de RAM</code> si se instalara en el disco
+						<code>512MB a 1GB de RAM</code> si se instalara en el disco
 						duro.
 					</li>
 
 					<li>
 						Respecto al requisito de <code>disco duro </code>
-						necesita como máximo <code>10GB</code> para que
+						necesita de <code> 6GB a 10GB</code> para que
 						funcione todo correctamente.
 					</li>
 				</ul>

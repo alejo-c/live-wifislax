@@ -15,7 +15,7 @@ export default class Start extends Component {
 			<p>
 				Incluye una larga lista de herramientas de seguridad y
 				auditoría listas para ser utilizadas, entre las que destacan
-				numerosos escáner e puertos y vulnerabilidades, herramientas
+				numerosos escáner de puertos y vulnerabilidades, herramientas
 				para creación y diseño de exploits, sniffers, herramientas de
 				análisis forense y herramientas para la <strong>auditoría
 				wireless</strong>.
